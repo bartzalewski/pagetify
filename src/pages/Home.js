@@ -29,6 +29,7 @@ import standout3 from '../images/standout-3.svg';
 import standout4 from '../images/standout-4.svg';
 import bz from '../images/bz.png';
 import dg from '../images/dg.png';
+import tick from '../images/tick.svg';
 
 const StyledHome = styled.section`
 	.hero,
@@ -69,6 +70,13 @@ const StyledHome = styled.section`
 		bottom: 0;
 	}
 
+	.decoration--tick {
+		z-index: -1;
+		height: 75%;
+		position: absolute;
+		align-self: center;
+	}
+
 	.section-title {
 		font-size: 36px;
 	}
@@ -105,6 +113,7 @@ const StyledHomeHero = styled.header`
 			p {
 				font-weight: 500;
 				margin: 1rem 0;
+				font-size: 18px;
 			}
 
 			button {
@@ -117,6 +126,13 @@ const StyledHomeHero = styled.header`
 				padding: 10px 30px;
 				cursor: pointer;
 				font-size: inherit;
+				box-shadow: 0 2px 10px rgba(50, 50, 93, 0.1);
+				transition: 0.2s ease-in-out;
+
+				&:hover {
+					transition: 0.2s ease-in-out;
+					box-shadow: 0 9px 32px 0 rgba(0, 0, 0, 0.15);
+				}
 			}
 
 			a {
@@ -152,6 +168,18 @@ const StyledHomeOffer = styled.section`
 			justify-content: center;
 			align-items: center;
 			flex-direction: column;
+			padding: 15px;
+			transition: 0.2s ease-in-out;
+
+			img {
+				width: 75px;
+				height: 75px;
+			}
+
+			&:hover {
+				box-shadow: 0 9px 32px 0 rgba(0, 0, 0, 0.15);
+				transition: 0.2s ease-in-out;
+			}
 		}
 
 		&__title {
@@ -162,8 +190,6 @@ const StyledHomeOffer = styled.section`
 
 		&__desc {
 			text-align: justify;
-			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-				Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 		}
 	}
 `;
@@ -201,6 +227,12 @@ const StyledHomeReviews = styled.section`
 			border-top: 5px solid;
 			position: relative;
 			box-shadow: 0 2px 10px rgba(50, 50, 93, 0.1);
+			transition: 0.2s ease-in-out;
+
+			&:hover {
+				transition: 0.2s ease-in-out;
+				box-shadow: 0 9px 32px 0 rgba(0, 0, 0, 0.15);
+			}
 
 			&--left {
 				border-image-source: linear-gradient(#36d0dc, #41bade);
@@ -254,6 +286,7 @@ const StyledHomeStandOut = styled.section`
 			width: 50%;
 			text-align: center;
 			font-weight: 500;
+			font-size: 18px;
 		}
 
 		&__wrapper {
@@ -271,6 +304,19 @@ const StyledHomeStandOut = styled.section`
 			align-items: center;
 			width: calc(50% + (25% / 3) * 2);
 			margin: 10px 0;
+			transition: 0.2s ease-in-out;
+			background: #fff;
+
+			&:hover {
+				opacity: 1;
+				transition: 0.2s ease-in-out;
+				box-shadow: 0 2px 10px rgba(50, 50, 93, 0.1);
+			}
+
+			img {
+				width: 75px;
+				height: 75px;
+			}
 
 			&--left {
 				align-self: flex-start;
@@ -283,8 +329,6 @@ const StyledHomeStandOut = styled.section`
 
 		&__txt {
 			text-align: justify;
-			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
-				Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 			width: 75%;
 		}
 	}
@@ -319,6 +363,12 @@ const StyledHomeBlog = styled.section`
 			border-radius: 5px;
 			padding: 15px;
 			border: 2px solid #49a9e0;
+			transition: 0.2s ease-in-out;
+
+			&:hover {
+				transition: 0.2s ease-in-out;
+				box-shadow: 0 9px 32px 0 rgba(0, 0, 0, 0.15);
+			}
 		}
 
 		&__author {
@@ -339,6 +389,7 @@ const StyledHomeBlog = styled.section`
 
 		&__date {
 			font-size: 14px;
+			color: #7f7f7f;
 		}
 
 		&__title {
@@ -351,6 +402,10 @@ const StyledHomeBlog = styled.section`
 		&__desc {
 			text-align: justify;
 		}
+	}
+
+	.decoration {
+		bottom: -2px;
 	}
 `;
 
@@ -375,6 +430,14 @@ const StyledHomeRequirements = styled.section`
 			border-radius: 25px;
 			padding: 10px 30px;
 			font-weight: 500;
+			box-shadow: 0 2px 10px rgba(50, 50, 93, 0.1);
+			transition: 0.2s ease-in-out;
+			z-index: 1;
+
+			&:hover {
+				transition: 0.2s ease-in-out;
+				box-shadow: 0 9px 32px 0 rgba(0, 0, 0, 0.15);
+			}
 
 			&--txt {
 				background: -webkit-linear-gradient(left, #36d1dc, #5b86e5);
@@ -614,6 +677,11 @@ export default function Home() {
 							on the web.
 						</p>
 						<div className="stand-out__wrapper">
+							<img
+								className="decoration decoration--tick"
+								src={tick}
+								alt="decoration"
+							/>
 							<div className="stand-out__box stand-out__box--right">
 								<img src={standout1} alt="standout" />
 								<p className="stand-out__txt">
