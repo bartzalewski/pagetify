@@ -10,6 +10,10 @@ import quality from '../images/quality.svg';
 import wallet from '../images/wallet.svg';
 import waveup from '../images/waveup.svg';
 import wavedown from '../images/wavedown.svg';
+import pyramidup from '../images/pyramidup.svg';
+import pyramiddown from '../images/pyramiddown.svg';
+import stairsup from '../images/stairsup.svg';
+import stairsdown from '../images/stairsdown.svg';
 import orella from '../images/clients/orella.png';
 import charlean from '../images/clients/charlean.png';
 import kalil from '../images/clients/kalil.png';
@@ -49,10 +53,12 @@ const StyledHome = styled.section`
 	}
 
 	.decoration {
-		position: absolute;
-		bottom: -75px;
+		position: relative;
+		bottom: 0px;
 		width: 100%;
 		z-index: 0;
+		align-self: flex-end;
+		user-select: none;
 	}
 
 	.decoration--top {
@@ -74,9 +80,13 @@ const StyledHomeHero = styled.header`
 	background-position: center;
 	background-repeat: no-repeat;
 	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 75vh;
 
 	.hero {
-		height: calc(50vh - 100px);
+		height: fit-content;
 		color: #fff;
 
 		.container {
@@ -115,15 +125,20 @@ const StyledHomeHero = styled.header`
 			}
 		}
 	}
+
+	.decoration {
+		bottom: -2px;
+	}
 `;
 
 const StyledHomeOffer = styled.section`
 	position: relative;
-	padding: 25px 0;
 
 	.offer {
+		padding: 50px 0;
+
 		h1 {
-			margin-bottom: 100px;
+			margin-bottom: 50px;
 		}
 
 		&__wrapper {
@@ -155,16 +170,18 @@ const StyledHomeOffer = styled.section`
 
 const StyledHomeReviews = styled.section`
 	position: relative;
-	padding: 25px 0;
+	background: #fbfbfb;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
 
 	.reviews {
-		background: #fbfbfb;
-
 		h1 {
 			width: 40%;
 			text-align: right;
 			align-self: flex-end;
-			margin: 100px 0;
+			margin: 50px 0 100px;
 		}
 
 		&__wrapper {
@@ -217,21 +234,26 @@ const StyledHomeReviews = styled.section`
 		}
 
 		&__desc {
-			font-size: 18px;
 			text-align: justify;
 			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
 				Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 		}
 	}
+
+	.decoration--bottom {
+		margin-top: 80px;
+	}
 `;
 
 const StyledHomeStandOut = styled.section`
 	position: relative;
-	padding: 25px 0;
 
 	.stand-out {
 		&__desc {
-			margin: 100px 0;
+			margin: 50px 0;
+			width: 50%;
+			text-align: center;
+			font-weight: 500;
 		}
 
 		&__wrapper {
@@ -270,13 +292,15 @@ const StyledHomeStandOut = styled.section`
 
 const StyledHomeBlog = styled.section`
 	position: relative;
-	padding: 25px 0;
+	background: #fbfbfb;
+	display: flex;
+	flex-direction: column;
 
 	.blog {
-		background: #fbfbfb;
+		margin: 80px 0;
 
 		h1 {
-			margin-bottom: 100px;
+			margin-bottom: 50px;
 			width: 40%;
 		}
 
@@ -332,7 +356,8 @@ const StyledHomeBlog = styled.section`
 
 const StyledHomeRequirements = styled.section`
 	position: relative;
-	padding: 25px 0;
+	display: flex;
+	flex-direction: column;
 
 	.requirements {
 		background: linear-gradient(to right, #36d1dc, #5b86e5);
@@ -348,7 +373,7 @@ const StyledHomeRequirements = styled.section`
 		&__btn {
 			background: #fff;
 			border-radius: 25px;
-			padding: 10px 25px;
+			padding: 10px 30px;
 			font-weight: 500;
 
 			&--txt {
@@ -360,11 +385,14 @@ const StyledHomeRequirements = styled.section`
 			}
 		}
 	}
+
+	.decoration {
+		margin-bottom: 50px;
+	}
 `;
 
 const StyledHomeFooter = styled.footer`
 	position: relative;
-	padding: 25px 0;
 
 	.footer {
 		&__wrapper {
@@ -569,6 +597,11 @@ export default function Home() {
 						</div>
 					</div>
 				</div>
+				<img
+					className="decoration decoration--bottom"
+					src={stairsup}
+					alt="decoration"
+				/>
 			</StyledHomeReviews>
 			<StyledHomeStandOut>
 				<div className="stand-out">
@@ -616,6 +649,7 @@ export default function Home() {
 				</div>
 			</StyledHomeStandOut>
 			<StyledHomeBlog>
+				<img className="decoration" src={stairsdown} alt="decoration" />
 				<div className="blog">
 					<div className="container">
 						<h1 className="section-title">
@@ -721,6 +755,7 @@ export default function Home() {
 						</div>
 					</div>
 				</div>
+				<img className="decoration" src={pyramidup} alt="decoration" />
 			</StyledHomeBlog>
 			<StyledHomeRequirements>
 				<div className="requirements">
@@ -736,6 +771,7 @@ export default function Home() {
 						</a>
 					</div>
 				</div>
+				<img className="decoration" src={pyramiddown} alt="decoration" />
 			</StyledHomeRequirements>
 			<StyledHomeFooter>
 				<div className="footer">

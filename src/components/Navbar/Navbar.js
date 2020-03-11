@@ -6,7 +6,7 @@ const StyledNavbar = styled.nav`
 	display: flex;
 	justify-content: center;
 	width: 100vw;
-	height: 100px;
+	height: 80px;
 
 	.navbar-container {
 		width: 1140px;
