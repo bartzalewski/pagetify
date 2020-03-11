@@ -19,17 +19,30 @@ import marti from '../images/clients/marti.png';
 import aubrie from '../images/clients/aubrie.png';
 import dodi from '../images/clients/dodi.png';
 import adam from '../images/clients/adam.png';
+import standout1 from '../images/standout-1.svg';
+import standout2 from '../images/standout-2.svg';
+import standout3 from '../images/standout-3.svg';
+import standout4 from '../images/standout-4.svg';
+import bz from '../images/bz.png';
+import dg from '../images/dg.png';
 
 const StyledHome = styled.section`
 	.hero,
 	.offer,
-	.reviews {
+	.reviews,
+	.stand-out,
+	.blog,
+	.requirements,
+	.footer {
 		display: flex;
 		justify-content: center;
 	}
 
 	.offer,
-	.reviews {
+	.reviews,
+	.stand-out,
+	.requirements,
+	.footer {
 		.container {
 			align-items: center;
 		}
@@ -134,6 +147,8 @@ const StyledHomeOffer = styled.section`
 
 		&__desc {
 			text-align: justify;
+			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+				Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 		}
 	}
 `;
@@ -206,6 +221,161 @@ const StyledHomeReviews = styled.section`
 			text-align: justify;
 			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
 				Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+		}
+	}
+`;
+
+const StyledHomeStandOut = styled.section`
+	position: relative;
+	padding: 25px 0;
+
+	.stand-out {
+		&__desc {
+			margin: 100px 0;
+		}
+
+		&__wrapper {
+			display: flex;
+			flex-direction: column;
+		}
+
+		&__box {
+			opacity: 0.9;
+			border-radius: 5px;
+			padding: 25px;
+			border: 1px solid #d2d2d2;
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: calc(50% + (25% / 3) * 2);
+			margin: 10px 0;
+
+			&--left {
+				align-self: flex-start;
+			}
+
+			&--right {
+				align-self: flex-end;
+			}
+		}
+
+		&__txt {
+			text-align: justify;
+			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+				Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+			width: 75%;
+		}
+	}
+`;
+
+const StyledHomeBlog = styled.section`
+	position: relative;
+	padding: 25px 0;
+
+	.blog {
+		background: #fbfbfb;
+
+		h1 {
+			margin-bottom: 100px;
+			width: 40%;
+		}
+
+		&__wrapper {
+			display: grid;
+			grid-template-columns: repeat(3, 1fr);
+			grid-gap: 30px;
+		}
+
+		&__box {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			flex-direction: column;
+			background: #fff;
+			border-radius: 5px;
+			padding: 15px;
+			border: 2px solid #49a9e0;
+		}
+
+		&__author {
+			align-self: flex-start;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+
+			&--flex {
+				margin-left: 0.5rem;
+			}
+		}
+
+		&__name,
+		&__date {
+			font-weight: 500;
+		}
+
+		&__date {
+			font-size: 14px;
+		}
+
+		&__title {
+			font-size: 24px;
+			font-weight: 600;
+			margin: 1rem 0;
+			text-align: justify;
+		}
+
+		&__desc {
+			text-align: justify;
+		}
+	}
+`;
+
+const StyledHomeRequirements = styled.section`
+	position: relative;
+	padding: 25px 0;
+
+	.requirements {
+		background: linear-gradient(to right, #36d1dc, #5b86e5);
+		color: #fff;
+
+		&__txt {
+			text-align: center;
+			width: 50%;
+			font-weight: 500;
+			margin: 25px 0;
+		}
+
+		&__btn {
+			background: #fff;
+			border-radius: 25px;
+			padding: 10px 25px;
+			font-weight: 500;
+
+			&--txt {
+				background: -webkit-linear-gradient(left, #36d1dc, #5b86e5);
+				-webkit-background-clip: text;
+				background-clip: text;
+				-webkit-text-fill-color: transparent;
+				font-weight: 600;
+			}
+		}
+	}
+`;
+
+const StyledHomeFooter = styled.footer`
+	position: relative;
+	padding: 25px 0;
+
+	.footer {
+		&__wrapper {
+			display: grid;
+			grid-template-columns: repeat(4, 1fr);
+			grid-gap: 30px;
+		}
+
+		&__title {
+			font-weight: 600;
+			font-size: 18px;
 		}
 	}
 `;
@@ -400,6 +570,211 @@ export default function Home() {
 					</div>
 				</div>
 			</StyledHomeReviews>
+			<StyledHomeStandOut>
+				<div className="stand-out">
+					<div className="container">
+						<h1 className="section-title">How do we stand out?</h1>
+						<p className="stand-out__desc">
+							We know that there are a lot of companies operating in our
+							industry on the market. However, several issues distinguish us
+							from others and make you entrust us with the image of your company
+							on the web.
+						</p>
+						<div className="stand-out__wrapper">
+							<div className="stand-out__box stand-out__box--right">
+								<img src={standout1} alt="standout" />
+								<p className="stand-out__txt">
+									We approach each order individually. We guarantee that we will
+									respond to your message within a maximum of 24 hours.
+								</p>
+							</div>
+							<div className="stand-out__box stand-out__box--left">
+								<img src={standout2} alt="standout" />
+								<p className="stand-out__txt">
+									We thoroughly analyze your requirements and propose solutions
+									ourselves, thanks to which each project is tailor made.
+								</p>
+							</div>
+							<div className="stand-out__box stand-out__box--right">
+								<img src={standout3} alt="standout" />
+								<p className="stand-out__txt">
+									We do not leave anyone alone after commissioning the project.
+									All you need to do is contact us and we'll advise you or help
+									you in every situation.
+								</p>
+							</div>
+							<div className="stand-out__box stand-out__box--left">
+								<img src={standout4} alt="standout" />
+								<p className="stand-out__txt">
+									We do not leave anyone alone after commissioning the project.
+									All you need to do is contact us and we'll advise you or help
+									you in every situation.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</StyledHomeStandOut>
+			<StyledHomeBlog>
+				<div className="blog">
+					<div className="container">
+						<h1 className="section-title">
+							Here are the latest posts from our blog
+						</h1>
+						<div className="blog__wrapper">
+							<div className="blog__box">
+								<div className="blog__author">
+									<img src={bz} alt="bart zalewski" />
+									<div className="blog__author--flex">
+										<p className="blog__name">Bart Zalewski</p>
+										<p className="blog__date">3 months ago</p>
+									</div>
+								</div>
+								<div className="blog__title">
+									Tips related to user interface - 7 things
+								</div>
+								<p className="blog__desc">
+									Here are our user interface tips that, if implemented, will
+									make your website more user-friendly. Check them out!
+								</p>
+							</div>
+							<div className="blog__box">
+								<div className="blog__author">
+									<img src={dg} alt="david grzanka" />
+									<div className="blog__author--flex">
+										<p className="blog__name">David Grzanka</p>
+										<p className="blog__date">3 months ago</p>
+									</div>
+								</div>
+								<div className="blog__title">
+									Getting money by blogging - 8 ways
+								</div>
+								<p className="blog__desc">
+									Here are our user interface tips that, if implemented, will
+									make your website more user-friendly. Check them out!
+								</p>
+							</div>
+							<div className="blog__box">
+								<div className="blog__author">
+									<img src={bz} alt="bart zalewski" />
+									<div className="blog__author--flex">
+										<p className="blog__name">Bart Zalewski</p>
+										<p className="blog__date">3 months ago</p>
+									</div>
+								</div>
+								<div className="blog__title">
+									Online stores not optimized - 10 reasons
+								</div>
+								<p className="blog__desc">
+									Here are our user interface tips that, if implemented, will
+									make your website more user-friendly. Check them out!
+								</p>
+							</div>
+							<div className="blog__box">
+								<div className="blog__author">
+									<img src={dg} alt="david grzanka" />
+									<div className="blog__author--flex">
+										<p className="blog__name">David Grzanka</p>
+										<p className="blog__date">3 months ago</p>
+									</div>
+								</div>
+								<div className="blog__title">
+									Tips related to user interface - 7 things
+								</div>
+								<p className="blog__desc">
+									Here are our user interface tips that, if implemented, will
+									make your website more user-friendly. Check them out!
+								</p>
+							</div>
+							<div className="blog__box">
+								<div className="blog__author">
+									<img src={bz} alt="bart zalewski" />
+									<div className="blog__author--flex">
+										<p className="blog__name">Bart Zalewski</p>
+										<p className="blog__date">3 months ago</p>
+									</div>
+								</div>
+								<div className="blog__title">
+									Online stores not optimized - 10 reasons
+								</div>
+								<p className="blog__desc">
+									Here are our user interface tips that, if implemented, will
+									make your website more user-friendly. Check them out!
+								</p>
+							</div>
+							<div className="blog__box">
+								<div className="blog__author">
+									<img src={dg} alt="david grzanka" />
+									<div className="blog__author--flex">
+										<p className="blog__name">David Grzanka</p>
+										<p className="blog__date">3 months ago</p>
+									</div>
+								</div>
+								<div className="blog__title">
+									Tips related to user interface - 7 things
+								</div>
+								<p className="blog__desc">
+									Here are our user interface tips that, if implemented, will
+									make your website more user-friendly. Check them out!
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</StyledHomeBlog>
+			<StyledHomeRequirements>
+				<div className="requirements">
+					<div className="container">
+						<h1 className="section-title">Tell us your requirements</h1>
+						<p className="requirements__txt">
+							Complete a very simple quick quotation form. Thanks to this, we
+							will get to know your requirements and select something fully
+							adequate to your needs.
+						</p>
+						<a href="#!" className="requirements__btn">
+							<span className="requirements__btn--txt">Ask for price</span>
+						</a>
+					</div>
+				</div>
+			</StyledHomeRequirements>
+			<StyledHomeFooter>
+				<div className="footer">
+					<div className="container">
+						<div className="footer__wrapper">
+							<div className="footer__box">
+								<div className="footer__title">Info</div>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+									Maxime, aspernatur?
+								</p>
+							</div>
+							<div className="footer__box">
+								<div className="footer__title">Services</div>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+									Maxime, aspernatur?
+								</p>
+							</div>
+							<div className="footer__box">
+								<div className="footer__title">More</div>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+									Maxime, aspernatur?
+								</p>
+							</div>
+							<div className="footer__box">
+								<div className="footer__title">Newest posts</div>
+								<p>
+									Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+									Maxime, aspernatur?
+								</p>
+							</div>
+						</div>
+						<hr />
+						<p>Pagetify &copy; 2019-2020. All rights reserved.</p>
+					</div>
+				</div>
+			</StyledHomeFooter>
 		</StyledHome>
 	);
 }

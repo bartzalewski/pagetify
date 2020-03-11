@@ -5,7 +5,6 @@ const GlobalStyle = createGlobalStyle`
 
   body {
     font-family: 'Montserrat';
-    font-size: 18px;
     color: #293347;
     overflow-x: hidden;
     width: 100vw;
