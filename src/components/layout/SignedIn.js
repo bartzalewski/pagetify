@@ -6,6 +6,9 @@ import Error from '../../pages/Error';
 import About from '../../pages/About';
 import BlogSite from '../../pages/Blog';
 import Contact from '../../pages/Contact';
+import Websites from '../../pages/Websites';
+import Stores from '../../pages/Stores';
+import Graphics from '../../pages/Graphics';
 
 export default class SignedIn extends Component {
 	render() {
@@ -13,6 +16,10 @@ export default class SignedIn extends Component {
 			<BrowserRouter>
 				<Switch>
 					<Route exact path="/" component={Home} />
+					<Route path="/services" component={Websites} />
+					<Route path="/websites" component={Websites} />
+					<Route path="/stores" component={Stores} />
+					<Route path="/graphics" component={Graphics} />
 					<Route path="/projects" component={Projects} />
 					<Route path="/about" component={About} />
 					<Route path="/blog" component={BlogSite} />

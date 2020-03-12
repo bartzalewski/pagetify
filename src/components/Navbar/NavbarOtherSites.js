@@ -81,13 +81,18 @@ export default function NavbarOtherSites() {
 					</NavLink>
 				</div>
 				<ul className="right">
-					<NavLink
-						activeClassName="active"
-						to="/services"
-						className="navbar__link"
-					>
-						<li>Services</li>
-					</NavLink>
+					<div className="navbar__wrapper navbar__link navbar__services">
+						<NavLink activeClassName="active" to="/services">
+							<li>Services</li>
+						</NavLink>
+						<div className="navbar__more">
+							<div className="navbar__more__content">
+								<NavLink to="/websites">Websites</NavLink>
+								<NavLink to="/stores">Online stores</NavLink>
+								<NavLink to="/graphics">Graphic design</NavLink>
+							</div>
+						</div>
+					</div>
 					<NavLink
 						activeClassName="active"
 						to="/projects"

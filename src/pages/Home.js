@@ -47,10 +47,6 @@ const StyledHome = styled.section`
 			align-items: center;
 		}
 	}
-
-	.decoration--blog {
-		bottom: -2px;
-	}
 `;
 
 const StyledHomeHero = styled.header`
@@ -67,6 +63,11 @@ const StyledHomeHero = styled.header`
 	.hero {
 		height: fit-content;
 		color: #fff;
+
+		&__cta {
+			display: flex;
+			align-items: center;
+		}
 
 		.container {
 			justify-content: center;
@@ -123,6 +124,8 @@ const StyledHomeHero = styled.header`
 					background: url(${tickdown}) center no-repeat;
 					margin-left: 0.5rem;
 					background-size: contain;
+					position: absolute;
+					animation: 1s float infinite linear;
 				}
 			}
 		}
@@ -333,8 +336,10 @@ export default function Home() {
 								If you need a website that if fully responsive, optimized and
 								easy to use - we are here for you.
 							</p>
-							<button>Ask for price</button>
-							<a href="#offer">or check our offer</a>
+							<div className="hero__cta">
+								<button>Ask for price</button>
+								<a href="#offer">or check our offer</a>
+							</div>
 						</div>
 					</div>
 				</div>

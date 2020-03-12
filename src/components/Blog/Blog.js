@@ -77,6 +77,10 @@ const StyledBlog = styled.section`
 
 	.decoration {
 		bottom: 0px;
+
+		&__pyramidup {
+			bottom: -2px;
+		}
 	}
 `;
 
@@ -193,7 +197,11 @@ export default function Blog() {
 					</div>
 				</div>
 			</div>
-			<img className="decoration" src={pyramidup} alt="decoration" />
+			<img
+				className="decoration decoration__pyramidup"
+				src={pyramidup}
+				alt="decoration"
+			/>
 		</StyledBlog>
 	);
 }
