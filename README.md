@@ -2,7 +2,7 @@
 
 This is my project for creating a complex website for web developers. It will contain things like blog, authentication, forms etc. As always, feel free to view my code!
 
-Currently there's no link to the app.
+Link to the website: https://pagetify.herokuapp.com/
 
 ## What kind of technologies did I use?
 
@@ -11,6 +11,7 @@ Currently there's no link to the app.
 - Firebase
 - Cloud Firestore
 - styled-components
+- Heroku CLI
 - RWD
 - SCSS/SASS
 - Lighthouse
