@@ -53,6 +53,10 @@ const StyledRequirements = styled.section`
 
 	.decoration {
 		margin-bottom: 50px;
+
+		&__pyramiddown {
+			bottom: 2px;
+		}
 	}
 `;
 
@@ -73,7 +77,11 @@ export default function Requirements() {
 					</a>
 				</div>
 			</div>
-			<img className="decoration" src={pyramiddown} alt="decoration" />
+			<img
+				className="decoration decoration__pyramiddown"
+				src={pyramiddown}
+				alt="decoration"
+			/>
 		</StyledRequirements>
 	);
 }

@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import Navbar from '../components/Navbar/Navbar';
 import Footer from '../components/Footer/Footer';
 import Requirements from '../components/Requirements/Requirements';
 import Blog from '../components/Blog/Blog';
+import { Link } from 'react-router-dom';
+
 import bg from '../images/bg.png';
 import websites from '../images/websites.svg';
 import stores from '../images/stores.svg';
@@ -52,8 +54,9 @@ const StyledHome = styled.section`
 const StyledHomeHero = styled.header`
 	background-image: url(${bg});
 	background-size: cover;
-	background-position: center;
+	background-position: center bottom;
 	background-repeat: no-repeat;
+	background-attachment: fixed;
 	position: relative;
 	display: flex;
 	flex-direction: column;
@@ -88,7 +91,7 @@ const StyledHomeHero = styled.header`
 				font-size: 18px;
 			}
 
-			button {
+			.hero__price {
 				font-weight: 600;
 				font-family: 'Montserrat';
 				border: none;
@@ -114,7 +117,7 @@ const StyledHomeHero = styled.header`
 				}
 			}
 
-			a {
+			.hero__check {
 				font-weight: 600;
 				margin-left: 1rem;
 
@@ -132,7 +135,7 @@ const StyledHomeHero = styled.header`
 	}
 
 	.decoration {
-		bottom: -2px;
+		bottom: -3px;
 	}
 `;
 
@@ -324,6 +327,9 @@ const StyledHomeStandOut = styled.section`
 `;
 
 export default function Home() {
+	useEffect(() => {
+		window.scrollTo(0, 0);
+	}, []);
 	return (
 		<StyledHome>
 			<StyledHomeHero>
@@ -337,8 +343,12 @@ export default function Home() {
 								easy to use - we are here for you.
 							</p>
 							<div className="hero__cta">
-								<button>Ask for price</button>
-								<a href="#offer">or check our offer</a>
+								<Link to="/price" className="hero__price">
+									Ask for price
+								</Link>
+								<a href="#offer" className="hero__check">
+									or check our offer
+								</a>
 							</div>
 						</div>
 					</div>
@@ -350,30 +360,30 @@ export default function Home() {
 					<div className="container">
 						<h1 className="section-title">What can we offer for you?</h1>
 						<div className="offer__wrapper">
-							<div className="offer__box">
+							<Link to="/websites" className="offer__box">
 								<img src={websites} alt="websites" className="offer__icon" />
 								<p className="offer__title">Websites</p>
 								<p className="offer__desc">
 									Responsible, SEO-friendly and convenient in self-service
 									thanks to the popular WordPress CMS.
 								</p>
-							</div>
-							<div className="offer__box">
+							</Link>
+							<Link to="/stores" className="offer__box">
 								<img src={stores} alt="stores" className="offer__icon" />
 								<p className="offer__title">Online stores</p>
 								<p className="offer__desc">
 									We use the world’s best e-commerce system called WooCommerce
 									that is extremely easy to use.
 								</p>
-							</div>
-							<div className="offer__box">
+							</Link>
+							<Link to="/graphics" className="offer__box">
 								<img src={graphic} alt="graphic" className="offer__icon" />
 								<p className="offer__title">Graphic design</p>
 								<p className="offer__desc">
 									If you don't have graphic skills or a knack for writing,
 									entrust us with creating effective content for your website.{' '}
 								</p>
-							</div>
+							</Link>
 							<div className="offer__box">
 								<img src={delivery} alt="delivery" className="offer__icon" />
 								<p className="offer__title">Fast delivery</p>

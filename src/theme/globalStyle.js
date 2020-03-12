@@ -141,19 +141,61 @@ const GlobalStyle = createGlobalStyle`
     opacity: 0;
     padding: 20px 0 0;
 
+    &--flex {
+      width: 75%;
+      margin: .5rem 0;
+
+      span {
+        font-size: 14px;
+        font-weight: 400;
+      }
+    }
+
     &__content {
       background-color: #fff;
       color: #293347;
       border-radius: 5px;
       padding: 20px 30px;
-      /* box-shadow: 0 0 40px 5px rgba(0, 0, 0, 0.5); */
       box-shadow: 0 0 32px 0 rgba(0, 0, 0, 0.15);
       position: relative;
       display: flex;
       flex-direction: column;
 
       a {
-        color: #293347 !important;
+        transition: .2s ease-in-out;
+        width: fit-content;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        svg {
+          width: 15% !important;
+        }
+
+        p {
+          color: #293347;
+        }
+
+        span {
+          color: #293347 !important;
+        }
+
+        &:hover {
+          transition: .2s ease-in-out;
+          transform: translateX(10px);
+
+          p {
+            color: #49A9E0;
+          }
+
+          span {
+            color: #293347 !important;
+          }
+
+          svg {
+            fill: #49A9E0;
+          }
+        }
       }
 
       &::after {
@@ -163,6 +205,75 @@ const GlobalStyle = createGlobalStyle`
         border-bottom-color: #fff;
         top: -20px;
         left: calc(50% - 10px);
+      }
+    }
+  }
+
+  @media (max-width: 1200px) {
+    .container {
+      width: 90%;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .container {
+      width: 97.5%;
+    }
+  }
+  
+  @media (max-width: 900px) {
+
+    .section-title {
+      text-align: center !important;
+    }
+
+    .navbar {
+
+      &__right {
+        display: none !important;
+      }
+    }
+
+    .hero {
+      .wrapper {
+        width: 100% !important;
+        text-align: center;
+      }
+
+      &__cta {
+        flex-direction: column;
+      }
+    }
+
+    .offer {
+      &__wrapper {
+        grid-template-columns: repeat(1,1fr) !important;
+      }
+    }
+
+    .reviews {
+      h1 {
+        width: 100% !important;
+      }
+
+      &__wrapper {
+        grid-template-columns: repeat(1,1fr) !important;
+      }
+    }
+
+    .blog {
+      h1 {
+        width: 100% !important;
+      }
+
+      &__wrapper {
+        grid-template-columns: repeat(1,1fr) !important;
+      }
+    }
+
+    .footer {
+      &__wrapper {
+        grid-template-columns: repeat(1,1fr) !important;
       }
     }
   }
