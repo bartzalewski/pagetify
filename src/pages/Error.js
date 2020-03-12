@@ -34,22 +34,15 @@ const StyledProjects = styled.section`
 	}
 `;
 
-export default function Projects() {
+export default function Error() {
 	return (
 		<>
 			<NavbarOtherSites></NavbarOtherSites>
 			<StyledProjects>
 				<div className="projects">
 					<div className="container">
-						<h1 className="section-title">Projects</h1>
-						<div className="projects__wrapper">
-							<p className="projects__desc">
-								Supported mobile devices, easy to use independently, SEO
-								friendly and ready for any expansion at any time. We create
-								websites ideally suited to the needs of both you and your
-								recipients. Check below what features they have.
-							</p>
-						</div>
+						<h1 className="section-title">Error 404</h1>
+						<div className="projects__wrapper">Not found.</div>
 					</div>
 				</div>
 			</StyledProjects>

@@ -59,11 +59,57 @@ const GlobalStyle = createGlobalStyle`
     color: inherit;
   }
 
+  .active::before {
+    transform: scaleX(1) !important;
+  }
+
   .container {
     width: 1140px;
     display: flex;
     flex-direction: column;
   }
+
+	.blog,
+	.requirements,
+	.footer {
+		display: flex;
+		justify-content: center;
+	}
+
+	.requirements,
+	.footer {
+		.container {
+			align-items: center;
+		}
+	}
+
+	.decoration {
+		position: relative;
+		bottom: 0px;
+		width: 100%;
+		z-index: 0;
+		align-self: flex-end;
+		user-select: none;
+	}
+
+	.decoration--top {
+		top: 0;
+	}
+
+	.decoration--bottom {
+		bottom: 0;
+	}
+
+	.decoration--tick {
+		z-index: -1;
+		height: 75%;
+		position: absolute;
+		align-self: center;
+	}
+
+	.section-title {
+		font-size: 36px;
+	}
 `;
 
 export default GlobalStyle;

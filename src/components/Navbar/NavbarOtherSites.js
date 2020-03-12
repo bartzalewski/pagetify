@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
-import logo from '../../images/logo-white.png';
+import logo from '../../images/logo-black.png';
 import tickright from '../../images/tick-right.svg';
 
-const StyledNavbar = styled.nav`
+const StyledNavbarOtherSites = styled.nav`
 	display: flex;
 	justify-content: center;
 	width: 100vw;
@@ -25,7 +25,7 @@ const StyledNavbar = styled.nav`
 			width: 50%;
 
 			a {
-				color: #fff;
+				color: inherit;
 				position: relative;
 			}
 
@@ -33,7 +33,7 @@ const StyledNavbar = styled.nav`
 				content: '';
 				height: 1px;
 				width: 100%;
-				background: #fff;
+				background: #293347;
 				transform: scaleX(0);
 				position: absolute;
 				bottom: 0;
@@ -71,9 +71,9 @@ const StyledNavbar = styled.nav`
 	}
 `;
 
-export default function Navbar() {
+export default function NavbarOtherSites() {
 	return (
-		<StyledNavbar>
+		<StyledNavbarOtherSites>
 			<div className="container navbar-container">
 				<div className="left">
 					<NavLink exact to="/">
@@ -117,6 +117,6 @@ export default function Navbar() {
 					</NavLink>
 				</ul>
 			</div>
-		</StyledNavbar>
+		</StyledNavbarOtherSites>
 	);
 }

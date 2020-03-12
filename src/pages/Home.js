@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
 import Navbar from '../components/Navbar/Navbar';
+import Footer from '../components/Footer/Footer';
+import Requirements from '../components/Requirements/Requirements';
+import Blog from '../components/Blog/Blog';
 import bg from '../images/bg.png';
 import websites from '../images/websites.svg';
 import stores from '../images/stores.svg';
@@ -10,10 +13,7 @@ import quality from '../images/quality.svg';
 import wallet from '../images/wallet.svg';
 import waveup from '../images/waveup.svg';
 import wavedown from '../images/wavedown.svg';
-import pyramidup from '../images/pyramidup.svg';
-import pyramiddown from '../images/pyramiddown.svg';
 import stairsup from '../images/stairsup.svg';
-import stairsdown from '../images/stairsdown.svg';
 import orella from '../images/clients/orella.png';
 import charlean from '../images/clients/charlean.png';
 import kalil from '../images/clients/kalil.png';
@@ -27,58 +27,29 @@ import standout1 from '../images/standout-1.svg';
 import standout2 from '../images/standout-2.svg';
 import standout3 from '../images/standout-3.svg';
 import standout4 from '../images/standout-4.svg';
-import bz from '../images/bz.png';
-import dg from '../images/dg.png';
 import tick from '../images/tick.svg';
+import tickright from '../images/tick-right.svg';
+import tickdown from '../images/tick-down.svg';
 
 const StyledHome = styled.section`
 	.hero,
 	.offer,
 	.reviews,
-	.stand-out,
-	.blog,
-	.requirements,
-	.footer {
+	.stand-out {
 		display: flex;
 		justify-content: center;
 	}
 
 	.offer,
 	.reviews,
-	.stand-out,
-	.requirements,
-	.footer {
+	.stand-out {
 		.container {
 			align-items: center;
 		}
 	}
 
-	.decoration {
-		position: relative;
-		bottom: 0px;
-		width: 100%;
-		z-index: 0;
-		align-self: flex-end;
-		user-select: none;
-	}
-
-	.decoration--top {
-		top: 0;
-	}
-
-	.decoration--bottom {
-		bottom: 0;
-	}
-
-	.decoration--tick {
-		z-index: -1;
-		height: 75%;
-		position: absolute;
-		align-self: center;
-	}
-
-	.section-title {
-		font-size: 36px;
+	.decoration--blog {
+		bottom: -2px;
 	}
 `;
 
@@ -133,11 +104,26 @@ const StyledHomeHero = styled.header`
 					transition: 0.2s ease-in-out;
 					box-shadow: 0 9px 32px 0 rgba(0, 0, 0, 0.15);
 				}
+
+				&::after {
+					content: 'a';
+					color: transparent;
+					background: url(${tickright}) center no-repeat;
+					margin-left: 0.5rem;
+				}
 			}
 
 			a {
 				font-weight: 600;
 				margin-left: 1rem;
+
+				&::after {
+					content: 'a';
+					color: transparent;
+					background: url(${tickdown}) center no-repeat;
+					margin-left: 0.5rem;
+					background-size: contain;
+				}
 			}
 		}
 	}
@@ -334,143 +320,6 @@ const StyledHomeStandOut = styled.section`
 	}
 `;
 
-const StyledHomeBlog = styled.section`
-	position: relative;
-	background: #fbfbfb;
-	display: flex;
-	flex-direction: column;
-
-	.blog {
-		margin: 80px 0;
-
-		h1 {
-			margin-bottom: 50px;
-			width: 40%;
-		}
-
-		&__wrapper {
-			display: grid;
-			grid-template-columns: repeat(3, 1fr);
-			grid-gap: 30px;
-		}
-
-		&__box {
-			display: flex;
-			justify-content: center;
-			align-items: center;
-			flex-direction: column;
-			background: #fff;
-			border-radius: 5px;
-			padding: 15px;
-			border: 2px solid #49a9e0;
-			transition: 0.2s ease-in-out;
-
-			&:hover {
-				transition: 0.2s ease-in-out;
-				box-shadow: 0 9px 32px 0 rgba(0, 0, 0, 0.15);
-			}
-		}
-
-		&__author {
-			align-self: flex-start;
-			display: flex;
-			justify-content: center;
-			align-items: center;
-
-			&--flex {
-				margin-left: 0.5rem;
-			}
-		}
-
-		&__name,
-		&__date {
-			font-weight: 500;
-		}
-
-		&__date {
-			font-size: 14px;
-			color: #7f7f7f;
-		}
-
-		&__title {
-			font-size: 24px;
-			font-weight: 600;
-			margin: 1rem 0;
-			text-align: justify;
-		}
-
-		&__desc {
-			text-align: justify;
-		}
-	}
-
-	.decoration {
-		bottom: -2px;
-	}
-`;
-
-const StyledHomeRequirements = styled.section`
-	position: relative;
-	display: flex;
-	flex-direction: column;
-
-	.requirements {
-		background: linear-gradient(to right, #36d1dc, #5b86e5);
-		color: #fff;
-
-		&__txt {
-			text-align: center;
-			width: 50%;
-			font-weight: 500;
-			margin: 25px 0;
-		}
-
-		&__btn {
-			background: #fff;
-			border-radius: 25px;
-			padding: 10px 30px;
-			font-weight: 500;
-			box-shadow: 0 2px 10px rgba(50, 50, 93, 0.1);
-			transition: 0.2s ease-in-out;
-			z-index: 1;
-
-			&:hover {
-				transition: 0.2s ease-in-out;
-				box-shadow: 0 9px 32px 0 rgba(0, 0, 0, 0.15);
-			}
-
-			&--txt {
-				background: -webkit-linear-gradient(left, #36d1dc, #5b86e5);
-				-webkit-background-clip: text;
-				background-clip: text;
-				-webkit-text-fill-color: transparent;
-				font-weight: 600;
-			}
-		}
-	}
-
-	.decoration {
-		margin-bottom: 50px;
-	}
-`;
-
-const StyledHomeFooter = styled.footer`
-	position: relative;
-
-	.footer {
-		&__wrapper {
-			display: grid;
-			grid-template-columns: repeat(4, 1fr);
-			grid-gap: 30px;
-		}
-
-		&__title {
-			font-weight: 600;
-			font-size: 18px;
-		}
-	}
-`;
-
 export default function Home() {
 	return (
 		<StyledHome>
@@ -485,14 +334,14 @@ export default function Home() {
 								easy to use - we are here for you.
 							</p>
 							<button>Ask for price</button>
-							<a href="!#">or check our offer</a>
+							<a href="#offer">or check our offer</a>
 						</div>
 					</div>
 				</div>
 				<img className="decoration" src={waveup} alt="decoration" />
 			</StyledHomeHero>
 			<StyledHomeOffer>
-				<div className="offer">
+				<div id="offer" className="offer">
 					<div className="container">
 						<h1 className="section-title">What can we offer for you?</h1>
 						<div className="offer__wrapper">
@@ -716,169 +565,9 @@ export default function Home() {
 					</div>
 				</div>
 			</StyledHomeStandOut>
-			<StyledHomeBlog>
-				<img className="decoration" src={stairsdown} alt="decoration" />
-				<div className="blog">
-					<div className="container">
-						<h1 className="section-title">
-							Here are the latest posts from our blog
-						</h1>
-						<div className="blog__wrapper">
-							<div className="blog__box">
-								<div className="blog__author">
-									<img src={bz} alt="bart zalewski" />
-									<div className="blog__author--flex">
-										<p className="blog__name">Bart Zalewski</p>
-										<p className="blog__date">3 months ago</p>
-									</div>
-								</div>
-								<div className="blog__title">
-									Tips related to user interface - 7 things
-								</div>
-								<p className="blog__desc">
-									Here are our user interface tips that, if implemented, will
-									make your website more user-friendly. Check them out!
-								</p>
-							</div>
-							<div className="blog__box">
-								<div className="blog__author">
-									<img src={dg} alt="david grzanka" />
-									<div className="blog__author--flex">
-										<p className="blog__name">David Grzanka</p>
-										<p className="blog__date">3 months ago</p>
-									</div>
-								</div>
-								<div className="blog__title">
-									Getting money by blogging - 8 ways
-								</div>
-								<p className="blog__desc">
-									Here are our user interface tips that, if implemented, will
-									make your website more user-friendly. Check them out!
-								</p>
-							</div>
-							<div className="blog__box">
-								<div className="blog__author">
-									<img src={bz} alt="bart zalewski" />
-									<div className="blog__author--flex">
-										<p className="blog__name">Bart Zalewski</p>
-										<p className="blog__date">3 months ago</p>
-									</div>
-								</div>
-								<div className="blog__title">
-									Online stores not optimized - 10 reasons
-								</div>
-								<p className="blog__desc">
-									Here are our user interface tips that, if implemented, will
-									make your website more user-friendly. Check them out!
-								</p>
-							</div>
-							<div className="blog__box">
-								<div className="blog__author">
-									<img src={dg} alt="david grzanka" />
-									<div className="blog__author--flex">
-										<p className="blog__name">David Grzanka</p>
-										<p className="blog__date">3 months ago</p>
-									</div>
-								</div>
-								<div className="blog__title">
-									Tips related to user interface - 7 things
-								</div>
-								<p className="blog__desc">
-									Here are our user interface tips that, if implemented, will
-									make your website more user-friendly. Check them out!
-								</p>
-							</div>
-							<div className="blog__box">
-								<div className="blog__author">
-									<img src={bz} alt="bart zalewski" />
-									<div className="blog__author--flex">
-										<p className="blog__name">Bart Zalewski</p>
-										<p className="blog__date">3 months ago</p>
-									</div>
-								</div>
-								<div className="blog__title">
-									Online stores not optimized - 10 reasons
-								</div>
-								<p className="blog__desc">
-									Here are our user interface tips that, if implemented, will
-									make your website more user-friendly. Check them out!
-								</p>
-							</div>
-							<div className="blog__box">
-								<div className="blog__author">
-									<img src={dg} alt="david grzanka" />
-									<div className="blog__author--flex">
-										<p className="blog__name">David Grzanka</p>
-										<p className="blog__date">3 months ago</p>
-									</div>
-								</div>
-								<div className="blog__title">
-									Tips related to user interface - 7 things
-								</div>
-								<p className="blog__desc">
-									Here are our user interface tips that, if implemented, will
-									make your website more user-friendly. Check them out!
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-				<img className="decoration" src={pyramidup} alt="decoration" />
-			</StyledHomeBlog>
-			<StyledHomeRequirements>
-				<div className="requirements">
-					<div className="container">
-						<h1 className="section-title">Tell us your requirements</h1>
-						<p className="requirements__txt">
-							Complete a very simple quick quotation form. Thanks to this, we
-							will get to know your requirements and select something fully
-							adequate to your needs.
-						</p>
-						<a href="#!" className="requirements__btn">
-							<span className="requirements__btn--txt">Ask for price</span>
-						</a>
-					</div>
-				</div>
-				<img className="decoration" src={pyramiddown} alt="decoration" />
-			</StyledHomeRequirements>
-			<StyledHomeFooter>
-				<div className="footer">
-					<div className="container">
-						<div className="footer__wrapper">
-							<div className="footer__box">
-								<div className="footer__title">Info</div>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-									Maxime, aspernatur?
-								</p>
-							</div>
-							<div className="footer__box">
-								<div className="footer__title">Services</div>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-									Maxime, aspernatur?
-								</p>
-							</div>
-							<div className="footer__box">
-								<div className="footer__title">More</div>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-									Maxime, aspernatur?
-								</p>
-							</div>
-							<div className="footer__box">
-								<div className="footer__title">Newest posts</div>
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-									Maxime, aspernatur?
-								</p>
-							</div>
-						</div>
-						<hr />
-						<p>Pagetify &copy; 2019-2020. All rights reserved.</p>
-					</div>
-				</div>
-			</StyledHomeFooter>
+			<Blog></Blog>
+			<Requirements></Requirements>
+			<Footer></Footer>
 		</StyledHome>
 	);
 }
