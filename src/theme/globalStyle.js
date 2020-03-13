@@ -209,6 +209,104 @@ const GlobalStyle = createGlobalStyle`
     }
   }
 
+  /* SIDENAV */
+
+  .hamburger {
+    display: none;
+    position: relative;
+    cursor: pointer;
+    z-index: 4;
+  }
+
+  .hamburger__wrapper {
+    width: 25px;
+    height: 20px;
+    position: relative;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+
+  .hamburger--line {
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    transition: all cubic-bezier(0.26, 0.1, 0.27, 1.55) 0.35s;
+    background-image: linear-gradient(to right,#36d1dc,#5b86e5);
+  }
+
+  .top {
+    top: 0%;
+    width: 80%;
+  }
+
+  .middle {
+    top: 45%;
+  }
+
+  .bottom {
+    top: 90%;
+    width: 60%;
+  }
+
+  .icon.close .top {
+    transform: rotate(45deg);
+    top: 48%;
+    width: 100%;
+  }
+
+  .icon.close .middle,
+  .icon.close .bottom {
+    transform: rotate(-45deg);
+    top: 48%;
+    width: 100%;
+  }
+
+  .sidenav--open {
+    width: 100% !important;
+    transition: 0.5s;
+  }
+
+  .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    top: 0;
+	  right: 0;
+    z-index: 4;
+    background-color: white;
+    transition: 0.2s ease-in-out;
+    padding-top: 50px;
+    overflow: hidden;
+
+    a {
+      padding: 8px 8px 8px 32px;
+      text-decoration: none;
+      font-size: 16px;
+      font-weight: 500;
+      display: block;
+      transition: 0.2s ease-in-out;
+      color: #49A9E0;
+
+      :hover {
+        color: #f1f1f1;
+      }
+    }
+
+    .active {
+      width: 100%;
+      height: fit-content;
+      font-weight: 500;
+    }
+  }
+
+  .sidenav__content {
+    position: relative;
+    width: fit-content !important;
+  }
+
+  /* SIDENAV END */
+
   @media (max-width: 1200px) {
     .container {
       width: 90%;
@@ -217,11 +315,15 @@ const GlobalStyle = createGlobalStyle`
 
   @media (max-width: 1024px) {
     .container {
-      width: 97.5%;
+      width: 95%;
     }
   }
   
   @media (max-width: 900px) {
+
+    .hamburger {
+		  display: block;
+	  }
 
     .section-title {
       text-align: center !important;
@@ -357,7 +459,7 @@ const GlobalStyle = createGlobalStyle`
 
       &__wrapper {
         grid-template-columns: repeat(1,1fr) !important;
-        grid-gap: 5px !important;
+        grid-gap: 10px !important;
       }
 
       &__title {
