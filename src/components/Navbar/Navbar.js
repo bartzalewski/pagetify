@@ -72,9 +72,9 @@ const StyledNavbar = styled.nav`
 
 export default function Navbar() {
 	return (
-		<StyledNavbar>
+		<StyledNavbar className="navbar">
 			<div className="container navbar-container">
-				<div className="left">
+				<div className="left navbar__left">
 					<NavLink exact to="/">
 						<img src={logo} alt="" />
 					</NavLink>

@@ -225,9 +225,18 @@ const GlobalStyle = createGlobalStyle`
 
     .section-title {
       text-align: center !important;
+      font-size: 24px;
     }
 
     .navbar {
+      height: 50px !important;
+
+      &__left {
+
+        img {
+          width: 175px;
+        }
+      }
 
       &__right {
         display: none !important;
@@ -235,19 +244,80 @@ const GlobalStyle = createGlobalStyle`
     }
 
     .hero {
+
+      h1 {
+        font-size: 30px !important;
+        width: 75%;
+      }
+
+      p {
+        width: 75%;
+        font-size: 16px !important;
+      }
+
       .wrapper {
         width: 100% !important;
         text-align: center;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
       }
 
       &__cta {
         flex-direction: column;
+      }
+
+      &__price {
+        margin-bottom: 1rem;
+      }
+
+      &__check {
+        margin-left: 0 !important;
       }
     }
 
     .offer {
       &__wrapper {
         grid-template-columns: repeat(1,1fr) !important;
+      }
+
+      &__box {
+
+        img {
+          width: 60px !important;
+          height: 60px !important;
+        }
+      }
+
+      &__title {
+        font-size: 18px !important;
+      }
+
+      &__desc {
+        font-size: 14px !important;
+      }
+    }
+
+    .stand-out {
+      padding: 3rem 0px !important;
+
+      &__desc {
+        width: 75% !important;
+        font-size: 16px !important;
+      }
+
+      &__box {
+        width: 100% !important;
+
+        img {
+          width: 50px !important;
+          height: 50px !important;
+        }
+      }
+
+      &__txt {
+        font-size: 14px !important;
+        width: 70% !important;
       }
     }
 
@@ -259,6 +329,25 @@ const GlobalStyle = createGlobalStyle`
       &__wrapper {
         grid-template-columns: repeat(1,1fr) !important;
       }
+
+      &__client {
+        height: 50px !important;
+        width: 50px !important;
+      }
+
+      &__img {
+        height: 50px !important;
+        width: 50px !important;
+      }
+
+      &__name {
+        font-size: 18px !important;
+        margin: 1.5rem 0 2rem 0 !important;
+      }
+
+      &__desc {
+        font-size: 14px !important;
+      }
     }
 
     .blog {
@@ -268,12 +357,46 @@ const GlobalStyle = createGlobalStyle`
 
       &__wrapper {
         grid-template-columns: repeat(1,1fr) !important;
+        grid-gap: 5px !important;
+      }
+
+      &__title {
+        font-size: 20px !important;
+      }
+
+      &__desc {
+        font-size: 14px !important;
+      }
+    }
+
+    .requirements {
+      padding: 3rem 0 !important;
+
+      &__txt {
+        width: 75% !important;
+        font-size: 16px !important;
       }
     }
 
     .footer {
+
+      a, p {
+        font-size: 14px !important;
+      }
+
       &__wrapper {
         grid-template-columns: repeat(1,1fr) !important;
+      }
+
+      &__homepage {
+        
+        img {
+          width: 175px !important;
+        }
+      }
+
+      &__copyright {
+        margin: 1rem 0 !important;
       }
     }
   }

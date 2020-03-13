@@ -72,14 +72,14 @@ const StyledNavbarOtherSites = styled.nav`
 
 export default function NavbarOtherSites() {
 	return (
-		<StyledNavbarOtherSites>
+		<StyledNavbarOtherSites className="navbar">
 			<div className="container navbar-container">
-				<div className="left">
+				<div className="left navbar__left">
 					<NavLink exact to="/">
 						<img src={logo} alt="" />
 					</NavLink>
 				</div>
-				<ul className="right">
+				<ul className="right navbar__right">
 					<div className="navbar__wrapper navbar__link navbar__services">
 						<NavLink activeClassName="active" to="/services">
 							<li>Services</li>
