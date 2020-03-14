@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { NavLink } from 'react-router-dom';
+import { NavLink, Link } from 'react-router-dom';
 import logo from '../../images/logo-white.png';
 import tickright from '../../images/tick-right.svg';
+import { connect } from 'react-redux';
+import { signOut } from '../../store/actions/authActions';
 
 const StyledNavbar = styled.nav`
 	display: flex;
@@ -85,32 +87,36 @@ class Navbar extends Component {
 			<StyledNavbar className="navbar">
 				<div
 					id="sidenav"
-					class={this.state.condition ? 'sidenav sidenav--open' : 'sidenav'}
+					className={this.state.condition ? 'sidenav sidenav--open' : 'sidenav'}
 				>
 					<NavLink
 						to="/services"
 						activeClassName="active"
-						class="navbar__services"
+						className="navbar__services"
 					>
 						Services
 					</NavLink>
 					<NavLink
 						to="/projects"
 						activeClassName="active"
-						class="navbar__projects"
+						className="navbar__projects"
 					>
 						Projects
 					</NavLink>
-					<NavLink to="/about" activeClassName="active" class="navbar__about">
+					<NavLink
+						to="/about"
+						activeClassName="active"
+						className="navbar__about"
+					>
 						About
 					</NavLink>
-					<NavLink to="/blog" activeClassName="active" class="navbar__blog">
+					<NavLink to="/blog" activeClassName="active" className="navbar__blog">
 						Blog
 					</NavLink>
 					<NavLink
 						to="/contact"
 						activeClassName="active"
-						class="navbar__contact"
+						className="navbar__contact"
 					>
 						Contact
 					</NavLink>
@@ -121,17 +127,17 @@ class Navbar extends Component {
 							<img src={logo} alt="" />
 						</NavLink>
 					</div>
-					<div class="hamburger" onClick={this.handleClick}>
+					<div className="hamburger" onClick={this.handleClick}>
 						<div
-							class={
+							className={
 								this.state.condition
 									? 'hamburger__wrapper icon close'
 									: 'hamburger__wrapper icon'
 							}
 						>
-							<span class="hamburger--line top"></span>
-							<span class="hamburger--line middle"></span>
-							<span class="hamburger--line bottom"></span>
+							<span className="hamburger--line top"></span>
+							<span className="hamburger--line middle"></span>
+							<span className="hamburger--line bottom"></span>
 						</div>
 					</div>
 					<ul className="right navbar__right">
@@ -245,6 +251,13 @@ class Navbar extends Component {
 						<NavLink to="/price" className="navbar-price">
 							<li>Price</li>
 						</NavLink>
+						{this.props.profile ? (
+							<Link to="/" className="navbar__link">
+								<span onClick={this.props.signOut} className="btn btn-logout">
+									Log Out
+								</span>
+							</Link>
+						) : null}
 					</ul>
 				</div>
 			</StyledNavbar>
@@ -252,4 +265,10 @@ class Navbar extends Component {
 	}
 }
 
-export default Navbar;
+const mapDispatchToProps = dispatch => {
+	return {
+		signOut: () => dispatch(signOut())
+	};
+};
+
+export default connect(null, mapDispatchToProps)(Navbar);

@@ -94,7 +94,7 @@ export default function Blog() {
 			/>
 			<div className="blog">
 				<div className="container">
-					<h1 className="section-title">
+					<h1 className="section__title">
 						Here are the latest posts from our blog
 					</h1>
 					<div className="blog__wrapper">

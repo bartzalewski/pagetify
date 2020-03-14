@@ -107,7 +107,7 @@ const GlobalStyle = createGlobalStyle`
 		align-self: center;
 	}
 
-	.section-title {
+	.section__title {
 		font-size: 36px;
 	}
 
@@ -307,6 +307,40 @@ const GlobalStyle = createGlobalStyle`
 
   /* SIDENAV END */
 
+  /* OTHER SITES HERO */
+
+  .sites {
+
+    &__hero {
+      margin: 50px 0;
+    }
+
+    &__container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+
+      .container {
+        align-items: center;
+      }
+    }
+
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      margin: 50px 0;
+    }
+
+    &__desc {
+      width: 50%;
+      text-align: center;
+    }
+  }
+
+  /* OTHER SITES HERO END */
+
   @media (max-width: 1200px) {
     .container {
       width: 90%;
@@ -325,7 +359,7 @@ const GlobalStyle = createGlobalStyle`
 		  display: block;
 	  }
 
-    .section-title {
+    .section__title {
       text-align: center !important;
       font-size: 24px;
     }

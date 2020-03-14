@@ -1,9 +1,6 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import Navbar from '../components/Navbar/Navbar';
-import Footer from '../components/Footer/Footer';
-import Requirements from '../components/Requirements/Requirements';
-import Blog from '../components/Blog/Blog';
 import { Link } from 'react-router-dom';
 
 import bg from '../images/bg.png';
@@ -327,14 +324,15 @@ const StyledHomeStandOut = styled.section`
 	}
 `;
 
-export default function Home() {
+export default function Home(props) {
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
+	console.log(props);
 	return (
 		<StyledHome>
 			<StyledHomeHero>
-				<Navbar></Navbar>
+				<Navbar profile={props.profile}></Navbar>
 				<div className="hero">
 					<div className="container">
 						<div className="wrapper">
@@ -359,7 +357,7 @@ export default function Home() {
 			<StyledHomeOffer>
 				<div id="offer" className="offer">
 					<div className="container">
-						<h1 className="section-title">What can we offer for you?</h1>
+						<h1 className="section__title">What can we offer for you?</h1>
 						<div className="offer__wrapper">
 							<Link to="/websites" className="offer__box">
 								<img src={websites} alt="websites" className="offer__icon" />
@@ -421,7 +419,7 @@ export default function Home() {
 				/>
 				<div className="reviews">
 					<div className="container">
-						<h1 className="section-title">
+						<h1 className="section__title">
 							What do our customers say about us?
 						</h1>
 						<div className="reviews__wrapper">
@@ -534,7 +532,7 @@ export default function Home() {
 			<StyledHomeStandOut>
 				<div className="stand-out">
 					<div className="container">
-						<h1 className="section-title">How do we stand out?</h1>
+						<h1 className="section__title">How do we stand out?</h1>
 						<p className="stand-out__desc">
 							We know that there are a lot of companies operating in our
 							industry on the market. However, several issues distinguish us
@@ -581,9 +579,6 @@ export default function Home() {
 					</div>
 				</div>
 			</StyledHomeStandOut>
-			<Blog></Blog>
-			<Requirements></Requirements>
-			<Footer></Footer>
 		</StyledHome>
 	);
 }

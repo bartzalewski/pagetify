@@ -66,7 +66,7 @@ export default function Requirements() {
 		<StyledRequirements>
 			<div className="requirements">
 				<div className="container">
-					<h1 className="section-title">Tell us your requirements</h1>
+					<h1 className="section__title">Tell us your requirements</h1>
 					<p className="requirements__txt">
 						Complete a very simple quick quotation form. Thanks to this, we will
 						get to know your requirements and select something fully adequate to

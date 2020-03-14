@@ -4,14 +4,7 @@ import { connect } from 'react-redux';
 import { signIn } from '../../store/actions/authActions';
 import firebase from '../../config/fbConfig';
 
-const StyledSignIn = styled.section`
-	width: 49%;
-	height: fit-content;
-
-	@media (max-width: 900px) {
-		width: 100%;
-	}
-`;
+const StyledSignIn = styled.section``;
 
 class SignIn extends Component {
 	state = {

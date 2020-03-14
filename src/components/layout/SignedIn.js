@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch, BrowserRouter } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Home from '../../pages/Home';
 import Projects from '../../pages/Projects';
 import Error from '../../pages/Error';
@@ -9,13 +9,25 @@ import Contact from '../../pages/Contact';
 import Websites from '../../pages/Websites';
 import Stores from '../../pages/Stores';
 import Graphics from '../../pages/Graphics';
+import PrivacyPolicy from '../../pages/PrivacyPolicy';
+import Price from '../../pages/Price';
+import Footer from '../Footer/Footer';
+import Requirements from '../Requirements/Requirements';
+import Blog from '../Blog/Blog';
 
 export default class SignedIn extends Component {
 	render() {
+		console.log(this.props);
 		return (
-			<BrowserRouter>
+			<>
 				<Switch>
-					<Route exact path="/" component={Home} />
+					<Route
+						exact
+						path="/"
+						component={props => (
+							<Home {...props} profile={this.props.profile} />
+						)}
+					/>
 					<Route path="/services" component={Websites} />
 					<Route path="/websites" component={Websites} />
 					<Route path="/stores" component={Stores} />
@@ -24,9 +36,14 @@ export default class SignedIn extends Component {
 					<Route path="/about" component={About} />
 					<Route path="/blog" component={BlogSite} />
 					<Route path="/contact" component={Contact} />
+					<Route path="/privacy-policy" component={PrivacyPolicy} />
+					<Route path="/price" component={Price} />
 					<Route component={Error} />
 				</Switch>
-			</BrowserRouter>
+				<Blog></Blog>
+				<Requirements></Requirements>
+				<Footer></Footer>
+			</>
 		);
 	}
 }

@@ -3,18 +3,7 @@ import styled from 'styled-components';
 import { signUp } from '../../store/actions/authActions';
 import { connect } from 'react-redux';
 
-const StyledSignUp = styled.div`
-	width: 49%;
-	height: fit-content;
-
-	.signup-form {
-		width: 100%;
-	}
-
-	@media (max-width: 600px) {
-		width: 100%;
-	}
-`;
+const StyledSignUp = styled.div``;
 
 class SignUp extends Component {
 	state = {

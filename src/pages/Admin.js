@@ -1,40 +1,10 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import NavbarOtherSites from '../components/Navbar/NavbarOtherSites';
-import Blog from '../components/Blog/Blog';
-import Requirements from '../components/Requirements/Requirements';
-import Footer from '../components/Footer/Footer';
 import SignIn from '../components/auth/SignIn';
 import SignUp from '../components/auth/SignUp';
 
-const StyledAdmin = styled.section`
-	margin: 50px 0;
-
-	.projects {
-		display: flex;
-		justify-content: center;
-		align-items: center;
-
-		&__wrapper {
-			display: flex;
-			flex-direction: column;
-			justify-content: center;
-			align-items: center;
-			margin: 50px 0;
-		}
-
-		&__desc {
-			width: 50%;
-			text-align: center;
-		}
-	}
-
-	.projects {
-		.container {
-			align-items: center;
-		}
-	}
-`;
+const StyledAdmin = styled.section``;
 
 export default function Graphics() {
 	useEffect(() => {
@@ -43,20 +13,17 @@ export default function Graphics() {
 	return (
 		<>
 			<NavbarOtherSites></NavbarOtherSites>
-			<StyledAdmin>
-				<div className="projects">
+			<StyledAdmin className="sites__hero">
+				<div className="sites__container">
 					<div className="container">
-						<h1 className="section-title">Admin panel</h1>
-						<div className="projects__wrapper">
-							<SignUp />
-							<SignIn />
+						<h1 className="section__title">Admin panel</h1>
+						<div className="sites__wrapper">
+							<SignUp></SignUp>
+							<SignIn></SignIn>
 						</div>
 					</div>
 				</div>
 			</StyledAdmin>
-			<Blog></Blog>
-			<Requirements></Requirements>
-			<Footer></Footer>
 		</>
 	);
 }

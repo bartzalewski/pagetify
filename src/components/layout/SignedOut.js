@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch, BrowserRouter } from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 import Home from '../../pages/Home';
 import Projects from '../../pages/Projects';
 import Error from '../../pages/Error';
@@ -9,12 +9,17 @@ import Contact from '../../pages/Contact';
 import Websites from '../../pages/Websites';
 import Stores from '../../pages/Stores';
 import Graphics from '../../pages/Graphics';
+import Footer from '../Footer/Footer';
+import Requirements from '../Requirements/Requirements';
+import Blog from '../Blog/Blog';
+import PrivacyPolicy from '../../pages/PrivacyPolicy';
+import Price from '../../pages/Price';
 import Admin from '../../pages/Admin';
 
 export default class SignedOut extends Component {
 	render() {
 		return (
-			<BrowserRouter>
+			<>
 				<Switch>
 					<Route exact path="/" component={Home} />
 					<Route path="/services" component={Websites} />
@@ -25,10 +30,15 @@ export default class SignedOut extends Component {
 					<Route path="/about" component={About} />
 					<Route path="/blog" component={BlogSite} />
 					<Route path="/contact" component={Contact} />
+					<Route path="/privacy-policy" component={PrivacyPolicy} />
+					<Route path="/price" component={Price} />
 					<Route path="/login" component={Admin} />
 					<Route component={Error} />
 				</Switch>
-			</BrowserRouter>
+				<Blog></Blog>
+				<Requirements></Requirements>
+				<Footer></Footer>
+			</>
 		);
 	}
 }
