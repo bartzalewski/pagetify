@@ -64,6 +64,7 @@ const StyledNavbarOtherSites = styled.nav`
 				&:hover {
 					transition: 0.2s ease-in-out;
 					box-shadow: 0 9px 32px 0 rgba(0, 0, 0, 0.15);
+					transform: scale(1.05);
 				}
 			}
 		}
@@ -86,24 +87,24 @@ class NavbarOtherSites extends Component {
 					id="sidenav"
 					class={this.state.condition ? 'sidenav sidenav--open' : 'sidenav'}
 				>
-					<NavLink to="/services" activeClassName="active" class="navbar__home">
+					<NavLink
+						to="/services"
+						activeClassName="active"
+						class="navbar__services"
+					>
 						Services
 					</NavLink>
 					<NavLink
 						to="/projects"
 						activeClassName="active"
-						class="navbar__about"
+						class="navbar__projects"
 					>
 						Projects
 					</NavLink>
-					<NavLink
-						to="/about"
-						activeClassName="active"
-						class="navbar__projects"
-					>
+					<NavLink to="/about" activeClassName="active" class="navbar__about">
 						About
 					</NavLink>
-					<NavLink to="/blog" activeClassName="active" class="navbar__contact">
+					<NavLink to="/blog" activeClassName="active" class="navbar__blog">
 						Blog
 					</NavLink>
 					<NavLink

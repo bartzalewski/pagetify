@@ -163,7 +163,7 @@ const GlobalStyle = createGlobalStyle`
 
       a {
         transition: .2s ease-in-out;
-        width: fit-content;
+        width: 100%;
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -286,10 +286,10 @@ const GlobalStyle = createGlobalStyle`
       font-weight: 500;
       display: block;
       transition: 0.2s ease-in-out;
-      color: #49A9E0;
+      color: #293347;
 
       :hover {
-        color: #f1f1f1;
+        color: #49A9E0;
       }
     }
 

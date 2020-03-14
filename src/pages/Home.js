@@ -107,6 +107,7 @@ const StyledHomeHero = styled.header`
 				&:hover {
 					transition: 0.2s ease-in-out;
 					box-shadow: 0 9px 32px 0 rgba(0, 0, 0, 0.15);
+					transform: scale(1.05);
 				}
 
 				&::after {
