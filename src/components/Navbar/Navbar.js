@@ -3,8 +3,6 @@ import styled from 'styled-components';
 import { NavLink, Link } from 'react-router-dom';
 import logo from '../../images/logo-white.png';
 import tickright from '../../images/tick-right.svg';
-import { connect } from 'react-redux';
-import { signOut } from '../../store/actions/authActions';
 
 const StyledNavbar = styled.nav`
 	display: flex;
@@ -252,11 +250,9 @@ class Navbar extends Component {
 							<li>Price</li>
 						</NavLink>
 						{this.props.profile ? (
-							<Link to="/" className="navbar__link">
-								<span onClick={this.props.signOut} className="btn btn-logout">
-									Log Out
-								</span>
-							</Link>
+							<NavLink to="/admin" className="navbar__link">
+								Admin Panel
+							</NavLink>
 						) : null}
 					</ul>
 				</div>
@@ -265,10 +261,4 @@ class Navbar extends Component {
 	}
 }
 
-const mapDispatchToProps = dispatch => {
-	return {
-		signOut: () => dispatch(signOut())
-	};
-};
-
-export default connect(null, mapDispatchToProps)(Navbar);
+export default Navbar;

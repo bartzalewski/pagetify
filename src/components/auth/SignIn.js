@@ -64,7 +64,8 @@ class SignIn extends Component {
 
 const mapStateToProps = state => {
 	return {
-		authError: state.auth.authError
+		authError: state.auth.authError,
+		auth: state.firebase.auth
 	};
 };
 

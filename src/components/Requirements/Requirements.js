@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import tickrightpurple from '../../images/tick-right-purple.svg';
 import pyramiddown from '../../images/pyramiddown.svg';
+import { Link } from 'react-router-dom';
 
 const StyledRequirements = styled.section`
 	position: relative;
@@ -72,10 +73,10 @@ export default function Requirements() {
 						get to know your requirements and select something fully adequate to
 						your needs.
 					</p>
-					<a href="#!" className="requirements__btn">
+					<Link to="/price" className="requirements__btn">
 						<span className="requirements__btn--txt">Ask for price</span>
 						<i className="requirements__btn--tick"></i>
-					</a>
+					</Link>
 				</div>
 			</div>
 			<img

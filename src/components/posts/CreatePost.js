@@ -3,114 +3,36 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { createPost } from '../../store/actions/postActions';
 import { Redirect } from 'react-router-dom';
-import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
-import { storage, db } from '../../config/fbConfig';
-import { moreWords } from '../filters/filters';
-import capitalize from 'capitalize-sentence';
-const Filter = require('bad-words');
-const filter = new Filter({ list: moreWords });
+import { storage } from '../../config/fbConfig';
+import NavbarOtherSites from '../Navbar/NavbarOtherSites';
 
-const StyledCreatePost = styled.section`
-	#schoolName,
-	#content {
-		border-radius: 15px;
-		border: none;
-		width: 100%;
-		margin: 0.25rem 0;
-		font-size: inherit;
-	}
-
-	#schoolName {
-		padding: 10px 15px;
-		background: #fff;
-		font-family: 'Poppins';
-	}
-
-	#content {
-		height: 10rem;
-	}
-
-	#upload-post-btn {
-		visibility: hidden;
-		position: absolute;
-		animation: pulse 0.5s infinite alternate;
-	}
-
-	#upload-post-warn {
-		color: #f44336;
-		display: none;
-	}
-
-	input[placeholder],
-	textarea[placeholder] {
-		padding: 10px 15px;
-	}
-
-	.upload-container {
-		display: flex;
-		margin-top: -1.75rem;
-	}
-
-	.input-field:first-of-type {
-		margin-top: 2rem;
-	}
-
-	@media (max-width: 813px) {
-		#schoolName,
-		#content {
-			font-size: 0.9rem;
-		}
-
-		.btn {
-			font-size: 0.8rem;
-			padding: 0px 12.5px;
-		}
-	}
-`;
+const StyledCreatePost = styled.section``;
 
 class CreatePost extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			schoolName: '',
-			schoolLogo: '',
+			authorName: `${this.props.profile.firstName} ${this.props.profile.lastName}`,
+			authorLogo: '',
 			content: '',
 			postBackground: null,
-			progress: 0,
-			authorEmail: this.props.auth.email
+			progress: 0
 		};
 		this.handleChange = this.handleChange.bind(this);
 		this.handleUpload = this.handleUpload.bind(this);
 		this.handleSubmit = this.handleSubmit.bind(this);
 		this.handleChoose = this.handleChoose.bind(this);
-		this.handleSelect = this.handleSelect.bind(this);
 	}
 	handleChange = async e => {
 		await this.setState({
 			[e.target.id]: e.target.value
 		});
 	};
-	handleSelect = e => {
-		const schoolList = document.getElementById('schoolName');
-		const value = schoolList.value;
-		const array = value.split(',');
-		this.setState({
-			schoolName: array[0],
-			schoolLogo: array[1]
-		});
-	};
 	handleSubmit = e => {
 		e.preventDefault();
-		this.state.content = filter.clean(this.state.content);
-		this.state.content = capitalize(this.state.content);
-		if (this.state.content.includes('*')) {
-			document.getElementById('upload-post-warn').style.display = 'block';
-			return null;
-		} else {
-			this.props.createPost(this.state);
-			this.props.history.push('/');
-		}
+		this.props.createPost(this.state);
+		this.props.history.push('/');
 	};
 	handleChoose = e => {
 		if (e.target.files[0]) {
@@ -124,7 +46,7 @@ class CreatePost extends Component {
 		const imageName = `${postBackground.name +
 			Math.round(Math.random() * 1000000000000)}`;
 		const uploadTask = storage
-			.ref(`images/feed/${imageName}`)
+			.ref(`images/posts/${imageName}`)
 			.put(postBackground);
 		uploadTask.on(
 			'state_changed',
@@ -139,7 +61,7 @@ class CreatePost extends Component {
 			},
 			() => {
 				storage
-					.ref('images/feed')
+					.ref('images/posts')
 					.child(imageName)
 					.getDownloadURL()
 					.then(postBackground => {
@@ -152,26 +74,6 @@ class CreatePost extends Component {
 			return downloadURL;
 		});
 	};
-	componentDidMount() {
-		db.collection('schools')
-			.get()
-			.then(snap =>
-				snap.forEach(doc => {
-					const { schoolName, schoolLogo } = doc.data();
-					const schoolList = document.getElementById('schoolName');
-					const option = document.createElement('option');
-					const p = document.createElement('p');
-					const img = document.createElement('img');
-					schoolList.appendChild(option);
-					option.appendChild(p);
-					option.appendChild(img);
-					p.value = schoolName;
-					p.innerText = schoolName;
-					img.value = schoolLogo;
-					option.value = [p.value, img.value];
-				})
-			);
-	}
 	render() {
 		const { auth } = this.props;
 		const uploadPostButton = document.getElementById('upload-post-btn');
@@ -185,66 +87,60 @@ class CreatePost extends Component {
 			uploadPostButton.disabled = false;
 			uploadPostButton.style.visibility = 'visible';
 		}
+		console.log(this.state);
 		return (
-			<StyledCreatePost className="site-container">
-				<div className="container">
-					<form onSubmit={this.handleSubmit}>
-						<h1>Create new post</h1>
-						<div className="input-field">
-							<label htmlFor="schoolName" />
-							<select
-								id="schoolName"
-								onChange={this.handleSelect}
-								defaultValue="Select your school"
-							>
-								<option disabled>Select your school</option>
-							</select>
+			<>
+				<NavbarOtherSites></NavbarOtherSites>
+				<StyledCreatePost className="sites__hero">
+					<div className="sites__container">
+						<div className="container">
+							<h1 className="section__title">Create new post</h1>
+							<form className="sites__wrapper" onSubmit={this.handleSubmit}>
+								<div className="input-field">
+									<label htmlFor="content" />
+									<textarea
+										placeholder="Type your post content here..."
+										id="content"
+										onChange={this.handleChange}
+									/>
+								</div>
+								<button
+									id="upload-post-btn"
+									disabled
+									className="btn"
+									style={{ margin: '5rem 0 0 0' }}
+									onClick={this.handleSubmit}
+								>
+									Upload Post
+								</button>
+							</form>
+							<progress value={this.state.progress} max="100" />
+							<br />
+							<div className="upload-container">
+								<input
+									className="custom-file-input"
+									type="file"
+									onChange={this.handleChoose}
+								/>
+								<button
+									className="btn btn-choose"
+									style={{ margin: '0 0 0 0.5rem' }}
+									onClick={this.handleUpload}
+								>
+									Upload an image
+								</button>
+							</div>
 						</div>
-						<div className="input-field">
-							<label htmlFor="content" />
-							<textarea
-								placeholder="Type your post content here..."
-								id="content"
-								onChange={this.handleChange}
-							/>
-						</div>
-						<button
-							id="upload-post-btn"
-							disabled
-							className="btn"
-							style={{ margin: '5rem 0 0 0' }}
-							onClick={this.handleSubmit}
-						>
-							Upload Post
-						</button>
-					</form>
-					<progress value={this.state.progress} max="100" />
-					<br />
-					<div className="upload-container">
-						<input
-							className="custom-file-input"
-							type="file"
-							onChange={this.handleChoose}
-						/>
-						<button
-							className="btn btn-choose"
-							style={{ margin: '0 0 0 0.5rem' }}
-							onClick={this.handleUpload}
-						>
-							Upload an image
-						</button>
 					</div>
-					<p id="upload-post-warn">You can't post using swear words!</p>
-				</div>
-			</StyledCreatePost>
+				</StyledCreatePost>
+			</>
 		);
 	}
 }
 
 const mapStateToProps = state => {
 	return {
-		auth: state.firebase.auth,
-		schools: state.firestore.ordered.schools
+		auth: state.firebase.auth
 	};
 };
 
@@ -254,7 +150,6 @@ const mapDispatchToProps = dispatch => {
 	};
 };
 
-export default compose(
-	connect(mapStateToProps, mapDispatchToProps),
-	firestoreConnect([{ collection: 'schools', orderBy: ['createdAt', 'desc'] }])
-)(CreatePost);
+export default compose(connect(mapStateToProps, mapDispatchToProps))(
+	CreatePost
+);

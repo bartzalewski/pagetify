@@ -1,12 +1,32 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import NavbarOtherSites from '../components/Navbar/NavbarOtherSites';
-import SignIn from '../components/auth/SignIn';
-import SignUp from '../components/auth/SignUp';
+import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { signOut } from '../store/actions/authActions';
 
-const StyledAdmin = styled.section``;
+const StyledAdmin = styled.section`
+	.admin__wrapper {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		grid-gap: 10px;
+	}
 
-export default function Graphics() {
+	.admin__box {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		background: #fff;
+		border-radius: 5px;
+		padding: 15px;
+		border: 2px solid #49a9e0;
+		-webkit-transition: 0.2s ease-in-out;
+		transition: 0.2s ease-in-out;
+	}
+`;
+
+function Admin(props) {
 	useEffect(() => {
 		window.scrollTo(0, 0);
 	}, []);
@@ -17,9 +37,15 @@ export default function Graphics() {
 				<div className="sites__container">
 					<div className="container">
 						<h1 className="section__title">Admin panel</h1>
-						<div className="sites__wrapper">
-							<SignUp></SignUp>
-							<SignIn></SignIn>
+						<div className="sites__wrapper admin__wrapper">
+							<Link to="/create-post" className="admin__box">
+								<div className="admin__title">Add a post</div>
+							</Link>
+							<Link to="/" className="admin__box">
+								<span onClick={props.signOut} className="btn btn-logout">
+									Log Out
+								</span>
+							</Link>
 						</div>
 					</div>
 				</div>
@@ -27,3 +53,11 @@ export default function Graphics() {
 		</>
 	);
 }
+
+const mapDispatchToProps = dispatch => {
+	return {
+		signOut: () => dispatch(signOut())
+	};
+};
+
+export default connect(null, mapDispatchToProps)(Admin);
