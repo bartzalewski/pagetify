@@ -9,6 +9,7 @@ import { Provider } from 'react-redux';
 import thunk from 'redux-thunk';
 import { reduxFirestore, getFirestore } from 'redux-firestore';
 import { reactReduxFirebase, getFirebase } from 'react-redux-firebase';
+import MessengerCustomerChat from 'react-messenger-customer-chat';
 
 const store = createStore(
 	rootReducer,
@@ -25,9 +26,12 @@ const store = createStore(
 
 store.firebaseAuthIsReady.then(() => {
 	ReactDOM.render(
-		<Provider store={store}>
-			<App />
-		</Provider>,
+		<>
+			<MessengerCustomerChat pageId="108729423937807" appId="669885237106196" />
+			<Provider store={store}>
+				<App />
+			</Provider>
+		</>,
 		document.getElementById('root')
 	);
 });
