@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import logo from '../../images/logo-white.png';
 import tickright from '../../images/tick-right.svg';
 

@@ -1,26 +1,20 @@
 import React from 'react';
 import styled from 'styled-components';
 import PostSummary from './PostSummary';
+import { Link } from 'react-router-dom';
 
-const StyledPostList = styled.div`
-	width: 100%;
-
-	@media (max-width: 1359px) {
-		padding: 20px;
-		margin-top: 0.5rem;
-	}
-
-	@media (max-width: 813px) {
-		padding: 10px;
-	}
-`;
+const StyledPostList = styled.div``;
 
 export default function PostList({ posts }) {
 	return (
-		<StyledPostList id="post-list-item">
+		<StyledPostList className="blog__wrapper">
 			{posts &&
 				posts.map(post => {
-					return <PostSummary post={post} key={post.id} />;
+					return (
+						<Link to={'/post/' + post.id}>
+							<PostSummary post={post} key={post.id} />
+						</Link>
+					);
 				})}
 		</StyledPostList>
 	);

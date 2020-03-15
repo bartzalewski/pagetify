@@ -1,9 +1,11 @@
-import React from 'react';
+import React, { Component } from 'react';
 import styled from 'styled-components';
 import stairsdown from '../../images/stairsdown.svg';
 import pyramidup from '../../images/pyramidup.svg';
-import bz from '../../images/bz.png';
-import dg from '../../images/dg.png';
+import { connect } from 'react-redux';
+import { firestoreConnect } from 'react-redux-firebase';
+import { compose } from 'redux';
+import PostList from '../posts/PostList';
 
 const StyledBlog = styled.section`
 	position: relative;
@@ -35,6 +37,7 @@ const StyledBlog = styled.section`
 			padding: 15px;
 			border: 2px solid #49a9e0;
 			transition: 0.2s ease-in-out;
+			max-height: 231px;
 
 			&:hover {
 				transition: 0.2s ease-in-out;
@@ -84,124 +87,43 @@ const StyledBlog = styled.section`
 	}
 `;
 
-export default function Blog() {
-	return (
-		<StyledBlog>
-			<img
-				className="decoration decoration--blog"
-				src={stairsdown}
-				alt="decoration"
-			/>
-			<div className="blog">
-				<div className="container">
-					<h1 className="section__title">
-						Here are the latest posts from our blog
-					</h1>
-					<div className="blog__wrapper">
-						<div className="blog__box">
-							<div className="blog__author">
-								<img src={bz} alt="bart zalewski" />
-								<div className="blog__author--flex">
-									<p className="blog__name">Bart Zalewski</p>
-									<p className="blog__date">3 months ago</p>
-								</div>
-							</div>
-							<div className="blog__title">
-								Tips related to user interface - 7 things
-							</div>
-							<p className="blog__desc">
-								Here are our user interface tips that, if implemented, will make
-								your website more user-friendly. Check them out!
-							</p>
-						</div>
-						<div className="blog__box">
-							<div className="blog__author">
-								<img src={dg} alt="david grzanka" />
-								<div className="blog__author--flex">
-									<p className="blog__name">David Grzanka</p>
-									<p className="blog__date">3 months ago</p>
-								</div>
-							</div>
-							<div className="blog__title">
-								Getting money by blogging - 8 ways
-							</div>
-							<p className="blog__desc">
-								Here are our user interface tips that, if implemented, will make
-								your website more user-friendly. Check them out!
-							</p>
-						</div>
-						<div className="blog__box">
-							<div className="blog__author">
-								<img src={bz} alt="bart zalewski" />
-								<div className="blog__author--flex">
-									<p className="blog__name">Bart Zalewski</p>
-									<p className="blog__date">3 months ago</p>
-								</div>
-							</div>
-							<div className="blog__title">
-								Online stores not optimized - 10 reasons
-							</div>
-							<p className="blog__desc">
-								Here are our user interface tips that, if implemented, will make
-								your website more user-friendly. Check them out!
-							</p>
-						</div>
-						<div className="blog__box">
-							<div className="blog__author">
-								<img src={dg} alt="david grzanka" />
-								<div className="blog__author--flex">
-									<p className="blog__name">David Grzanka</p>
-									<p className="blog__date">3 months ago</p>
-								</div>
-							</div>
-							<div className="blog__title">
-								Tips related to user interface - 7 things
-							</div>
-							<p className="blog__desc">
-								Here are our user interface tips that, if implemented, will make
-								your website more user-friendly. Check them out!
-							</p>
-						</div>
-						<div className="blog__box">
-							<div className="blog__author">
-								<img src={bz} alt="bart zalewski" />
-								<div className="blog__author--flex">
-									<p className="blog__name">Bart Zalewski</p>
-									<p className="blog__date">3 months ago</p>
-								</div>
-							</div>
-							<div className="blog__title">
-								Online stores not optimized - 10 reasons
-							</div>
-							<p className="blog__desc">
-								Here are our user interface tips that, if implemented, will make
-								your website more user-friendly. Check them out!
-							</p>
-						</div>
-						<div className="blog__box">
-							<div className="blog__author">
-								<img src={dg} alt="david grzanka" />
-								<div className="blog__author--flex">
-									<p className="blog__name">David Grzanka</p>
-									<p className="blog__date">3 months ago</p>
-								</div>
-							</div>
-							<div className="blog__title">
-								Tips related to user interface - 7 things
-							</div>
-							<p className="blog__desc">
-								Here are our user interface tips that, if implemented, will make
-								your website more user-friendly. Check them out!
-							</p>
-						</div>
+class Blog extends Component {
+	render() {
+		const { posts } = this.props;
+		return (
+			<StyledBlog>
+				<img
+					className="decoration decoration--blog"
+					src={stairsdown}
+					alt="decoration"
+				/>
+				<div className="blog">
+					<div className="container">
+						<h1 className="section__title">
+							Here are the latest posts from our blog
+						</h1>
+						<PostList posts={posts}></PostList>
 					</div>
 				</div>
-			</div>
-			<img
-				className="decoration decoration__pyramidup"
-				src={pyramidup}
-				alt="decoration"
-			/>
-		</StyledBlog>
-	);
+				<img
+					className="decoration decoration__pyramidup"
+					src={pyramidup}
+					alt="decoration"
+				/>
+			</StyledBlog>
+		);
+	}
 }
+
+const mapStateToProps = state => {
+	return {
+		posts: state.firestore.ordered.posts
+	};
+};
+
+export default compose(
+	connect(mapStateToProps),
+	firestoreConnect([
+		{ collection: 'posts', limit: 6, orderBy: ['createdAt', 'desc'] }
+	])
+)(Blog);

@@ -2,33 +2,23 @@ import React from 'react';
 import styled from 'styled-components';
 import moment from 'moment';
 
-const StyledPostSummary = styled.div`
-	display: flex;
-	justify-content: center;
-	align-items: center;
-`;
+const StyledPostSummary = styled.div``;
 
 export default function PostSummary({ post }) {
 	return (
 		<StyledPostSummary>
-			<div className="posts-list">
-				<div className="flex">
-					<img
-						className="school-logo posts-logo"
-						src={post.schoolLogo}
-						alt="school logo"
-					/>
-					<h5 className="posts-title">{post.schoolName}</h5>
-					<p className="posts-time">
-						{moment(post.createdAt.toDate()).calendar()}
-					</p>
+			<div className="blog__box">
+				<div className="blog__author">
+					<img src={post.authorAvatar} alt="bart zalewski" />
+					<div className="blog__author--flex">
+						<p className="blog__name">{post.authorName}</p>
+						<p className="blog__date">
+							{moment(post.createdAt.toDate()).calendar()}
+						</p>
+					</div>
 				</div>
-				<p className="posts-desc">{post.content}</p>
-				<img
-					className="posts-img"
-					src={post.postBackground}
-					alt="school feed"
-				/>
+				<div className="blog__title">{post.title}</div>
+				<p className="blog__desc">{post.content}</p>
 			</div>
 		</StyledPostSummary>
 	);

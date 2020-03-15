@@ -14,8 +14,10 @@ class CreatePost extends Component {
 		super(props);
 		this.state = {
 			authorName: `${this.props.profile.firstName} ${this.props.profile.lastName}`,
-			authorLogo: '',
+			authorAvatar: this.props.profile.userAvatar,
+			title: '',
 			content: '',
+			url: '',
 			postBackground: null,
 			progress: 0
 		};
@@ -79,7 +81,7 @@ class CreatePost extends Component {
 		const uploadPostButton = document.getElementById('upload-post-btn');
 		if (!auth.uid) return <Redirect to="/" />;
 		if (
-			this.state.schoolLogo !== '' &&
+			this.state.authorName !== '' &&
 			this.state.postBackground !== null &&
 			this.state.progress === 100 &&
 			this.state.content !== ''
@@ -96,6 +98,24 @@ class CreatePost extends Component {
 						<div className="container">
 							<h1 className="section__title">Create new post</h1>
 							<form className="sites__wrapper" onSubmit={this.handleSubmit}>
+								<div className="input-field">
+									<label htmlFor="content" />
+									<input
+										type="text"
+										placeholder="Title here..."
+										id="title"
+										onChange={this.handleChange}
+									/>
+								</div>
+								<div className="input-field">
+									<label htmlFor="content" />
+									<input
+										type="text"
+										placeholder="Url here..."
+										id="url"
+										onChange={this.handleChange}
+									/>
+								</div>
 								<div className="input-field">
 									<label htmlFor="content" />
 									<textarea

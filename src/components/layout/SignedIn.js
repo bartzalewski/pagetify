@@ -16,6 +16,7 @@ import Requirements from '../Requirements/Requirements';
 import Blog from '../Blog/Blog';
 import Admin from '../../pages/Admin';
 import CreatePost from '../posts/CreatePost';
+import PostDetails from '../posts/PostDetails';
 
 export default class SignedIn extends Component {
 	render() {
@@ -40,6 +41,7 @@ export default class SignedIn extends Component {
 					<Route path="/contact" component={Contact} />
 					<Route path="/privacy-policy" component={PrivacyPolicy} />
 					<Route path="/price" component={Price} />
+					<Route path="/post/:id" component={PostDetails} />
 					<Route path="/admin" component={Admin} />
 					<Route
 						path="/create-post"
