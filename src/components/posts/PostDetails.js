@@ -9,7 +9,6 @@ import NavbarOtherSites from '../Navbar/NavbarOtherSites';
 const StyledPostDetails = styled.section`
 	.post__wrapper {
 		align-items: flex-start;
-		padding: 20px;
 	}
 
 	.post__info {
@@ -86,9 +85,16 @@ const PostDetails = props => {
 		);
 	} else {
 		return (
-			<div className="container center">
-				<p>Loading post...</p>
-			</div>
+			<>
+				<NavbarOtherSites></NavbarOtherSites>
+				<StyledPostDetails className="sites__hero">
+					<div className="sites__container">
+						<div className="container">
+							<h1 className="section__title">Loading post...</h1>
+						</div>
+					</div>
+				</StyledPostDetails>
+			</>
 		);
 	}
 };
