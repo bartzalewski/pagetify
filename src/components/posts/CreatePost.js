@@ -52,6 +52,7 @@ const StyledCreatePost = styled.section`
 		font-family: 'Montserrat';
 		cursor: pointer;
 		margin-top: 5rem;
+		visibility: hidden;
 
 		&:hover {
 			transition: 0.2s ease-in-out;
@@ -170,7 +171,9 @@ class CreatePost extends Component {
 			this.state.authorName !== '' &&
 			this.state.postBackground !== null &&
 			this.state.progress === 100 &&
-			this.state.content !== ''
+			this.state.content !== '' &&
+			this.state.title !== '' &&
+			this.state.url !== ''
 		) {
 			uploadPostButton.disabled = false;
 			uploadPostButton.style.visibility = 'visible';

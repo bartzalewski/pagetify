@@ -2,7 +2,6 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import NavbarOtherSites from '../components/Navbar/NavbarOtherSites';
 import SignIn from '../components/auth/SignIn';
-import SignUp from '../components/auth/SignUp';
 
 const StyledLogin = styled.section``;
 
@@ -18,7 +17,6 @@ export default function Login() {
 					<div className="container">
 						<h1 className="section__title">Log in</h1>
 						<div className="sites__wrapper">
-							<SignUp></SignUp>
 							<SignIn></SignIn>
 						</div>
 					</div>
