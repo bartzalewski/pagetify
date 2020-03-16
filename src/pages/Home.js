@@ -264,6 +264,7 @@ const StyledHomeReviews = styled.section`
 
 	.decoration--bottom {
 		margin-top: 80px;
+		bottom: -4px;
 	}
 `;
 

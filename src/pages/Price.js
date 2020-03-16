@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import NavbarOtherSites from '../components/Navbar/NavbarOtherSites';
+import Form from '../components/Form/Form';
 
 const StyledPrice = styled.section``;
 
@@ -16,12 +17,7 @@ export default function Price() {
 					<div className="container">
 						<h1 className="section__title">Price</h1>
 						<div className="sites__wrapper">
-							<p className="sites__desc">
-								Supported mobile devices, easy to use independently, SEO
-								friendly and ready for any expansion at any time. We create
-								websites ideally suited to the needs of both you and your
-								recipients. Check below what features they have.
-							</p>
+							<Form></Form>
 						</div>
 					</div>
 				</div>
