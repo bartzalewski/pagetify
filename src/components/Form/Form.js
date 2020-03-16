@@ -24,7 +24,7 @@ class Form extends Component {
 		};
 
 		axios
-			.post('API_URI', data)
+			.post('https://pagetify-api-17qzk2zsm.now.sh', data)
 			.then(res => {
 				this.setState({ sent: true }, this.resetForm());
 			})
