@@ -5,17 +5,18 @@ import { Link } from 'react-router-dom';
 
 const StyledPostList = styled.div`
 	.post__item {
-		transition: 0.2s;
+		transition: 0.2s ease-in-out;
+
+		.blog__title {
+			transition: 0.2s ease-in-out;
+		}
 
 		&:hover {
-			transition: 0.2s;
+			transition: 0.2s ease-in-out;
 
 			.blog__title {
-				background: -webkit-linear-gradient(left, #36d1dc, #5b86e5);
-				-webkit-background-clip: text;
-				background-clip: text;
-				-webkit-text-fill-color: transparent;
-				transition: 0.2s;
+				color: #49a9e0;
+				transition: 0.2s ease-in-out;
 			}
 		}
 	}

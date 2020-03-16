@@ -29,8 +29,8 @@ const StyledBlog = styled.section`
 
 		&__box {
 			display: flex;
-			justify-content: center;
-			align-items: center;
+			justify-content: flex-start;
+			align-items: flex-start;
 			flex-direction: column;
 			background: #fff;
 			border-radius: 5px;
@@ -38,6 +38,7 @@ const StyledBlog = styled.section`
 			border: 2px solid #49a9e0;
 			transition: 0.2s ease-in-out;
 			max-height: 231px;
+			min-height: 231px;
 
 			&:hover {
 				transition: 0.2s ease-in-out;
@@ -75,6 +76,7 @@ const StyledBlog = styled.section`
 
 		&__desc {
 			text-align: justify;
+			overflow: hidden;
 		}
 	}
 

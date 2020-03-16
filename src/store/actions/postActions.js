@@ -1,9 +1,10 @@
-export const createPost = post => {
+export const createPost = (post, url) => {
 	return (dispatch, getState, { getFirebase, getFirestore }) => {
 		const firestore = getFirestore();
 		firestore
 			.collection('posts')
-			.add({
+			.doc(url)
+			.set({
 				...post,
 				createdAt: new Date()
 			})
