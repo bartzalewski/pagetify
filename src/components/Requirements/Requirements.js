@@ -80,6 +80,7 @@ export default function Requirements() {
 				</div>
 			</div>
 			<img
+				loading="lazy"
 				className="decoration decoration__pyramiddown"
 				src={pyramiddown}
 				alt="decoration"

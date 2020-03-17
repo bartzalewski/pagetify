@@ -122,7 +122,7 @@ class Navbar extends Component {
 				<div className="container navbar-container">
 					<div className="left navbar__left">
 						<NavLink exact to="/">
-							<img src={logo} alt="" />
+							<img loading="lazy" src={logo} alt="pagetify logo" />
 						</NavLink>
 					</div>
 					<div className="hamburger" onClick={this.handleClick}>

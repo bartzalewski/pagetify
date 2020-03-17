@@ -351,7 +351,12 @@ export default function Home(props) {
 						</div>
 					</div>
 				</div>
-				<img className="decoration" src={waveup} alt="decoration" />
+				<img
+					loading="lazy"
+					className="decoration"
+					src={waveup}
+					alt="decoration"
+				/>
 			</StyledHomeHero>
 			<StyledHomeOffer>
 				<div id="offer" className="offer">
@@ -359,7 +364,12 @@ export default function Home(props) {
 						<h1 className="section__title">What can we offer for you?</h1>
 						<div className="offer__wrapper">
 							<Link to="/websites" className="offer__box">
-								<img src={websites} alt="websites" className="offer__icon" />
+								<img
+									loading="lazy"
+									src={websites}
+									alt="websites"
+									className="offer__icon"
+								/>
 								<p className="offer__title">Websites</p>
 								<p className="offer__desc">
 									Responsible, SEO-friendly and convenient in self-service
@@ -367,7 +377,12 @@ export default function Home(props) {
 								</p>
 							</Link>
 							<Link to="/stores" className="offer__box">
-								<img src={stores} alt="stores" className="offer__icon" />
+								<img
+									loading="lazy"
+									src={stores}
+									alt="stores"
+									className="offer__icon"
+								/>
 								<p className="offer__title">Online stores</p>
 								<p className="offer__desc">
 									We use the world’s best e-commerce system called WooCommerce
@@ -375,7 +390,12 @@ export default function Home(props) {
 								</p>
 							</Link>
 							<Link to="/graphics" className="offer__box">
-								<img src={graphic} alt="graphic" className="offer__icon" />
+								<img
+									loading="lazy"
+									src={graphic}
+									alt="graphic"
+									className="offer__icon"
+								/>
 								<p className="offer__title">Graphic design</p>
 								<p className="offer__desc">
 									If you don't have graphic skills or a knack for writing,
@@ -383,7 +403,12 @@ export default function Home(props) {
 								</p>
 							</Link>
 							<div className="offer__box">
-								<img src={delivery} alt="delivery" className="offer__icon" />
+								<img
+									loading="lazy"
+									src={delivery}
+									alt="delivery"
+									className="offer__icon"
+								/>
 								<p className="offer__title">Fast delivery</p>
 								<p className="offer__desc">
 									We don’t like waiting as much as you do, so we make sure to
@@ -391,7 +416,12 @@ export default function Home(props) {
 								</p>
 							</div>
 							<div className="offer__box">
-								<img src={quality} alt="quality" className="offer__icon" />
+								<img
+									loading="lazy"
+									src={quality}
+									alt="quality"
+									className="offer__icon"
+								/>
 								<p className="offer__title">Highest quality</p>
 								<p className="offer__desc">
 									We are professionals that care about what are we developing.
@@ -399,7 +429,12 @@ export default function Home(props) {
 								</p>
 							</div>
 							<div className="offer__box">
-								<img src={wallet} alt="wallet" className="offer__icon" />
+								<img
+									loading="lazy"
+									src={wallet}
+									alt="wallet"
+									className="offer__icon"
+								/>
 								<p className="offer__title">Wallet-friendly</p>
 								<p className="offer__desc">
 									We don’t want you to bankrupt after taking our service. Our
@@ -412,6 +447,7 @@ export default function Home(props) {
 			</StyledHomeOffer>
 			<StyledHomeReviews>
 				<img
+					loading="lazy"
 					className="decoration decoration--top"
 					src={wavedown}
 					alt="decoration"
@@ -424,7 +460,12 @@ export default function Home(props) {
 						<div className="reviews__wrapper">
 							<div className="reviews__box reviews__box--left">
 								<div className="reviews__client">
-									<img src={orella} alt="client" className="reviews__img" />
+									<img
+										loading="lazy"
+										src={orella}
+										alt="client"
+										className="reviews__img"
+									/>
 								</div>
 								<p className="reviews__name">Orella</p>
 								<p className="reviews__desc">
@@ -435,7 +476,12 @@ export default function Home(props) {
 							</div>
 							<div className="reviews__box reviews__box--center">
 								<div className="reviews__client">
-									<img src={charlean} alt="client" className="reviews__img" />
+									<img
+										loading="lazy"
+										src={charlean}
+										alt="client"
+										className="reviews__img"
+									/>
 								</div>
 								<p className="reviews__name">Charlean</p>
 								<p className="reviews__desc">
@@ -444,7 +490,12 @@ export default function Home(props) {
 							</div>
 							<div className="reviews__box reviews__box--right">
 								<div className="reviews__client">
-									<img src={kalil} alt="client" className="reviews__img" />
+									<img
+										loading="lazy"
+										src={kalil}
+										alt="client"
+										className="reviews__img"
+									/>
 								</div>
 								<p className="reviews__name">Kalil</p>
 								<p className="reviews__desc">
@@ -455,7 +506,12 @@ export default function Home(props) {
 							</div>
 							<div className="reviews__box reviews__box--left">
 								<div className="reviews__client">
-									<img src={jeralee} alt="client" className="reviews__img" />
+									<img
+										loading="lazy"
+										src={jeralee}
+										alt="client"
+										className="reviews__img"
+									/>
 								</div>
 								<p className="reviews__name">Jeralee</p>
 								<p className="reviews__desc">
@@ -465,7 +521,12 @@ export default function Home(props) {
 							</div>
 							<div className="reviews__box reviews__box--center">
 								<div className="reviews__client">
-									<img src={aaron} alt="client" className="reviews__img" />
+									<img
+										loading="lazy"
+										src={aaron}
+										alt="client"
+										className="reviews__img"
+									/>
 								</div>
 								<p className="reviews__name">Aaron</p>
 								<p className="reviews__desc">
@@ -477,7 +538,12 @@ export default function Home(props) {
 							</div>
 							<div className="reviews__box reviews__box--right">
 								<div className="reviews__client">
-									<img src={marti} alt="client" className="reviews__img" />
+									<img
+										loading="lazy"
+										src={marti}
+										alt="client"
+										className="reviews__img"
+									/>
 								</div>
 								<p className="reviews__name">Marti</p>
 								<p className="reviews__desc">
@@ -490,7 +556,12 @@ export default function Home(props) {
 							</div>
 							<div className="reviews__box reviews__box--left">
 								<div className="reviews__client">
-									<img src={aubrie} alt="client" className="reviews__img" />
+									<img
+										loading="lazy"
+										src={aubrie}
+										alt="client"
+										className="reviews__img"
+									/>
 								</div>
 								<p className="reviews__name">Aubrie</p>
 								<p className="reviews__desc">
@@ -500,7 +571,12 @@ export default function Home(props) {
 							</div>
 							<div className="reviews__box reviews__box--center">
 								<div className="reviews__client">
-									<img src={dodi} alt="client" className="reviews__img" />
+									<img
+										loading="lazy"
+										src={dodi}
+										alt="client"
+										className="reviews__img"
+									/>
 								</div>
 								<p className="reviews__name">Dodi</p>
 								<p className="reviews__desc">
@@ -512,7 +588,12 @@ export default function Home(props) {
 							</div>
 							<div className="reviews__box reviews__box--right">
 								<div className="reviews__client">
-									<img src={adam} alt="client" className="reviews__img" />
+									<img
+										loading="lazy"
+										src={adam}
+										alt="client"
+										className="reviews__img"
+									/>
 								</div>
 								<p className="reviews__name">Adam</p>
 								<p className="reviews__desc">
@@ -523,6 +604,7 @@ export default function Home(props) {
 					</div>
 				</div>
 				<img
+					loading="lazy"
 					className="decoration decoration--bottom"
 					src={stairsup}
 					alt="decoration"
@@ -540,26 +622,27 @@ export default function Home(props) {
 						</p>
 						<div className="stand-out__wrapper">
 							<img
+								loading="lazy"
 								className="decoration decoration--tick"
 								src={tick}
 								alt="decoration"
 							/>
 							<div className="stand-out__box stand-out__box--right">
-								<img src={standout1} alt="standout" />
+								<img loading="lazy" src={standout1} alt="standout" />
 								<p className="stand-out__txt">
 									We approach each order individually. We guarantee that we will
 									respond to your message within a maximum of 24 hours.
 								</p>
 							</div>
 							<div className="stand-out__box stand-out__box--left">
-								<img src={standout2} alt="standout" />
+								<img loading="lazy" src={standout2} alt="standout" />
 								<p className="stand-out__txt">
 									We thoroughly analyze your requirements and propose solutions
 									ourselves, thanks to which each project is tailor made.
 								</p>
 							</div>
 							<div className="stand-out__box stand-out__box--right">
-								<img src={standout3} alt="standout" />
+								<img loading="lazy" src={standout3} alt="standout" />
 								<p className="stand-out__txt">
 									We do not leave anyone alone after commissioning the project.
 									All you need to do is contact us and we'll advise you or help
@@ -567,7 +650,7 @@ export default function Home(props) {
 								</p>
 							</div>
 							<div className="stand-out__box stand-out__box--left">
-								<img src={standout4} alt="standout" />
+								<img loading="lazy" src={standout4} alt="standout" />
 								<p className="stand-out__txt">
 									We do not leave anyone alone after commissioning the project.
 									All you need to do is contact us and we'll advise you or help

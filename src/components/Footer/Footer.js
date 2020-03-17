@@ -90,7 +90,7 @@ export default function Footer() {
 									className="footer__homepage"
 									onClick={() => window.scrollTo(0, 0)}
 								>
-									<img src={logo} alt="pagetify logo" />
+									<img loading="lazy" src={logo} alt="pagetify logo" />
 								</Link>
 								<a href="tel:+48531797647">✆ +48 531 797 647</a>
 								<a href="tel:+48882193371">✆ +48 882 193 371</a>

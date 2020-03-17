@@ -95,6 +95,7 @@ class Blog extends Component {
 		return (
 			<StyledBlog>
 				<img
+					loading="lazy"
 					className="decoration decoration--blog"
 					src={stairsdown}
 					alt="decoration"
@@ -108,6 +109,7 @@ class Blog extends Component {
 					</div>
 				</div>
 				<img
+					loading="lazy"
 					className="decoration decoration__pyramidup"
 					src={pyramidup}
 					alt="decoration"
