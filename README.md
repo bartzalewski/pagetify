@@ -2,7 +2,7 @@
 
 This is my project for creating a complex website for web developers. It will contain things like blog, authentication, forms etc. As always, feel free to view my code!
 
-Link to the website: https://pagetify.herokuapp.com/
+Link to the website: https://pagetify.com/
 
 ## What kind of technologies did I use?
 
@@ -14,6 +14,9 @@ Link to the website: https://pagetify.herokuapp.com/
 - Heroku CLI
 - RWD
 - SCSS/SASS
+- Composer
+- PHPMailer
+- MomentJS
 - Lighthouse
 - ESLint
 - Prettier
