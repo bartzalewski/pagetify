@@ -629,6 +629,10 @@ const GlobalStyle = createGlobalStyle`
         font-size: 14px !important;
       }
 
+      &__container {
+        justify-content: flex-start !important;
+      }
+
       &__wrapper {
         grid-template-columns: repeat(1,1fr) !important;
       }
@@ -641,7 +645,21 @@ const GlobalStyle = createGlobalStyle`
       }
 
       &__copyright {
+        padding: 1rem 0 !important;
+      }
+    }
+
+    .sites__desc {
+      width: 100%;
+    }
+
+    .post {
+      &__background {
         margin: 1rem 0 !important;
+      }
+
+      &__content {
+        font-size: 16px !important;
       }
     }
   }

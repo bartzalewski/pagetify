@@ -69,7 +69,7 @@ const StyledFooter = styled.footer`
 		}
 
 		&__copyright {
-			margin: 50px 0;
+			padding: 50px 0;
 			font-size: 14px;
 			font-weight: 500;
 		}
@@ -78,7 +78,7 @@ const StyledFooter = styled.footer`
 
 export default function Footer() {
 	return (
-		<StyledFooter>
+		<StyledFooter className="footer__container">
 			<div className="footer">
 				<div className="container">
 					<div className="footer__wrapper">

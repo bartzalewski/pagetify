@@ -57,16 +57,18 @@ class Form extends Component {
 									value={name}
 									onChange={this.handleChange('name')}
 									placeholder="Your name"
+									required
 								/>
 							</label>
 						</div>
 						<div className="input-field">
 							<label>
 								<input
-									type="text"
+									type="email"
 									value={email}
 									onChange={this.handleChange('email')}
 									placeholder="Your email"
+									required
 								/>
 							</label>
 						</div>
@@ -78,6 +80,7 @@ class Form extends Component {
 								value={message}
 								onChange={this.handleChange('message')}
 								placeholder="Message"
+								required
 							></textarea>
 						</label>
 					</div>
