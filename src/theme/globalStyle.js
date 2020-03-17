@@ -341,6 +341,115 @@ const GlobalStyle = createGlobalStyle`
 
   /* OTHER SITES HERO END */
 
+  /* FORM */
+
+  .form {
+
+    &--flex {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    &__container {
+      width: 100%;
+    }
+
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+    }
+
+    &__btn {
+      border: none;
+      border-radius: 25px;
+      background-image: linear-gradient(to right, #36d1dc, #5b86e5);
+      color: #fff;
+      padding: 10px 30px;
+      font-weight: 600;
+      box-shadow: 0 2px 10px rgba(50, 50, 93, 0.1);
+      transition: 0.2s ease-in-out;
+      cursor: pointer;
+      width: fit-content;
+      margin-top: 1rem;
+
+      &:hover {
+        transition: 0.2s ease-in-out;
+        box-shadow: 0 9px 32px 0 rgba(0, 0, 0, 0.15);
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  /* FORM END */
+
+  /* INPUTS */
+
+  input, textarea {
+		width: 100%;
+		border: none;
+		border-bottom: 1px solid #d9d9d9;
+		padding: 10px 15px;
+		font-family: 'Montserrat';
+		font-size: 18px;
+		outline: none;
+		transition: 0.2s ease-in-out;
+    /* background: #FBFBFB; */
+
+		&:focus {
+			border-bottom: 1px solid #49a9e0;
+			transition: 0.2s ease-in-out;
+		}
+	}
+
+	textarea {
+		height: 10rem;
+	}
+
+	#upload-post-btn {
+		border: none;
+		border-radius: 25px;
+		background-image: linear-gradient(to right, #36d1dc, #5b86e5);
+		color: #fff;
+		padding: 10px 30px;
+		font-weight: 600;
+		box-shadow: 0 2px 10px rgba(50, 50, 93, 0.1);
+		transition: 0.2s ease-in-out;
+		font-size: 16px;
+		font-family: 'Montserrat';
+		cursor: pointer;
+		margin-top: 5rem;
+		visibility: hidden;
+
+		&:hover {
+			transition: 0.2s ease-in-out;
+			box-shadow: 0 9px 32px 0 rgba(0, 0, 0, 0.15);
+			transform: scale(1.05);
+		}
+	}
+
+	.input-field {
+		width: 100%;
+
+		&--flex {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+			width: 100%;
+		}
+
+    &--m1 {
+      margin: 1rem 0;
+    }
+
+    &--mt1 {
+      margin-top: 1rem;
+    }
+	}
+
+  /* INPUTS END */
+
   @media (max-width: 1200px) {
     .container {
       width: 90%;

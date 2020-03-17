@@ -128,7 +128,6 @@ class CreatePost extends Component {
 			const postBackground = e.target.files[0];
 			this.setState(() => ({ postBackground }));
 		}
-		console.log(this.state);
 	};
 	handleUpload = () => {
 		const { postBackground } = this.state;
@@ -178,7 +177,6 @@ class CreatePost extends Component {
 			uploadPostButton.disabled = false;
 			uploadPostButton.style.visibility = 'visible';
 		}
-		console.log(this.state);
 		return (
 			<>
 				<NavbarOtherSites></NavbarOtherSites>

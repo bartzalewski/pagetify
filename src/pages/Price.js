@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import NavbarOtherSites from '../components/Navbar/NavbarOtherSites';
-import Form from '../components/Form/Form';
+import PriceForm from '../components/Form/PriceForm';
 
 const StyledPrice = styled.section``;
 
@@ -16,7 +16,9 @@ export default function Price() {
 				<div className="sites__container">
 					<div className="container">
 						<h1 className="section__title">Price</h1>
-						<Form></Form>
+						<div className="sites__wrapper form__container">
+							<PriceForm></PriceForm>
+						</div>
 					</div>
 				</div>
 			</StyledPrice>

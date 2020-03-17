@@ -33,7 +33,6 @@ class SignIn extends Component {
 		return (
 			<StyledSignIn>
 				<form className="signin-form" onSubmit={this.handleSubmit}>
-					<h1 className="signin-title">sign in</h1>
 					<div className="input-field">
 						<input
 							type="email"

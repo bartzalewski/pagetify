@@ -20,7 +20,6 @@ import PostDetails from '../posts/PostDetails';
 
 export default class SignedIn extends Component {
 	render() {
-		console.log(this.props);
 		return (
 			<>
 				<Switch>
