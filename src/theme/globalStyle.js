@@ -1,4 +1,5 @@
 import { createGlobalStyle } from 'styled-components';
+import tickDownPrimary from '../images/tick-down-primary.svg';
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
@@ -298,6 +299,24 @@ const GlobalStyle = createGlobalStyle`
       height: fit-content;
       font-weight: 500;
     }
+
+    &__more {
+      transform: translateX(1rem);
+      
+      a {
+        font-size: 14px;
+      }
+    }
+
+    &__services {
+      &::after {
+        content: "a";
+        color: transparent;
+        margin-left: 0.5rem;
+        background: url(${tickDownPrimary}) center center no-repeat;
+        background-size: contain;
+      }
+    }
   }
 
   .sidenav__content {
@@ -392,7 +411,7 @@ const GlobalStyle = createGlobalStyle`
 		border-bottom: 1px solid #d9d9d9;
 		padding: 10px 15px;
 		font-family: 'Montserrat';
-		font-size: 18px;
+		font-size: 16px;
 		outline: none;
 		transition: 0.2s ease-in-out;
     /* background: #FBFBFB; */
@@ -651,6 +670,7 @@ const GlobalStyle = createGlobalStyle`
 
     .sites__desc {
       width: 100%;
+      font-size: 14px !important;
     }
 
     .post {
@@ -661,6 +681,10 @@ const GlobalStyle = createGlobalStyle`
       &__content {
         font-size: 16px !important;
       }
+    }
+
+    input, textarea {
+      font-size: 14px !important;
     }
   }
 

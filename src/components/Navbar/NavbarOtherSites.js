@@ -1,10 +1,8 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 import logo from '../../images/logo-black.png';
 import tickright from '../../images/tick-right.svg';
-import { connect } from 'react-redux';
-import { signOut } from '../../store/actions/authActions';
 
 const StyledNavbarOtherSites = styled.nav`
 	display: flex;
@@ -89,13 +87,18 @@ class NavbarOtherSites extends Component {
 					id="sidenav"
 					className={this.state.condition ? 'sidenav sidenav--open' : 'sidenav'}
 				>
-					<NavLink
-						to="/services"
+					<a
+						href="#!"
 						activeClassName="active"
-						className="navbar__services"
+						className="navbar__services sidenav__services"
 					>
 						Services
-					</NavLink>
+					</a>
+					<div className="sidenav__more">
+						<NavLink to="/websites">Websites</NavLink>
+						<NavLink to="/stores">Online stores</NavLink>
+						<NavLink to="/graphics">Graphic design</NavLink>
+					</div>
 					<NavLink
 						to="/projects"
 						activeClassName="active"
@@ -119,6 +122,13 @@ class NavbarOtherSites extends Component {
 						className="navbar__contact"
 					>
 						Contact
+					</NavLink>
+					<NavLink
+						to="/price"
+						activeClassName="active"
+						className="navbar__price"
+					>
+						Price
 					</NavLink>
 				</div>
 				<div className="container navbar-container">
@@ -251,13 +261,6 @@ class NavbarOtherSites extends Component {
 						<NavLink to="/price" className="navbar-price">
 							<li>Price</li>
 						</NavLink>
-						{this.props.profile ? (
-							<Link to="/" className="navbar__link">
-								<span onClick={this.props.signOut} className="btn btn-logout">
-									Log Out
-								</span>
-							</Link>
-						) : null}
 					</ul>
 				</div>
 			</StyledNavbarOtherSites>
@@ -265,10 +268,4 @@ class NavbarOtherSites extends Component {
 	}
 }
 
-const mapDispatchToProps = dispatch => {
-	return {
-		signOut: () => dispatch(signOut())
-	};
-};
-
-export default connect(null, mapDispatchToProps)(NavbarOtherSites);
+export default NavbarOtherSites;

@@ -87,13 +87,18 @@ class Navbar extends Component {
 					id="sidenav"
 					className={this.state.condition ? 'sidenav sidenav--open' : 'sidenav'}
 				>
-					<NavLink
-						to="/services"
+					<a
+						href="#!"
 						activeClassName="active"
-						className="navbar__services"
+						className="navbar__services sidenav__services"
 					>
 						Services
-					</NavLink>
+					</a>
+					<div className="sidenav__more">
+						<NavLink to="/websites">Websites</NavLink>
+						<NavLink to="/stores">Online stores</NavLink>
+						<NavLink to="/graphics">Graphic design</NavLink>
+					</div>
 					<NavLink
 						to="/projects"
 						activeClassName="active"
@@ -117,6 +122,13 @@ class Navbar extends Component {
 						className="navbar__contact"
 					>
 						Contact
+					</NavLink>
+					<NavLink
+						to="/price"
+						activeClassName="active"
+						className="navbar__price"
+					>
+						Price
 					</NavLink>
 				</div>
 				<div className="container navbar-container">
