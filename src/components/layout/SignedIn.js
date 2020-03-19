@@ -17,9 +17,12 @@ import Blog from '../Blog/Blog';
 import Admin from '../../pages/Admin';
 import CreatePost from '../posts/CreatePost';
 import PostDetails from '../posts/PostDetails';
+import CreateProject from '../projects/CreateProject';
+import ProjectDetails from '../projects/ProjectDetails';
 
 export default class SignedIn extends Component {
 	render() {
+		const { profile } = this.props;
 		return (
 			<>
 				<Switch>
@@ -41,13 +44,16 @@ export default class SignedIn extends Component {
 					<Route path="/privacy-policy" component={PrivacyPolicy} />
 					<Route path="/price" component={Price} />
 					<Route path="/post/:id" component={PostDetails} />
-					<Route path="/admin" component={Admin} />
+					<Route path="/project/:id" component={ProjectDetails} />
+					<Route
+						path="/admin"
+						component={props => <Admin {...props} profile={profile} />}
+					/>
 					<Route
 						path="/create-post"
-						component={props => (
-							<CreatePost {...props} profile={this.props.profile} />
-						)}
+						component={props => <CreatePost {...props} profile={profile} />}
 					/>
+					<Route path="/create-project" component={CreateProject} />
 					<Route component={Error} />
 				</Switch>
 				<Blog></Blog>

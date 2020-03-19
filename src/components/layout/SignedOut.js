@@ -16,6 +16,7 @@ import PrivacyPolicy from '../../pages/PrivacyPolicy';
 import Price from '../../pages/Price';
 import Login from '../../pages/Login';
 import PostDetails from '../posts/PostDetails';
+import ProjectDetails from '../projects/ProjectDetails';
 
 export default class SignedOut extends Component {
 	render() {
@@ -34,6 +35,7 @@ export default class SignedOut extends Component {
 					<Route path="/privacy-policy" component={PrivacyPolicy} />
 					<Route path="/price" component={Price} />
 					<Route path="/post/:id" component={PostDetails} />
+					<Route path="/project/:id" component={ProjectDetails} />
 					<Route path="/login" component={Login} />
 					<Route component={Error} />
 				</Switch>

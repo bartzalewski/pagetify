@@ -23,6 +23,16 @@ const StyledAdmin = styled.section`
 		border: 2px solid #49a9e0;
 		-webkit-transition: 0.2s ease-in-out;
 		transition: 0.2s ease-in-out;
+
+		&:hover {
+			background: #49a9e0;
+			color: white;
+			transition: 0.2s ease-in-out;
+		}
+	}
+
+	.admin__desc {
+		margin-top: 50px;
 	}
 `;
 
@@ -37,9 +47,15 @@ function Admin(props) {
 				<div className="sites__container">
 					<div className="container">
 						<h1 className="section__title">Admin panel</h1>
+						<div className="sites__desc admin__desc">
+							Hello {props.profile.firstName}!
+						</div>
 						<div className="sites__wrapper admin__wrapper">
 							<Link to="/create-post" className="admin__box">
 								<div className="admin__title">Add a post</div>
+							</Link>
+							<Link to="/create-project" className="admin__box">
+								<div className="admin__title">Add a project</div>
 							</Link>
 							<Link to="/" className="admin__box">
 								<span onClick={props.signOut} className="btn btn-logout">
