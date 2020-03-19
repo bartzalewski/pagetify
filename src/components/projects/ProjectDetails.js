@@ -3,10 +3,73 @@ import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';
-import moment from 'moment';
 import NavbarOtherSites from '../Navbar/NavbarOtherSites';
 
-const StyledProjectDetails = styled.section``;
+const StyledProjectDetails = styled.section`
+	.project__container {
+		align-items: stretch;
+	}
+
+	.project__title {
+		align-self: center;
+	}
+
+	.project__wrapper {
+		align-items: flex-start;
+
+		&--grid {
+			display: grid;
+			grid-template-columns: repeat(2, 1fr);
+			grid-gap: 30px;
+			margin-bottom: 50px;
+		}
+	}
+
+	.project__info--bold {
+		font-weight: 500;
+	}
+
+	.project__url,
+	.project__review {
+		font-size: 14px;
+	}
+
+	.project__author {
+		margin-left: 0.5rem;
+	}
+
+	.project__name {
+		font-weight: 500;
+	}
+
+	.project__background {
+		width: 100%;
+		position: relative;
+		overflow: hidden;
+		border-radius: 6px;
+		box-shadow: 0 36px 64px 0 rgba(0, 0, 0, 0.2);
+		object-fit: cover;
+	}
+
+	.project__content {
+		text-align: justify;
+		font-size: 18px;
+	}
+
+	.project__client,
+	.project__prof {
+		font-weight: 500;
+	}
+
+	.project__prof {
+		font-size: 14px;
+		color: #7f7f7f;
+	}
+
+	.project__about--wrapper:nth-of-type(2) {
+		margin: 1rem 0;
+	}
+`;
 
 const ProjectDetails = props => {
 	const { project } = props;
@@ -20,22 +83,42 @@ const ProjectDetails = props => {
 				<StyledProjectDetails className="sites__hero">
 					<div className="sites__container">
 						<div className="container project__container">
-							<h1 className="section__title project__title">{project.title}</h1>
+							<h1 className="section__title project__title">
+								{project.projectName}
+							</h1>
 							<div className="sites__wrapper project__wrapper">
-								<div className="project__info">
-									<img src={project.authorAvatar} alt="author avatar" />
-									<div className="project__author">
-										<p className="project__name">{project.authorName}</p>
-										<p className="project__date">
-											{moment(project.createdAt.toDate()).calendar()}
-										</p>
+								<div className="project__wrapper--grid">
+									<img
+										className="project__background"
+										src={project.projectBackground}
+										alt="project background"
+									/>
+									<div className="project__about">
+										<div className="project__about--wrapper">
+											<p className="project__client">{project.projectClient}</p>
+											<p className="project__prof">Client</p>
+										</div>
+										<div className="project__about--wrapper">
+											<p className="project__info--bold">Website:</p>
+											<a
+												href={project.projectURL}
+												className="project__url default-link"
+												target="_blank"
+												rel="noopener noreferrer"
+											>
+												{project.projectURL}
+											</a>
+										</div>
+										<div className="project__about--wrapper">
+											<p className="project__info--bold">Review:</p>
+											<q className="project__review">
+												{project.projectReview
+													? project.projectReview
+													: 'No review'}
+											</q>
+										</div>
 									</div>
 								</div>
-								<img
-									className="project__background"
-									src={project.projectBackground}
-									alt="project background"
-								/>
 								<p className="project__content">{project.content}</p>
 							</div>
 						</div>

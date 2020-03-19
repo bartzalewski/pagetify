@@ -6,17 +6,25 @@ import { Redirect } from 'react-router-dom';
 import { compose } from 'redux';
 import { storage } from '../../config/fbConfig';
 import NavbarOtherSites from '../Navbar/NavbarOtherSites';
+import TextareaMarkdown from 'textarea-markdown';
 
-const StyledCreateProject = styled.section``;
+const StyledCreateProject = styled.section`
+	.create-project__wrapper {
+		width: 100%;
+	}
+`;
 
 class CreatePost extends Component {
 	constructor(props) {
 		super(props);
 		this.state = {
 			projectName: '',
+			projectBackground: null,
+			projectClient: '',
+			projectCategory: '',
+			projectReview: '',
 			content: '',
 			url: '',
-			projectBackground: null,
 			projectURL: '',
 			progress: 0
 		};
@@ -87,12 +95,18 @@ class CreatePost extends Component {
 			return downloadURL;
 		});
 	};
+	componentDidMount = () => {
+		let textarea = document.querySelector('textarea');
+		new TextareaMarkdown(textarea);
+	};
 	render() {
 		const { auth } = this.props;
 		const uploadPostButton = document.getElementById('upload-post-btn');
 		if (!auth.uid) return <Redirect to="/" />;
 		if (
 			this.state.projectName !== '' &&
+			this.state.projectClient !== '' &&
+			this.state.projectCategory !== '' &&
 			this.state.projectBackground !== null &&
 			this.state.url !== '' &&
 			this.state.progress === 100 &&
@@ -110,7 +124,7 @@ class CreatePost extends Component {
 						<div className="container">
 							<h1 className="section__title">Create new project</h1>
 							<form
-								className="sites__wrapper create-post__wrapper"
+								className="sites__wrapper create-project__wrapper"
 								onSubmit={this.handleSubmit}
 							>
 								<div className="input-field--flex">
@@ -147,13 +161,56 @@ class CreatePost extends Component {
 										/>
 									</div>
 								</div>
+								<div className="input-field--flex">
+									<div className="input-field">
+										<label htmlFor="projectClient" />
+										<input
+											type="text"
+											placeholder="Client name..."
+											id="projectClient"
+											onChange={this.handleURL}
+											autoComplete="off"
+										/>
+									</div>
+									<div className="input-field">
+										<label htmlFor="projectCategory" />
+										<input
+											type="text"
+											placeholder="Project category..."
+											id="projectCategory"
+											onChange={this.handleChange}
+											autoComplete="off"
+										/>
+									</div>
+								</div>
+								<div className="input-field">
+									<label htmlFor="projectReview" />
+									<input
+										type="text"
+										placeholder="Project review..."
+										id="projectReview"
+										onChange={this.handleChange}
+										autoComplete="off"
+									/>
+								</div>
 								<div className="input-field">
 									<label htmlFor="content" />
 									<textarea
 										placeholder="Type your project content here..."
 										id="content"
+										data-preview="#preview"
 										onChange={this.handleChange}
 									/>
+									<p
+										style={{
+											margin: '1rem 0',
+											fontWeight: 500,
+											fontSize: '16px'
+										}}
+									>
+										Preview:
+									</p>
+									<div id="preview"></div>
 								</div>
 								<button
 									id="upload-post-btn"

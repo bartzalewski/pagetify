@@ -28,8 +28,13 @@ export default function PostList({ posts }) {
 			{posts &&
 				posts.map(post => {
 					return (
-						<Link to={'/post/' + post.id} className="post__item">
-							<PostSummary post={post} key={post.id} />
+						<Link
+							to={'/post/' + post.id}
+							className="post__item"
+							key={post.id}
+							title={post.title}
+						>
+							<PostSummary post={post} />
 						</Link>
 					);
 				})}
