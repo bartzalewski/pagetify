@@ -3,7 +3,11 @@ import styled from 'styled-components';
 import NavbarOtherSites from '../components/Navbar/NavbarOtherSites';
 import ContactForm from '../components/Form/ContactForm';
 
-const StyledContact = styled.section``;
+const StyledContact = styled.section`
+	.contact__desc {
+		margin-bottom: 50px;
+	}
+`;
 
 export default function Contact() {
 	useEffect(() => {
@@ -17,6 +21,18 @@ export default function Contact() {
 					<div className="container">
 						<h1 className="section__title">Contact</h1>
 						<div className="sites__wrapper form__container">
+							<p className="sites__desc contact__desc">
+								Get in touch with us by using the following form or via{' '}
+								<a
+									href="https://m.me/pagetify"
+									target="_blank"
+									rel="noopener noreferrer"
+									className="default-link"
+								>
+									Messenger
+								</a>
+								!
+							</p>
 							<ContactForm></ContactForm>
 						</div>
 					</div>

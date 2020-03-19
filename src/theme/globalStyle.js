@@ -373,11 +373,15 @@ const GlobalStyle = createGlobalStyle`
     &__container {
       width: 100%;
     }
-
+    
     &__wrapper {
       display: flex;
       flex-direction: column;
       width: 100%;
+      padding: 50px;
+      border-radius: 5px;
+      /* box-shadow: 0 9px 32px 0 rgba(0, 0, 0, 0.15); */
+      box-shadow: 0 2px 10px rgba(50,50,93,0.1);
     }
 
     &__btn {
@@ -414,7 +418,7 @@ const GlobalStyle = createGlobalStyle`
 		font-size: 16px;
 		outline: none;
 		transition: 0.2s ease-in-out;
-    /* background: #FBFBFB; */
+    background: #FBFBFB;
 
 		&:focus {
 			border-bottom: 1px solid #49a9e0;
@@ -468,6 +472,32 @@ const GlobalStyle = createGlobalStyle`
 	}
 
   /* INPUTS END */
+
+  /* LINKS HOVER */
+
+  .default-link {
+		margin: 2.5px 0;
+		position: relative;
+		width: fit-content;
+
+		&::before {
+			content: '';
+			height: 1px;
+			width: 100%;
+			background: #293347;
+			transform: scaleX(0);
+			position: absolute;
+			bottom: 0;
+			transition: 0.2s ease-in-out;
+		}
+
+		&:hover::before {
+			transition: 0.2s ease-in-out;
+			transform: scaleX(1);
+		}
+	}
+
+  /* LINKS HOVER END */
 
   @media (max-width: 1200px) {
     .container {
@@ -592,6 +622,17 @@ const GlobalStyle = createGlobalStyle`
 
       &__wrapper {
         grid-template-columns: repeat(1,1fr) !important;
+
+        div {
+          &:nth-of-type(4),
+          &:nth-of-type(5),
+          &:nth-of-type(6),
+          &:nth-of-type(7),
+          &:nth-of-type(8),
+          &:nth-of-type(9) {
+            display: none !important;
+          }
+        }
       }
 
       &__client {
@@ -622,7 +663,17 @@ const GlobalStyle = createGlobalStyle`
       &__wrapper {
         grid-template-columns: repeat(1,1fr) !important;
         grid-gap: 10px !important;
+
+        a {
+          &:nth-of-type(4),
+          &:nth-of-type(5),
+          &:nth-of-type(6) {
+            display: none !important;
+          }
+        }
       }
+
+      
 
       &__title {
         font-size: 20px !important;
@@ -685,6 +736,22 @@ const GlobalStyle = createGlobalStyle`
 
     input, textarea {
       font-size: 14px !important;
+    }
+
+    .form__wrapper {
+      padding: 25px !important;
+    }
+
+    .input-field {
+      width: 100% !important;
+
+      &--flex {
+        flex-direction: column !important;
+      }
+
+      &--right {
+        margin-top: 1rem;
+      }
     }
   }
 

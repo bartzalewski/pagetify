@@ -87,11 +87,7 @@ class Navbar extends Component {
 					id="sidenav"
 					className={this.state.condition ? 'sidenav sidenav--open' : 'sidenav'}
 				>
-					<a
-						href="#!"
-						activeClassName="active"
-						className="navbar__services sidenav__services"
-					>
+					<a href="#!" className="navbar__services sidenav__services">
 						Services
 					</a>
 					<div className="sidenav__more">

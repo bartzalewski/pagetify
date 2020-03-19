@@ -4,28 +4,6 @@ import NavbarOtherSites from '../components/Navbar/NavbarOtherSites';
 import { Link } from 'react-router-dom';
 
 const StyledPrivacyPolicy = styled.section`
-	a {
-		margin: 2.5px 0;
-		position: relative;
-		width: fit-content;
-
-		&::before {
-			content: '';
-			height: 1px;
-			width: 100%;
-			background: #293347;
-			transform: scaleX(0);
-			position: absolute;
-			bottom: 0;
-			transition: 0.2s ease-in-out;
-		}
-
-		&:hover::before {
-			transition: 0.2s ease-in-out;
-			transform: scaleX(1);
-		}
-	}
-
 	p {
 		margin-top: 1rem;
 	}
@@ -53,17 +31,22 @@ export default function PrivacyPolicy() {
 						<div className="sites__wrapper privacy-policy__wrapper">
 							<p>
 								At Pagetify - Websites, online shops, graphics, accessible from{' '}
-								<Link to="/">https://pagetify.com</Link>, one of our main
-								priorities is the privacy of our visitors. This Privacy Policy
-								document contains types of information that is collected and
-								recorded by Pagetify - Websites, online shops, graphics and how
-								we use it.
+								<Link to="/" className="default-link">
+									https://pagetify.com
+								</Link>
+								, one of our main priorities is the privacy of our visitors.
+								This Privacy Policy document contains types of information that
+								is collected and recorded by Pagetify - Websites, online shops,
+								graphics and how we use it.
 							</p>
 
 							<p>
 								If you have additional questions or require more information
 								about our Privacy Policy, do not hesitate to{' '}
-								<Link to="/contact">contact us</Link>.
+								<Link to="/contact" className="default-link">
+									contact us
+								</Link>
+								.
 							</p>
 
 							<p>
