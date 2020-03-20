@@ -753,6 +753,14 @@ const GlobalStyle = createGlobalStyle`
         margin-top: 1rem;
       }
     }
+
+    .project__wrapper, .about__wrapper {
+      grid-template-columns: repeat(1,1fr) !important;
+    }
+
+    .about__wrapper {
+      width: 100%;
+    }
   }
 
   @keyframes float {

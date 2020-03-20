@@ -4,6 +4,15 @@ import SignedIn from './components/layout/SignedIn';
 import SignedOut from './components/layout/SignedOut';
 import { BrowserRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fab } from '@fortawesome/free-brands-svg-icons';
+import {
+	faGlobe,
+	faPhone,
+	faEnvelope
+} from '@fortawesome/free-solid-svg-icons';
+
+library.add(fab, faGlobe, faPhone, faEnvelope);
 
 function App(props) {
 	const { auth, profile } = props;

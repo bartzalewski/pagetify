@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom';
 const StyledProjectList = styled.div`
 	.project__item {
 		transition: 0.2s ease-in-out;
+		box-shadow: 0 2px 10px rgba(50, 50, 93, 0.1);
 
 		.project__name {
 			transition: 0.2s ease-in-out;

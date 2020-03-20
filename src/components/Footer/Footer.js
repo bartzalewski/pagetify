@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import logo from '../../images/logo-black.png';
 import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const StyledFooter = styled.footer`
 	display: flex;
@@ -73,6 +74,25 @@ const StyledFooter = styled.footer`
 			font-size: 14px;
 			font-weight: 500;
 		}
+
+		&__link {
+			font-size: 24px;
+
+			&:nth-of-type(2) {
+				margin: 0 1rem;
+			}
+
+			&:hover {
+				.footer__icon {
+					color: #49a9e0;
+					transition: 0.2s ease-in-out;
+				}
+			}
+		}
+
+		&__icon {
+			transition: 0.2s ease-in-out;
+		}
 	}
 `;
 
@@ -92,9 +112,15 @@ export default function Footer() {
 								>
 									<img loading="lazy" src={logo} alt="pagetify logo" />
 								</Link>
-								<a href="tel:+48531797647">✆ +48 531 797 647</a>
-								<a href="tel:+48882193371">✆ +48 882 193 371</a>
-								<a href="mailto:mail@pagetify.com">✉ mail@pagetify.com</a>
+								<a href="tel:+48531797647">
+									<FontAwesomeIcon icon="phone" /> +48 531 797 647
+								</a>
+								<a href="tel:+48882193371">
+									<FontAwesomeIcon icon="phone" /> +48 882 193 371
+								</a>
+								<a href="mailto:mail@pagetify.com">
+									<FontAwesomeIcon icon="envelope" /> mail@pagetify.com
+								</a>
 							</div>
 						</div>
 						<div className="footer__box">
@@ -117,13 +143,43 @@ export default function Footer() {
 							</div>
 						</div>
 						<div className="footer__box">
-							<div className="footer__title">Newest posts</div>
-							<div className="footer__content">
-								<p>
-									Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-									Maxime, aspernatur?
-								</p>
-							</div>
+							<div className="footer__title">Social media</div>
+							<a
+								href="https://www.facebook.com/pagetify/"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="footer__link"
+								title="Facebook"
+							>
+								<FontAwesomeIcon
+									icon={['fab', 'facebook']}
+									className="footer__icon"
+								/>
+							</a>
+							<a
+								href="https://twitter.com/pagetify"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="footer__link"
+								title="Twitter"
+							>
+								<FontAwesomeIcon
+									icon={['fab', 'twitter']}
+									className="footer__icon"
+								/>
+							</a>
+							<a
+								href="https://www.linkedin.com/company/pagetify"
+								target="_blank"
+								rel="noopener noreferrer"
+								className="footer__link"
+								title="LinkedIn"
+							>
+								<FontAwesomeIcon
+									icon={['fab', 'linkedin']}
+									className="footer__icon"
+								/>
+							</a>
 						</div>
 					</div>
 					<hr className="footer__line" />

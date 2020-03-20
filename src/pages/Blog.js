@@ -58,6 +58,20 @@ const StyledBlog = styled.section`
 		font-size: 14px;
 		color: #7f7f7f;
 	}
+
+	@media screen and (max-width: 900px) {
+		.blog__wrapper {
+			grid-gap: 50px !important;
+
+			a {
+				&:nth-of-type(4),
+				&:nth-of-type(5),
+				&:nth-of-type(6) {
+					display: block !important;
+				}
+			}
+		}
+	}
 `;
 
 class Blog extends Component {
