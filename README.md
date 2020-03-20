@@ -12,6 +12,9 @@ Link to the website: https://pagetify.com/
 - Cloud Firestore
 - styled-components
 - Heroku CLI
+- React Messenger Customer Chat
+- Textarea Markdown
+- Font Awesome
 - RWD
 - SCSS/SASS
 - Composer
