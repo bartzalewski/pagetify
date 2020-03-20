@@ -55,6 +55,16 @@ const StyledBlog = styled.section`
 			&--flex {
 				margin-left: 0.5rem;
 			}
+
+			&--hide-on-component {
+				display: none;
+			}
+
+			&--hide-on-site {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
 		}
 
 		&__name,
@@ -72,11 +82,25 @@ const StyledBlog = styled.section`
 			font-weight: 600;
 			margin: 1rem 0;
 			text-align: justify;
+
+			&--hide-on-component {
+				display: none;
+			}
 		}
 
 		&__desc {
 			text-align: justify;
 			overflow: hidden;
+		}
+
+		&__background {
+			display: none;
+		}
+
+		&__overlay {
+			&--wrapper {
+				display: none;
+			}
 		}
 	}
 

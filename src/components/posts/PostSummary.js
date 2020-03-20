@@ -9,15 +9,41 @@ export default function PostSummary({ post }) {
 		<StyledPostSummary>
 			<div className="blog__box">
 				<div className="blog__author">
-					<img src={post.authorAvatar} alt="bart zalewski" />
-					<div className="blog__author--flex">
-						<p className="blog__name">{post.authorName}</p>
-						<p className="blog__date">
-							{moment(post.createdAt.toDate()).calendar()}
-						</p>
+					<div className="blog__title blog__title--hide-on-component">
+						{post.title}
+					</div>
+					<div className="blog__author--hide-on-component">
+						<img src={post.authorAvatar} alt="author avatar" />
+						<div className="blog__author--flex">
+							<p className="blog__name">{post.authorName}</p>
+							<p className="blog__date">
+								{moment(post.createdAt.toDate()).calendar()}
+							</p>
+						</div>
+					</div>
+					<div className="blog__overlay--wrapper">
+						<img
+							className="blog__background"
+							src={post.postBackground}
+							alt="post background"
+						/>
+						<div className="blog__overlay">
+							<div className="blog__arrow">→</div>
+						</div>
+					</div>
+					<div className="blog__author--hide-on-site">
+						<img src={post.authorAvatar} alt="author avatar" />
+						<div className="blog__author--flex">
+							<p className="blog__name">{post.authorName}</p>
+							<p className="blog__date">
+								{moment(post.createdAt.toDate()).calendar()}
+							</p>
+						</div>
 					</div>
 				</div>
-				<div className="blog__title">{post.title}</div>
+				<div className="blog__title blog__title--hide-on-site">
+					{post.title}
+				</div>
 				<p className="blog__desc">{post.content}</p>
 			</div>
 		</StyledPostSummary>

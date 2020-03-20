@@ -6,6 +6,7 @@ import { Redirect } from 'react-router-dom';
 import { compose } from 'redux';
 import { storage } from '../../config/fbConfig';
 import NavbarOtherSites from '../Navbar/NavbarOtherSites';
+import TextareaMarkdown from 'textarea-markdown';
 
 const StyledCreatePost = styled.section`
 	#title,
@@ -162,6 +163,10 @@ class CreatePost extends Component {
 			return downloadURL;
 		});
 	};
+	componentDidMount = () => {
+		let textarea = document.querySelector('textarea');
+		new TextareaMarkdown(textarea);
+	};
 	render() {
 		const { auth } = this.props;
 		const uploadPostButton = document.getElementById('upload-post-btn');
@@ -217,8 +222,19 @@ class CreatePost extends Component {
 									<textarea
 										placeholder="Type your post content here..."
 										id="content"
+										data-preview="#preview"
 										onChange={this.handleChange}
 									/>
+									<p
+										style={{
+											margin: '1rem 0',
+											fontWeight: 500,
+											fontSize: '16px'
+										}}
+									>
+										Preview:
+									</p>
+									<div id="preview"></div>
 								</div>
 								<button
 									id="upload-post-btn"

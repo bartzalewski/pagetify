@@ -18,7 +18,46 @@ const StyledPostList = styled.div`
 				color: #49a9e0;
 				transition: 0.2s ease-in-out;
 			}
+			.blog__overlay {
+				opacity: 1;
+			}
 		}
+	}
+
+	.blog__overlay--wrapper {
+		position: relative;
+		width: 100%;
+		height: 225px;
+		overflow: hidden;
+		border-radius: 6px;
+		box-shadow: 0 36px 64px 0 rgba(0, 0, 0, 0.2);
+		object-fit: cover;
+		margin: 1rem 0;
+	}
+
+	.blog__overlay {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		height: 100%;
+		width: 100%;
+		opacity: 0;
+		transition: 0.2s ease-in-out;
+		background-color: #49a9e0;
+	}
+
+	.blog__arrow {
+		color: white;
+		font-size: 20px;
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		-webkit-transform: translate(-50%, -50%);
+		-ms-transform: translate(-50%, -50%);
+		transform: translate(-50%, -50%);
+		text-align: center;
 	}
 `;
 
