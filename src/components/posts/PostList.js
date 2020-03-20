@@ -45,12 +45,12 @@ const StyledPostList = styled.div`
 		width: 100%;
 		opacity: 0;
 		transition: 0.2s ease-in-out;
-		background-color: #49a9e0;
+		background-image: linear-gradient(to right, #36d1dc, #5b86e5);
 	}
 
 	.blog__arrow {
 		color: white;
-		font-size: 20px;
+		font-size: 80px;
 		position: absolute;
 		top: 50%;
 		left: 50%;
