@@ -1,6 +1,10 @@
 import { createGlobalStyle } from 'styled-components';
 import tickDownPrimary from '../images/tick-down-primary.svg';
 import tickDown from '../images/tick-down.svg';
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+
+AOS.init();
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');

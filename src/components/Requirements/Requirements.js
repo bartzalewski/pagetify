@@ -69,13 +69,30 @@ export default function Requirements() {
 		<StyledRequirements>
 			<div className="requirements">
 				<div className="container">
-					<h1 className="section__title">Tell us your requirements</h1>
-					<p className="requirements__txt">
+					<h1
+						data-aos="fade-up"
+						data-aos-once="true"
+						className="section__title"
+					>
+						Tell us your requirements
+					</h1>
+					<p
+						data-aos="fade-up"
+						data-aos-once="true"
+						data-aos-delay="100"
+						className="requirements__txt"
+					>
 						Complete a very simple quick quotation form. Thanks to this, we will
 						get to know your requirements and select something fully adequate to
 						your needs.
 					</p>
-					<Link to="/price" className="requirements__btn">
+					<Link
+						data-aos="fade-up"
+						data-aos-once="true"
+						data-aos-delay="200"
+						to="/price"
+						className="requirements__btn"
+					>
 						<span className="requirements__btn--txt">Ask for price</span>
 						<i className="requirements__btn--tick"></i>
 					</Link>
