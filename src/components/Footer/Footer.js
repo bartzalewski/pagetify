@@ -118,9 +118,6 @@ export default function Footer() {
 								<a href="tel:+48531797647">
 									<FontAwesomeIcon icon="phone" /> +48 531 797 647
 								</a>
-								<a href="tel:+48882193371">
-									<FontAwesomeIcon icon="phone" /> +48 882 193 371
-								</a>
 								<a href="mailto:mail@pagetify.com">
 									<FontAwesomeIcon icon="envelope" /> mail@pagetify.com
 								</a>

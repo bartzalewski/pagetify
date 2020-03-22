@@ -146,7 +146,7 @@ const GlobalStyle = createGlobalStyle`
   .navbar {
     display: flex;
     justify-content: center;
-    width: 100vw;
+    width: 100%;
     height: 80px;
   }
 
@@ -626,13 +626,15 @@ const GlobalStyle = createGlobalStyle`
 		margin: 2.5px 0;
 		position: relative;
 		width: fit-content;
+    transition: 0.2s ease-in-out;
+    font-weight: 500;
 
 		&::before {
 			content: '';
 			height: 1px;
 			width: 100%;
 			background: #293347;
-			transform: scaleX(0);
+			transform: scaleX(1);
 			position: absolute;
 			bottom: 0;
 			transition: 0.2s ease-in-out;
@@ -640,8 +642,13 @@ const GlobalStyle = createGlobalStyle`
 
 		&:hover::before {
 			transition: 0.2s ease-in-out;
-			transform: scaleX(1);
-		}
+			transform: scaleX(0);
+    }
+    
+    &:hover {
+      color: #49A9E0;
+      transition: 0.2s ease-in-out;
+    }
 	}
 
   /* LINKS HOVER END */
