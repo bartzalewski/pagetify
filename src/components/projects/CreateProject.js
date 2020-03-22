@@ -142,7 +142,7 @@ class CreatePost extends Component {
 										<label htmlFor="projectURL" />
 										<input
 											type="text"
-											placeholder="URL here..."
+											placeholder="URL here... (https://)"
 											id="projectURL"
 											onChange={this.handleChange}
 											autoComplete="off"
@@ -176,7 +176,7 @@ class CreatePost extends Component {
 										<label htmlFor="projectCategory" />
 										<input
 											type="text"
-											placeholder="Project category..."
+											placeholder="Project category... ex.(Website, Online store)"
 											id="projectCategory"
 											onChange={this.handleChange}
 											autoComplete="off"

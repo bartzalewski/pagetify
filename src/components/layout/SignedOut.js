@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Home from '../../pages/Home';
 import Projects from '../../pages/Projects';
@@ -18,31 +18,31 @@ import Login from '../../pages/Login';
 import PostDetails from '../posts/PostDetails';
 import ProjectDetails from '../projects/ProjectDetails';
 
-export default class SignedOut extends Component {
-	render() {
-		return (
-			<>
-				<Switch>
-					<Route exact path="/" component={Home} />
-					<Route path="/services" component={Websites} />
-					<Route path="/websites" component={Websites} />
-					<Route path="/stores" component={Stores} />
-					<Route path="/graphics" component={Graphics} />
-					<Route path="/projects" component={Projects} />
-					<Route path="/about" component={About} />
-					<Route path="/blog" component={BlogSite} />
-					<Route path="/contact" component={Contact} />
-					<Route path="/privacy-policy" component={PrivacyPolicy} />
-					<Route path="/price" component={Price} />
-					<Route path="/post/:id" component={PostDetails} />
-					<Route path="/project/:id" component={ProjectDetails} />
-					<Route path="/login" component={Login} />
-					<Route component={Error} />
-				</Switch>
-				<Blog></Blog>
-				<Requirements></Requirements>
-				<Footer></Footer>
-			</>
-		);
-	}
-}
+const SignedOut = () => {
+	return (
+		<>
+			<Switch>
+				<Route exact path="/" component={Home} />
+				<Route path="/services" component={Websites} />
+				<Route path="/websites" component={Websites} />
+				<Route path="/stores" component={Stores} />
+				<Route path="/graphics" component={Graphics} />
+				<Route path="/projects" component={Projects} />
+				<Route path="/about" component={About} />
+				<Route path="/blog" component={BlogSite} />
+				<Route path="/contact" component={Contact} />
+				<Route path="/privacy-policy" component={PrivacyPolicy} />
+				<Route path="/price" component={Price} />
+				<Route path="/post/:id" component={PostDetails} />
+				<Route path="/project/:id" component={ProjectDetails} />
+				<Route path="/login" component={Login} />
+				<Route component={Error} />
+			</Switch>
+			<Blog></Blog>
+			<Requirements></Requirements>
+			<Footer></Footer>
+		</>
+	);
+};
+
+export default SignedOut;

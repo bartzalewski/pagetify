@@ -25,7 +25,6 @@ const GlobalStyle = createGlobalStyle`
     font-family: 'Montserrat';
     color: #293347;
     overflow-x: hidden;
-    width: 100vw;
   }
 
   body::-webkit-scrollbar {
@@ -49,6 +48,11 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     margin: 0;
     padding: 0;
+  }
+
+  ::selection {
+    background: #49A9E0;
+    color: white;
   }
 
   ul {
@@ -111,6 +115,11 @@ const GlobalStyle = createGlobalStyle`
 	.section__title {
 		font-size: 36px;
 	}
+
+  .section__subtitle {
+    font-size: 24px;
+    font-weight: 500;
+  }
 
   .navbar__services {
     position: relative;
@@ -520,6 +529,10 @@ const GlobalStyle = createGlobalStyle`
     .section__title {
       text-align: center !important;
       font-size: 24px;
+    }
+
+    .section__subtitle {
+      font-size: 20px;
     }
 
     .navbar {
