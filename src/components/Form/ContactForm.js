@@ -1,9 +1,16 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const StyledContactForm = styled.div`
+	width: 50%;
+
 	.input-field {
 		width: 49.25%;
+	}
+
+	.input-field:not(.input-field__textarea) {
+		grid-template-columns: 10% 90%;
 	}
 
 	.input-field__textarea {
@@ -65,48 +72,88 @@ class Form extends Component {
 		e.preventDefault();
 	};
 
+	componentDidMount = () => {
+		const inputs = document.querySelectorAll('.input-field__input');
+
+		function addcl() {
+			let parent = this.parentNode.parentNode.parentNode;
+			parent.classList.add('focus');
+		}
+
+		function remcl() {
+			let parent = this.parentNode.parentNode.parentNode;
+			if (this.value === '') {
+				parent.classList.remove('focus');
+			}
+		}
+
+		inputs.forEach(input => {
+			input.addEventListener('focus', addcl);
+			input.addEventListener('blur', remcl);
+		});
+	};
+
 	render() {
 		const { name, email, message, emailStatus } = this.state;
+
 		return (
 			<StyledContactForm className="form__wrapper" onSubmit={this.submitForm}>
 				{emailStatus ? emailStatus : null}
 				<form className="form--flex">
 					<div className="input-field--flex">
 						<div className="input-field">
-							<label>
-								<input
-									type="text"
-									value={name}
-									onChange={this.handleChange('name')}
-									placeholder="Your name *"
-									required
-								/>
-							</label>
+							<div className="input-field__icon">
+								<FontAwesomeIcon icon="user" className="input-field__fa" />
+							</div>
+							<div className="input-field__wrapper">
+								<span>Your name *</span>
+								<label>
+									<input
+										type="text"
+										value={name}
+										onChange={this.handleChange('name')}
+										required
+										className="input-field__input"
+									/>
+								</label>
+							</div>
 						</div>
 						<div className="input-field input-field--right">
+							<div className="input-field__icon">
+								<FontAwesomeIcon icon="envelope" className="input-field__fa" />
+							</div>
+							<div className="input-field__wrapper">
+								<span>Your email *</span>
+								<label>
+									<input
+										type="email"
+										value={email}
+										onChange={this.handleChange('email')}
+										required
+										className="input-field__input"
+									/>
+								</label>
+							</div>
+						</div>
+					</div>
+					<div className="input-field input-field__textarea">
+						<div className="input-field__icon">
+							<FontAwesomeIcon icon="comments" className="input-field__fa" />
+						</div>
+						<div className="input-field__wrapper">
+							<span>Message *</span>
 							<label>
-								<input
-									type="email"
-									value={email}
-									onChange={this.handleChange('email')}
-									placeholder="Your email *"
+								<textarea
+									type="text"
+									value={message}
+									onChange={this.handleChange('message')}
 									required
-								/>
+									className="input-field__input"
+								></textarea>
 							</label>
 						</div>
 					</div>
-					<div className="input-field input-field--mt1 input-field__textarea">
-						<label>
-							<textarea
-								type="text"
-								value={message}
-								onChange={this.handleChange('message')}
-								placeholder="Message *"
-								required
-							></textarea>
-						</label>
-					</div>
-					<div className="input-field input-field__checkbox">
+					<div className="input-field__checkbox">
 						<input type="checkbox" id="accept" required name="accept" />
 						<label htmlFor="accept">
 							I accept the information contained in the{' '}
@@ -121,7 +168,11 @@ class Form extends Component {
 							. *
 						</label>
 					</div>
-					<input type="submit" className="form__btn" value="Submit" />
+					<input
+						type="submit"
+						className="form__btn btn--gradient"
+						value="Submit"
+					/>
 				</form>
 			</StyledContactForm>
 		);

@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import tickrightpurple from '../../images/tick-right-purple.svg';
-import pyramiddown from '../../images/pyramiddown.svg';
+import tickDownPurple from '../../images/tick-down-purple.svg';
+import pyramidDown from '../../images/pyramiddown.svg';
 import { Link } from 'react-router-dom';
 
 const StyledRequirements = styled.section`
@@ -33,7 +33,6 @@ const StyledRequirements = styled.section`
 			&:hover {
 				transition: 0.2s ease-in-out;
 				box-shadow: 0 9px 32px 0 rgba(0, 0, 0, 0.15);
-				transform: scale(1.05);
 			}
 
 			&--txt {
@@ -47,8 +46,11 @@ const StyledRequirements = styled.section`
 			&--tick::after {
 				content: 'a';
 				color: transparent;
-				background: url(${tickrightpurple}) center no-repeat;
+				background: url(${tickDownPurple}) center no-repeat;
 				margin-left: 0.5rem;
+				background-size: contain;
+				transform: rotate(-90deg);
+				display: inline-block;
 			}
 		}
 	}
@@ -82,7 +84,7 @@ export default function Requirements() {
 			<img
 				loading="lazy"
 				className="decoration decoration__pyramiddown"
-				src={pyramiddown}
+				src={pyramidDown}
 				alt="decoration"
 			/>
 		</StyledRequirements>

@@ -11,10 +11,13 @@ const StyledFooter = styled.footer`
 	height: 80px;
 
 	.footer {
+		width: 100%;
+
 		&__wrapper {
 			display: grid;
 			grid-template-columns: repeat(4, 1fr);
 			grid-gap: 30px;
+			width: 100%;
 		}
 
 		&__box {

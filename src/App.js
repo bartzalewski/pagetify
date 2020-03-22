@@ -9,10 +9,12 @@ import { fab } from '@fortawesome/free-brands-svg-icons';
 import {
 	faGlobe,
 	faPhone,
-	faEnvelope
+	faEnvelope,
+	faUser,
+	faComments
 } from '@fortawesome/free-solid-svg-icons';
 
-library.add(fab, faGlobe, faPhone, faEnvelope);
+library.add(fab, faGlobe, faPhone, faEnvelope, faUser, faComments);
 
 function App(props) {
 	const { auth, profile } = props;

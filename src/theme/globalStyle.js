@@ -1,5 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
 import tickDownPrimary from '../images/tick-down-primary.svg';
+import tickDown from '../images/tick-down.svg';
 
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
@@ -121,6 +122,34 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 500;
   }
 
+  .btn--gradient {
+    font-weight: 600;
+    font-family: 'Montserrat';
+    border: none;
+    border-radius: 25px;
+    background-image: linear-gradient(to right, #36d1dc, #5b86e5, #36d1dc);
+    color: #fff;
+    padding: 10px 30px;
+    cursor: pointer;
+    font-size: inherit;
+    box-shadow: 0 2px 10px rgba(50, 50, 93, 0.1);
+    transition: 0.4s ease-in-out;
+    background-size: 200%;
+
+    &:hover {
+      transition: 0.4s ease-in-out;
+      box-shadow: 0 9px 32px 0 rgba(0, 0, 0, 0.15);
+      background-position: right;
+    }
+  }
+
+  .navbar {
+    display: flex;
+    justify-content: center;
+    width: 100vw;
+    height: 80px;
+  }
+
   .navbar__services {
     position: relative;
 
@@ -132,6 +161,56 @@ const GlobalStyle = createGlobalStyle`
       }
     }
   }
+
+  .navbar-container {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-direction: row;
+
+		.right {
+			display: flex;
+			font-weight: 500;
+			align-items: center;
+			justify-content: space-between;
+			width: 50%;
+
+			a {
+				color: #fff;
+				position: relative;
+			}
+
+			.navbar__link::before {
+				content: '';
+				height: 1px;
+				width: 100%;
+				background: #fff;
+				transform: scaleX(0);
+				position: absolute;
+				bottom: 0;
+				transition: 0.2s ease-in-out;
+			}
+
+			.navbar__link:hover::before {
+				transition: 0.2s ease-in-out;
+				transform: scaleX(1);
+			}
+
+			.navbar-price {
+				border: none;
+
+				li::after {
+					content: 'a';
+					color: transparent;
+					background: url(${tickDown}) center no-repeat;
+					margin-left: 0.5rem;
+					background-size: contain;
+					transform: rotate(-90deg);
+					display: inline-block;
+				}
+			}
+		}
+	}
 
   .navbar__more {
     width: 355px;
@@ -387,30 +466,12 @@ const GlobalStyle = createGlobalStyle`
       display: flex;
       flex-direction: column;
       width: 100%;
-      padding: 50px;
-      border-radius: 5px;
-      /* box-shadow: 0 9px 32px 0 rgba(0, 0, 0, 0.15); */
-      box-shadow: 0 2px 10px rgba(50,50,93,0.1);
     }
 
     &__btn {
-      border: none;
-      border-radius: 25px;
-      background-image: linear-gradient(to right, #36d1dc, #5b86e5);
-      color: #fff;
-      padding: 10px 30px;
-      font-weight: 600;
-      box-shadow: 0 2px 10px rgba(50, 50, 93, 0.1);
-      transition: 0.2s ease-in-out;
       cursor: pointer;
       width: fit-content;
       margin-top: 1rem;
-
-      &:hover {
-        transition: 0.2s ease-in-out;
-        box-shadow: 0 9px 32px 0 rgba(0, 0, 0, 0.15);
-        transform: scale(1.05);
-      }
     }
   }
 
@@ -421,16 +482,14 @@ const GlobalStyle = createGlobalStyle`
   input, textarea {
 		width: 100%;
 		border: none;
-		border-bottom: 1px solid #d9d9d9;
 		padding: 10px 15px;
 		font-family: 'Montserrat';
 		font-size: 16px;
 		outline: none;
 		transition: 0.2s ease-in-out;
-    background: #FBFBFB;
 
 		&:focus {
-			border-bottom: 1px solid #49a9e0;
+			border-color: #49a9e0;
 			transition: 0.2s ease-in-out;
 		}
 	}
@@ -463,13 +522,49 @@ const GlobalStyle = createGlobalStyle`
 
 	.input-field {
 		width: 100%;
+    position: relative;
+    display: grid;
+    grid-template-columns: 5% 95%;
+    margin: 25px 0;
+    padding: 5px 0;
+    border-bottom: 2px solid #d9d9d9;
 
 		&--flex {
 			display: flex;
 			justify-content: space-between;
 			align-items: center;
 			width: 100%;
-		}
+    }
+    
+    &__wrapper {
+      position: relative;
+      height: 45px;
+
+      span {
+        position: absolute;
+        left: 10px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #999;
+        font-size: 18px;
+        transition: .3s;
+        font-weight: 500;
+      }
+    }
+
+    &__input {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      border: none;
+      outline: none;
+      background: none;
+      padding: 0.5rem 0.7rem;
+      color: inherit;
+      font-weight: 500;
+    }
 
     &--m1 {
       margin: 1rem 0;
@@ -477,6 +572,49 @@ const GlobalStyle = createGlobalStyle`
 
     &--mt1 {
       margin-top: 1rem;
+    }
+
+    &__icon {
+      color: #d9d9d9;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    &__fa {
+      transition: .3s;
+    }
+
+    &::before, &::after {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      width: 0%;
+      height: 2px;
+      background-color: #49A9E0;
+      transition: .4s;
+    }
+
+    &::before {
+      right: 50%;
+    }
+
+    &::after{
+      left: 50%;
+    }
+
+    &.focus::before, &.focus::after {
+      width: 50%;
+    }
+
+    &.focus span {
+      top: -5px;
+      font-size: 14px;
+    }
+
+    &.focus &__icon &__fa {
+      color: #49A9E0;
+      transition: .3s;
     }
 	}
 
@@ -752,7 +890,11 @@ const GlobalStyle = createGlobalStyle`
     }
 
     .form__wrapper {
-      padding: 25px !important;
+      width: 100% !important;
+    }
+
+    .input-field:not(.input-field__textarea) {
+      grid-template-columns: 5% 95% !important;
     }
 
     .input-field {
@@ -771,8 +913,18 @@ const GlobalStyle = createGlobalStyle`
       grid-template-columns: repeat(1,1fr) !important;
     }
 
-    .about__wrapper {
-      width: 100%;
+    .about {
+      &__wrapper {
+        width: 100%;
+      }
+
+      &__dev {
+        font-size: 18px !important;
+      }
+
+      &__role {
+        font-size: 14px !important;
+      }
     }
   }
 

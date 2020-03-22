@@ -27,7 +27,6 @@ import standout2 from '../images/standout-2.svg';
 import standout3 from '../images/standout-3.svg';
 import standout4 from '../images/standout-4.svg';
 import tick from '../images/tick.svg';
-import tickright from '../images/tick-right.svg';
 import tickdown from '../images/tick-down.svg';
 
 const StyledHome = styled.section`
@@ -93,25 +92,29 @@ const StyledHomeHero = styled.header`
 				font-family: 'Montserrat';
 				border: none;
 				border-radius: 25px;
-				background-image: linear-gradient(to right, #36d1dc, #5b86e5);
+				background-image: linear-gradient(to right, #36d1dc, #5b86e5, #36d1dc);
 				color: #fff;
 				padding: 10px 30px;
 				cursor: pointer;
 				font-size: inherit;
 				box-shadow: 0 2px 10px rgba(50, 50, 93, 0.1);
-				transition: 0.2s ease-in-out;
+				transition: 0.4s ease-in-out;
+				background-size: 200%;
 
 				&:hover {
-					transition: 0.2s ease-in-out;
+					transition: 0.4s ease-in-out;
 					box-shadow: 0 9px 32px 0 rgba(0, 0, 0, 0.15);
-					transform: scale(1.05);
+					background-position: right;
 				}
 
 				&::after {
 					content: 'a';
 					color: transparent;
-					background: url(${tickright}) center no-repeat;
+					background: url(${tickdown}) center no-repeat;
 					margin-left: 0.5rem;
+					background-size: contain;
+					transform: rotate(-90deg);
+					display: inline-block;
 				}
 			}
 
