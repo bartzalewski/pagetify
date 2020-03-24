@@ -126,11 +126,7 @@ class Blog extends Component {
 				/>
 				<div className="blog">
 					<div className="container">
-						<h1
-							data-aos="fade-right"
-							data-aos-once="true"
-							className="section__title"
-						>
+						<h1 className="section__title">
 							Here are the latest posts from our blog
 						</h1>
 						<PostList posts={posts}></PostList>

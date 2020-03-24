@@ -68,7 +68,7 @@ export default function PostList({ posts }) {
 				posts.map(post => {
 					return (
 						<Link
-							data-aos="fade-right"
+							data-aos="fade-in"
 							data-aos-once="true"
 							to={'/post/' + post.id}
 							className="post__item"

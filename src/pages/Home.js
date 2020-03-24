@@ -287,6 +287,12 @@ const StyledHomeStandOut = styled.section`
 			flex-direction: column;
 		}
 
+		&--flex {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
 		&__box {
 			opacity: 0.9;
 			border-radius: 5px;
@@ -349,23 +355,16 @@ export default function Home(props) {
 								If you need a website that if fully responsive, optimized and
 								easy to use - we are here for you.
 							</p>
-							<div className="hero__cta">
-								<Link
-									data-aos="fade-right"
-									data-aos-once="true"
-									data-aos-delay="200"
-									to="/price"
-									className="hero__price"
-								>
+							<div
+								data-aos="fade-right"
+								data-aos-once="true"
+								data-aos-delay="200"
+								className="hero__cta"
+							>
+								<Link to="/price" className="hero__price">
 									Ask for price
 								</Link>
-								<a
-									data-aos="fade-right"
-									data-aos-once="true"
-									data-aos-delay="300"
-									href="#offer"
-									className="hero__check"
-								>
+								<a href="#offer" className="hero__check">
 									or check our offer
 								</a>
 							</div>
@@ -382,25 +381,16 @@ export default function Home(props) {
 			<StyledHomeOffer>
 				<div id="offer" className="offer">
 					<div className="container">
-						<h1
-							data-aos="fade-up"
-							data-aos-once="true"
-							className="section__title"
-						>
-							What can we offer for you?
-						</h1>
+						<h1 className="section__title">What can we offer for you?</h1>
 						<div className="offer__wrapper">
-							<Link
-								data-aos="fade-up"
-								data-aos-once="true"
-								to="/websites"
-								className="offer__box"
-							>
+							<Link to="/websites" className="offer__box">
 								<img
 									loading="lazy"
 									src={websites}
 									alt="websites"
 									className="offer__icon"
+									data-aos="fade-up"
+									data-aos-once="true"
 								/>
 								<p className="offer__title">Websites</p>
 								<p className="offer__desc">
@@ -408,18 +398,15 @@ export default function Home(props) {
 									thanks to the popular WordPress CMS.
 								</p>
 							</Link>
-							<Link
-								data-aos="fade-up"
-								data-aos-once="true"
-								data-aos-delay="100"
-								to="/stores"
-								className="offer__box"
-							>
+							<Link to="/stores" className="offer__box">
 								<img
 									loading="lazy"
 									src={stores}
 									alt="stores"
 									className="offer__icon"
+									data-aos="fade-up"
+									data-aos-once="true"
+									data-aos-delay="100"
 								/>
 								<p className="offer__title">Online stores</p>
 								<p className="offer__desc">
@@ -427,18 +414,15 @@ export default function Home(props) {
 									that is extremely easy to use.
 								</p>
 							</Link>
-							<Link
-								data-aos="fade-up"
-								data-aos-once="true"
-								data-aos-delay="200"
-								to="/graphics"
-								className="offer__box"
-							>
+							<Link to="/graphics" className="offer__box">
 								<img
 									loading="lazy"
 									src={graphic}
 									alt="graphic"
 									className="offer__icon"
+									data-aos="fade-up"
+									data-aos-once="true"
+									data-aos-delay="200"
 								/>
 								<p className="offer__title">Graphic design</p>
 								<p className="offer__desc">
@@ -446,17 +430,15 @@ export default function Home(props) {
 									entrust us with creating effective content for your website.{' '}
 								</p>
 							</Link>
-							<div
-								data-aos="fade-up"
-								data-aos-once="true"
-								data-aos-delay="300"
-								className="offer__box"
-							>
+							<div className="offer__box">
 								<img
 									loading="lazy"
 									src={delivery}
 									alt="delivery"
 									className="offer__icon"
+									data-aos="fade-up"
+									data-aos-once="true"
+									data-aos-delay="300"
 								/>
 								<p className="offer__title">Fast delivery</p>
 								<p className="offer__desc">
@@ -464,17 +446,15 @@ export default function Home(props) {
 									guarantee as fastest delivery as possible.{' '}
 								</p>
 							</div>
-							<div
-								data-aos="fade-up"
-								data-aos-once="true"
-								data-aos-delay="400"
-								className="offer__box"
-							>
+							<div className="offer__box">
 								<img
 									loading="lazy"
 									src={quality}
 									alt="quality"
 									className="offer__icon"
+									data-aos="fade-up"
+									data-aos-once="true"
+									data-aos-delay="400"
 								/>
 								<p className="offer__title">Highest quality</p>
 								<p className="offer__desc">
@@ -482,17 +462,15 @@ export default function Home(props) {
 									We always do our best.
 								</p>
 							</div>
-							<div
-								data-aos="fade-up"
-								data-aos-once="true"
-								data-aos-delay="500"
-								className="offer__box"
-							>
+							<div className="offer__box">
 								<img
 									loading="lazy"
 									src={wallet}
 									alt="wallet"
 									className="offer__icon"
+									data-aos="fade-up"
+									data-aos-once="true"
+									data-aos-delay="500"
 								/>
 								<p className="offer__title">Wallet-friendly</p>
 								<p className="offer__desc">
@@ -513,19 +491,11 @@ export default function Home(props) {
 				/>
 				<div className="reviews">
 					<div className="container">
-						<h1
-							data-aos="fade-right"
-							data-aos-once="true"
-							className="section__title"
-						>
+						<h1 className="section__title">
 							What do our customers say about us?
 						</h1>
 						<div className="reviews__wrapper">
-							<div
-								data-aos="fade-up"
-								data-aos-once="true"
-								className="reviews__box reviews__box--left"
-							>
+							<div className="reviews__box reviews__box--left">
 								<div className="reviews__client">
 									<img
 										loading="lazy"
@@ -541,12 +511,7 @@ export default function Home(props) {
 									we've just launched our 5th website!
 								</p>
 							</div>
-							<div
-								data-aos="fade-up"
-								data-aos-once="true"
-								data-aos-delay="100"
-								className="reviews__box reviews__box--center"
-							>
+							<div className="reviews__box reviews__box--center">
 								<div className="reviews__client">
 									<img
 										loading="lazy"
@@ -560,12 +525,7 @@ export default function Home(props) {
 									Pagetify was the best investment I ever made. Thank you!
 								</p>
 							</div>
-							<div
-								data-aos="fade-up"
-								data-aos-once="true"
-								data-aos-delay="200"
-								className="reviews__box reviews__box--right"
-							>
+							<div className="reviews__box reviews__box--right">
 								<div className="reviews__client">
 									<img
 										loading="lazy"
@@ -581,12 +541,7 @@ export default function Home(props) {
 									worth much more than I paid.
 								</p>
 							</div>
-							<div
-								data-aos="fade-up"
-								data-aos-once="true"
-								data-aos-delay="300"
-								className="reviews__box reviews__box--left"
-							>
+							<div className="reviews__box reviews__box--left">
 								<div className="reviews__client">
 									<img
 										loading="lazy"
@@ -601,12 +556,7 @@ export default function Home(props) {
 									from Pagetify. I am completely blown away.
 								</p>
 							</div>
-							<div
-								data-aos="fade-up"
-								data-aos-once="true"
-								data-aos-delay="400"
-								className="reviews__box reviews__box--center"
-							>
+							<div className="reviews__box reviews__box--center">
 								<div className="reviews__client">
 									<img
 										loading="lazy"
@@ -623,12 +573,7 @@ export default function Home(props) {
 									paid. I highly recommend them.
 								</p>
 							</div>
-							<div
-								data-aos="fade-up"
-								data-aos-once="true"
-								data-aos-delay="500"
-								className="reviews__box reviews__box--right"
-							>
+							<div className="reviews__box reviews__box--right">
 								<div className="reviews__client">
 									<img
 										loading="lazy"
@@ -646,12 +591,7 @@ export default function Home(props) {
 									you guys.
 								</p>
 							</div>
-							<div
-								data-aos="fade-up"
-								data-aos-once="true"
-								data-aos-delay="600"
-								className="reviews__box reviews__box--left"
-							>
+							<div className="reviews__box reviews__box--left">
 								<div className="reviews__client">
 									<img
 										loading="lazy"
@@ -666,12 +606,7 @@ export default function Home(props) {
 									am completely blown away. I will be recommending you guys.
 								</p>
 							</div>
-							<div
-								data-aos="fade-up"
-								data-aos-once="true"
-								data-aos-delay="700"
-								className="reviews__box reviews__box--center"
-							>
+							<div className="reviews__box reviews__box--center">
 								<div className="reviews__client">
 									<img
 										loading="lazy"
@@ -688,12 +623,7 @@ export default function Home(props) {
 									made. Thank you!
 								</p>
 							</div>
-							<div
-								data-aos="fade-up"
-								data-aos-once="true"
-								data-aos-delay="800"
-								className="reviews__box reviews__box--right"
-							>
+							<div className="reviews__box reviews__box--right">
 								<div className="reviews__client">
 									<img
 										loading="lazy"
@@ -720,19 +650,8 @@ export default function Home(props) {
 			<StyledHomeStandOut>
 				<div className="stand-out">
 					<div className="container">
-						<h1
-							data-aos="fade-down"
-							data-aos-once="true"
-							className="section__title"
-						>
-							How do we stand out?
-						</h1>
-						<p
-							data-aos="fade-down"
-							data-aos-once="true"
-							data-aos-delay="100"
-							className="stand-out__desc"
-						>
+						<h1 className="section__title">How do we stand out?</h1>
+						<p className="stand-out__desc">
 							We know that there are a lot of companies operating in our
 							industry on the market. However, several issues distinguish us
 							from others and make you entrust us with the image of your company
@@ -748,54 +667,63 @@ export default function Home(props) {
 								src={tick}
 								alt="decoration"
 							/>
-							<div
-								data-aos="fade-left"
-								data-aos-once="true"
-								className="stand-out__box stand-out__box--right"
-							>
-								<img loading="lazy" src={standout1} alt="standout" />
-								<p className="stand-out__txt">
-									We approach each order individually. We guarantee that we will
-									respond to your message within a maximum of 24 hours.
-								</p>
+							<div className="stand-out__box stand-out__box--right">
+								<div
+									className="stand-out--flex"
+									data-aos="fade-left"
+									data-aos-once="true"
+								>
+									<img loading="lazy" src={standout1} alt="standout" />
+									<p className="stand-out__txt">
+										We approach each order individually. We guarantee that we
+										will respond to your message within a maximum of 24 hours.
+									</p>
+								</div>
 							</div>
-							<div
-								data-aos="fade-right"
-								data-aos-once="true"
-								data-aos-delay="100"
-								className="stand-out__box stand-out__box--left"
-							>
-								<img loading="lazy" src={standout2} alt="standout" />
-								<p className="stand-out__txt">
-									We thoroughly analyze your requirements and propose solutions
-									ourselves, thanks to which each project is tailor made.
-								</p>
+							<div className="stand-out__box stand-out__box--left">
+								<div
+									className="stand-out--flex"
+									data-aos="fade-right"
+									data-aos-once="true"
+									data-aos-delay="100"
+								>
+									<img loading="lazy" src={standout2} alt="standout" />
+									<p className="stand-out__txt">
+										We thoroughly analyze your requirements and propose
+										solutions ourselves, thanks to which each project is tailor
+										made.
+									</p>
+								</div>
 							</div>
-							<div
-								data-aos="fade-left"
-								data-aos-once="true"
-								data-aos-delay="200"
-								className="stand-out__box stand-out__box--right"
-							>
-								<img loading="lazy" src={standout3} alt="standout" />
-								<p className="stand-out__txt">
-									We do not leave anyone alone after commissioning the project.
-									All you need to do is contact us and we'll advise you or help
-									you in every situation.
-								</p>
+							<div className="stand-out__box stand-out__box--right">
+								<div
+									className="stand-out--flex"
+									data-aos="fade-left"
+									data-aos-once="true"
+									data-aos-delay="200"
+								>
+									<img loading="lazy" src={standout3} alt="standout" />
+									<p className="stand-out__txt">
+										We do not leave anyone alone after commissioning the
+										project. All you need to do is contact us and we'll advise
+										you or help you in every situation.
+									</p>
+								</div>
 							</div>
-							<div
-								data-aos="fade-right"
-								data-aos-once="true"
-								data-aos-delay="300"
-								className="stand-out__box stand-out__box--left"
-							>
-								<img loading="lazy" src={standout4} alt="standout" />
-								<p className="stand-out__txt">
-									We do not leave anyone alone after commissioning the project.
-									All you need to do is contact us and we'll advise you or help
-									you in every situation.
-								</p>
+							<div className="stand-out__box stand-out__box--left">
+								<div
+									className="stand-out--flex"
+									data-aos="fade-right"
+									data-aos-once="true"
+									data-aos-delay="300"
+								>
+									<img loading="lazy" src={standout4} alt="standout" />
+									<p className="stand-out__txt">
+										We do not leave anyone alone after commissioning the
+										project. All you need to do is contact us and we'll advise
+										you or help you in every situation.
+									</p>
+								</div>
 							</div>
 						</div>
 					</div>
