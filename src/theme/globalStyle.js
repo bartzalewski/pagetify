@@ -21,7 +21,6 @@ const GlobalStyle = createGlobalStyle`
   */
 
   html {
-    scroll-behavior: smooth;
 	  scrollbar-color: #49A9E0 #f0f0f0;
 	  scrollbar-width: thin;
   }
@@ -390,6 +389,7 @@ const GlobalStyle = createGlobalStyle`
       width: 100%;
       height: fit-content;
       font-weight: 500;
+      color: #49a9e0;
     }
 
     &__more {
@@ -680,8 +680,8 @@ const GlobalStyle = createGlobalStyle`
       font-size: 24px;
     }
 
-    .section__subtitle {
-      font-size: 20px;
+    .section__subtitle, .video__title {
+      font-size: 20px !important;
     }
 
     .navbar {
@@ -935,6 +935,22 @@ const GlobalStyle = createGlobalStyle`
 
       &__role {
         font-size: 14px !important;
+      }
+    }
+
+    .video {
+
+      &__wrapper {
+        grid-template-columns: repeat(1, 1fr) !important;
+      }
+
+      &__desc {
+        font-size: 14px !important;
+
+        &--center {
+          font-size: 14px !important;
+          text-align: center;
+        }
       }
     }
   }
