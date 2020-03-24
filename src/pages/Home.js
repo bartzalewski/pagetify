@@ -670,7 +670,7 @@ export default function Home(props) {
 							<div className="stand-out__box stand-out__box--right">
 								<div
 									className="stand-out--flex"
-									data-aos="fade-left"
+									data-aos="fade-up"
 									data-aos-once="true"
 								>
 									<img loading="lazy" src={standout1} alt="standout" />
@@ -683,7 +683,7 @@ export default function Home(props) {
 							<div className="stand-out__box stand-out__box--left">
 								<div
 									className="stand-out--flex"
-									data-aos="fade-right"
+									data-aos="fade-up"
 									data-aos-once="true"
 									data-aos-delay="100"
 								>
@@ -698,7 +698,7 @@ export default function Home(props) {
 							<div className="stand-out__box stand-out__box--right">
 								<div
 									className="stand-out--flex"
-									data-aos="fade-left"
+									data-aos="fade-up"
 									data-aos-once="true"
 									data-aos-delay="200"
 								>
@@ -713,7 +713,7 @@ export default function Home(props) {
 							<div className="stand-out__box stand-out__box--left">
 								<div
 									className="stand-out--flex"
-									data-aos="fade-right"
+									data-aos="fade-up"
 									data-aos-once="true"
 									data-aos-delay="300"
 								>
