@@ -3,6 +3,15 @@ import styled from 'styled-components';
 import NavbarOtherSites from '../components/Navbar/NavbarOtherSites';
 import CountUp from 'react-countup';
 import VisibilitySensor from 'react-visibility-sensor';
+import wordpress from '../images/wordpress.svg';
+import react from '../images/react.svg';
+import other from '../images/other.svg';
+import responsive from '../images/responsive.svg';
+import blazing from '../images/blazing.svg';
+import seo from '../images/seo.svg';
+import easy from '../images/easy.svg';
+import convenient from '../images/convenient.svg';
+import modern from '../images/modern.svg';
 
 const StyledWebsites = styled.section`
 	.websites {
@@ -52,8 +61,12 @@ const StyledWebsites = styled.section`
 		}
 
 		&__box {
-			width: 100%;
 			text-align: center;
+		}
+
+		&__counter {
+			font-size: 24px;
+			font-weight: 500;
 		}
 	}
 `;
@@ -78,145 +91,135 @@ export default function Websites() {
 							</p>
 							<div className="websites__wrapper">
 								<div className="websites__box">
-									<img src="" alt="wordpress icon" />
-									<p className="websites__title">Wordpress</p>
+									<img src={wordpress} alt="wordpress icon" />
+									<p className="websites__title">WordPress</p>
 									<p className="websites__desc">
-										Responsible, SEO-friendly and convenient in self-service
-										thanks to the popular WordPress CMS.
+										<b>The most popular option</b>. If you are not that much
+										into websites, this is the perfect option for you. Wordpress
+										is the easiest way to get started in managing your own
+										website, because of it's very clear interface which is
+										effortless to learn and maintain.
 									</p>
 								</div>
 								<div className="websites__box">
-									<img src="" alt="react icon" />
+									<img src={react} alt="react icon" />
 									<p className="websites__title">React</p>
 									<p className="websites__desc">
-										Responsible, SEO-friendly and convenient in self-service
-										thanks to the popular WordPress CMS.
+										<b>The best non-wordpress option</b>. If you want your
+										website to be the fastest one, the most stable and the most
+										customizable among your competitors, this is the right
+										choice for you.
 									</p>
 								</div>
 								<div className="websites__box">
-									<img src="" alt="laravel icon" />
-									<p className="websites__title">Laravel</p>
+									<img src={other} alt="other icon" />
+									<p className="websites__title">Other technology</p>
 									<p className="websites__desc">
-										Responsible, SEO-friendly and convenient in self-service
-										thanks to the popular WordPress CMS.
-									</p>
-								</div>
-								<div className="websites__box">
-									<img src="" alt="technology icon" />
-									<p className="websites__title">Wordpress</p>
-									<p className="websites__desc">
-										Responsible, SEO-friendly and convenient in self-service
-										thanks to the popular WordPress CMS.
-									</p>
-								</div>
-								<div className="websites__box">
-									<img src="" alt="technology icon" />
-									<p className="websites__title">Wordpress</p>
-									<p className="websites__desc">
-										Responsible, SEO-friendly and convenient in self-service
-										thanks to the popular WordPress CMS.
-									</p>
-								</div>
-								<div className="websites__box">
-									<img src="" alt="technology icon" />
-									<p className="websites__title">Wordpress</p>
-									<p className="websites__desc">
-										Responsible, SEO-friendly and convenient in self-service
-										thanks to the popular WordPress CMS.
+										If you want your website to be in other technology that is
+										not listed here, you can always tell us what specific type
+										of technology you want us to use.
 									</p>
 								</div>
 							</div>
-							<p className="section__subtitle">Our website features</p>
+							<h1 className="section__title">Our website features</h1>
 							<div className="websites__wrapper">
 								<div className="websites__box">
-									<img src="" alt="wordpress icon" />
-									<p className="websites__title">Wordpress</p>
+									<img src={responsive} alt="responsive icon" />
+									<p className="websites__title">Fully responsive</p>
+									<p className="websites__desc">
+										We make sure that our websites are fully responsive on every
+										device. Hence, your website will be looking superb on every
+										screen!
+									</p>
+								</div>
+								<div className="websites__box">
+									<img src={blazing} alt="blazing fast icon" />
+									<p className="websites__title">Blazing fast</p>
+									<p className="websites__desc">
+										We take care of every aspect that leads to making your
+										website as fast as possible. Thanks to our experience, wthis
+										is our strongest point amongst other companies.
+									</p>
+								</div>
+								<div className="websites__box">
+									<img src={seo} alt="seo icon" />
+									<p className="websites__title">SEO friendly</p>
+									<p className="websites__desc">
+										We had businesses like you do and we know how to position
+										your website in the search engines and make it as efficient
+										as possible to get to the top of popularity.
+									</p>
+								</div>
+								<div className="websites__box">
+									<img src={convenient} alt="technology icon" />
+									<p className="websites__title">Convenient</p>
 									<p className="websites__desc">
 										Responsible, SEO-friendly and convenient in self-service
 										thanks to the popular WordPress CMS.
 									</p>
 								</div>
 								<div className="websites__box">
-									<img src="" alt="react icon" />
-									<p className="websites__title">React</p>
+									<img src={modern} alt="modern looking icon" />
+									<p className="websites__title">Modern looking</p>
 									<p className="websites__desc">
-										Responsible, SEO-friendly and convenient in self-service
-										thanks to the popular WordPress CMS.
+										The number one rule to success with your website is that it
+										has to be looking beautiful. Your clients and visitors won't
+										be satisfied with your website if it's not looking good.
 									</p>
 								</div>
 								<div className="websites__box">
-									<img src="" alt="laravel icon" />
-									<p className="websites__title">Laravel</p>
+									<img src={easy} alt="easy to use icon" />
+									<p className="websites__title">Easy to use</p>
 									<p className="websites__desc">
-										Responsible, SEO-friendly and convenient in self-service
-										thanks to the popular WordPress CMS.
-									</p>
-								</div>
-								<div className="websites__box">
-									<img src="" alt="technology icon" />
-									<p className="websites__title">Wordpress</p>
-									<p className="websites__desc">
-										Responsible, SEO-friendly and convenient in self-service
-										thanks to the popular WordPress CMS.
-									</p>
-								</div>
-								<div className="websites__box">
-									<img src="" alt="technology icon" />
-									<p className="websites__title">Wordpress</p>
-									<p className="websites__desc">
-										Responsible, SEO-friendly and convenient in self-service
-										thanks to the popular WordPress CMS.
-									</p>
-								</div>
-								<div className="websites__box">
-									<img src="" alt="technology icon" />
-									<p className="websites__title">Wordpress</p>
-									<p className="websites__desc">
-										Responsible, SEO-friendly and convenient in self-service
-										thanks to the popular WordPress CMS.
+										After taking our service, we want you to feel comfortable
+										maintaining your website. We always provide a manual
+										instruction covering everything you need to know.
 									</p>
 								</div>
 							</div>
 							<div className="count__wrapper">
-								<CountUp
-									start={0}
-									end={100}
-									duration={2}
-									redraw={true}
-									prefix={'+'}
-								>
-									{({ countUpRef, start }) => (
-										<VisibilitySensor onChange={start} delayedCall>
-											<span ref={countUpRef} className="count__box" />
-										</VisibilitySensor>
-									)}
-								</CountUp>
-								<CountUp
-									start={0}
-									end={1000000}
-									duration={3}
-									redraw={true}
-									prefix={'+'}
-								>
-									{({ countUpRef, start }) => (
-										<VisibilitySensor onChange={start} delayedCall>
-											<span ref={countUpRef} className="count__box" />
-										</VisibilitySensor>
-									)}
-								</CountUp>
-								<CountUp
-									start={0}
-									end={100}
-									duration={4}
-									redraw={true}
-									prefix={'+'}
-								>
-									{({ countUpRef, start }) => (
-										<VisibilitySensor onChange={start} delayedCall>
-											<span ref={countUpRef} className="count__box" />
-										</VisibilitySensor>
-									)}
-								</CountUp>
+								<div className="count__box">
+									<CountUp
+										start={0}
+										end={100}
+										duration={2}
+										redraw={true}
+										prefix={'+'}
+									>
+										{({ countUpRef, start }) => (
+											<VisibilitySensor onChange={start} delayedCall>
+												<span ref={countUpRef} className="count__counter" />
+											</VisibilitySensor>
+										)}
+									</CountUp>
+									<p>Hello</p>
+								</div>
+								<div className="count__box">
+									<CountUp
+										start={0}
+										end={1000000}
+										duration={3}
+										redraw={true}
+										prefix={'+'}
+									>
+										{({ countUpRef, start }) => (
+											<VisibilitySensor onChange={start} delayedCall>
+												<span ref={countUpRef} className="count__counter" />
+											</VisibilitySensor>
+										)}
+									</CountUp>
+									<p>Written lines of code</p>
+								</div>
+								<div className="count__box">
+									<CountUp start={0} end={20} duration={4} redraw={true}>
+										{({ countUpRef, start }) => (
+											<VisibilitySensor onChange={start} delayedCall>
+												<span ref={countUpRef} className="count__counter" />
+											</VisibilitySensor>
+										)}
+									</CountUp>
+									<p>Coffee drunk per day</p>
+								</div>
 							</div>
 						</div>
 					</div>

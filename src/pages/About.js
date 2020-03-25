@@ -194,7 +194,9 @@ export default function About() {
 									playsInline={true}
 								></video>
 							</div>
-							<p className="section__subtitle">Meet our team</p>
+							<h1 className="section__title" style={{ margin: '50px 0' }}>
+								Meet our team
+							</h1>
 							<div className="about__wrapper">
 								<div className="about__box">
 									<img src={bz} alt="bart zalewski" className="about__avatar" />

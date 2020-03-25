@@ -920,7 +920,7 @@ const GlobalStyle = createGlobalStyle`
       }
     }
 
-    .project__wrapper, .about__wrapper {
+    .project__wrapper, .about__wrapper, .websites__wrapper {
       grid-template-columns: repeat(1,1fr) !important;
     }
 
