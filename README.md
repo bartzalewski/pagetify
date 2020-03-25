@@ -21,6 +21,8 @@ Link to the website: https://pagetify.com/
 - PHPMailer
 - MomentJS
 - AOS
+- React CountUp
+- React Visibility Sensor
 - Lighthouse
 - ESLint
 - Prettier
