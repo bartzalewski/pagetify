@@ -4,12 +4,12 @@ import NavbarOtherSites from '../components/Navbar/NavbarOtherSites';
 import woocommerce from '../images/woocommerce.svg';
 import prestashop from '../images/prestashop.svg';
 import other2 from '../images/other-2.svg';
-import responsive from '../images/responsive.svg';
-import blazing from '../images/blazing.svg';
-import seo from '../images/seo.svg';
-import easy from '../images/easy.svg';
-import convenient from '../images/convenient.svg';
-import modern from '../images/modern.svg';
+import branding from '../images/branding-online.svg';
+import help from '../images/help.svg';
+import sales from '../images/sales.svg';
+import save from '../images/save-money.svg';
+import success from '../images/success.svg';
+import yourStore from '../images/your-store.svg';
 
 const StyledWebsites = styled.section`
 	.websites {
@@ -156,10 +156,10 @@ export default function Stores() {
 									<img
 										data-aos="fade-up"
 										data-aos-once="true"
-										src={responsive}
-										alt="responsive icon"
+										src={yourStore}
+										alt="your store icon"
 									/>
-									<p className="websites__title">Fully responsive</p>
+									<p className="websites__title">Your store online</p>
 									<p className="websites__desc">
 										We make sure that our websites are fully responsive on every
 										device. Hence, your website will be looking superb on every
@@ -171,10 +171,10 @@ export default function Stores() {
 										data-aos="fade-up"
 										data-aos-once="true"
 										data-aos-delay="100"
-										src={blazing}
-										alt="blazing fast icon"
+										src={success}
+										alt="success icon"
 									/>
-									<p className="websites__title">Blazing fast</p>
+									<p className="websites__title">Build successful brand</p>
 									<p className="websites__desc">
 										We take care of every aspect that leads to making your
 										website as fast as possible. Thanks to our experience, wthis
@@ -186,14 +186,13 @@ export default function Stores() {
 										data-aos="fade-up"
 										data-aos-once="true"
 										data-aos-delay="200"
-										src={seo}
-										alt="seo icon"
+										src={save}
+										alt="save money icon"
 									/>
-									<p className="websites__title">SEO friendly</p>
+									<p className="websites__title">Save your money</p>
 									<p className="websites__desc">
-										We had businesses like you do and we know how to position
-										your website in the search engines and make it as efficient
-										as possible to get to the top of popularity.
+										Don't spend a lot of money on website! With our service you
+										can focus on getting more clients than saving up money.
 									</p>
 								</div>
 								<div className="websites__box">
@@ -201,10 +200,10 @@ export default function Stores() {
 										data-aos="fade-up"
 										data-aos-once="true"
 										data-aos-delay="300"
-										src={convenient}
-										alt="technology icon"
+										src={sales}
+										alt="sales icon"
 									/>
-									<p className="websites__title">Convenient</p>
+									<p className="websites__title">Make more sales</p>
 									<p className="websites__desc">
 										Responsible, SEO-friendly and convenient in self-service
 										thanks to the popular WordPress CMS.
@@ -215,10 +214,10 @@ export default function Stores() {
 										data-aos="fade-up"
 										data-aos-once="true"
 										data-aos-delay="400"
-										src={modern}
-										alt="modern looking icon"
+										src={help}
+										alt="help icon"
 									/>
-									<p className="websites__title">Modern looking</p>
+									<p className="websites__title">Get our help</p>
 									<p className="websites__desc">
 										The number one rule to success with your website is that it
 										has to be looking beautiful. Your clients and visitors won't
@@ -230,10 +229,10 @@ export default function Stores() {
 										data-aos="fade-up"
 										data-aos-once="true"
 										data-aos-delay="500"
-										src={easy}
+										src={branding}
 										alt="easy to use icon"
 									/>
-									<p className="websites__title">Easy to use</p>
+									<p className="websites__title">Build your brand</p>
 									<p className="websites__desc">
 										After taking our service, we want you to feel comfortable
 										maintaining your website. We always provide a manual

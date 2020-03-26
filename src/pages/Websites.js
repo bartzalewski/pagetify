@@ -68,7 +68,7 @@ const StyledWebsites = styled.section`
 
 		&__counter {
 			font-size: 36px;
-			font-weight: 600;
+			font-weight: 700;
 		}
 	}
 `;

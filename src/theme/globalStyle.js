@@ -949,7 +949,7 @@ const GlobalStyle = createGlobalStyle`
       }
     }
 
-    .project__wrapper, .about__wrapper, .websites__wrapper {
+    .project__wrapper, .about__wrapper, .websites__wrapper, .project__wrapper--grid {
       grid-template-columns: repeat(1,1fr) !important;
     }
 
@@ -980,6 +980,39 @@ const GlobalStyle = createGlobalStyle`
           font-size: 14px !important;
           text-align: center;
         }
+      }
+    }
+
+    .websites {
+      &__title {
+        font-size: 18px !important;
+
+      }
+
+      &__desc {
+        font-size: 14px !important;
+      }
+
+      &__box {
+        img {
+          width: 60px !important;
+          height: 60px !important;
+        }
+      }
+    }
+
+    .count {
+
+      &__wrapper {
+        grid-template-columns: repeat(1,1fr) !important;
+      }
+
+      &__box {
+        font-size: 14px !important;
+      }
+      
+      &__counter {
+        font-size: 24px !important;
       }
     }
   }
