@@ -59,6 +59,11 @@ const StyledPostList = styled.div`
 		transform: translate(-50%, -50%);
 		text-align: center;
 	}
+
+	.blog__desc {
+		font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+			Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+	}
 `;
 
 export default function PostList({ posts }) {

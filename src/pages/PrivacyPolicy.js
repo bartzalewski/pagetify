@@ -20,6 +20,22 @@ const StyledPrivacyPolicy = styled.section`
 export default function PrivacyPolicy() {
 	useEffect(() => {
 		window.scrollTo(0, 0);
+
+		const spans = document.querySelectorAll('.rubber-span');
+
+		spans.forEach(span => {
+			span.addEventListener('mouseover', function(e) {
+				span.classList.add('animated', 'rubberBand');
+			});
+		});
+
+		spans.forEach(span =>
+			span.addEventListener('mouseout', function(e) {
+				setTimeout(() => {
+					span.classList.remove('animated', 'rubberBand');
+				}, 1000);
+			})
+		);
 	}, []);
 	return (
 		<>
@@ -27,7 +43,22 @@ export default function PrivacyPolicy() {
 			<StyledPrivacyPolicy className="sites__hero">
 				<div className="sites__container">
 					<div className="container">
-						<h1 className="section__title">Privacy Policy</h1>
+						<h1 className="section__title rubber-band">
+							<span className="rubber-span">P</span>
+							<span className="rubber-span">r</span>
+							<span className="rubber-span">i</span>
+							<span className="rubber-span">v</span>
+							<span className="rubber-span">a</span>
+							<span className="rubber-span">c</span>
+							<span className="rubber-span">y</span>
+							<span className="rubber-span rubber-hide">i</span>
+							<span className="rubber-span">P</span>
+							<span className="rubber-span">o</span>
+							<span className="rubber-span">l</span>
+							<span className="rubber-span">i</span>
+							<span className="rubber-span">c</span>
+							<span className="rubber-span">y</span>
+						</h1>
 						<div className="sites__wrapper privacy-policy__wrapper">
 							<p>
 								At Pagetify - Websites, online shops, graphics, accessible from{' '}

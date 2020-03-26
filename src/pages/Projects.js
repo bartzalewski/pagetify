@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import NavbarOtherSites from '../components/Navbar/NavbarOtherSites';
 import { connect } from 'react-redux';
@@ -61,32 +61,56 @@ const StyledProjects = styled.section`
 	}
 `;
 
-class Projects extends Component {
-	componentDidUpdate = () => {
+const Projects = props => {
+	useEffect(() => {
 		window.scrollTo(0, 0);
-	};
-	render() {
-		const { projects } = this.props;
-		return (
-			<>
-				<NavbarOtherSites></NavbarOtherSites>
-				<StyledProjects className="sites__hero">
-					<div className="sites__container">
-						<div className="container">
-							<h1 className="section__title">Projects</h1>
-							<div className="sites__wrapper projects__wrapper">
-								<div className="sites__desc projects__desc">
-									Check our portfolio!
-								</div>
-								<ProjectList projects={projects}></ProjectList>
+
+		const spans = document.querySelectorAll('.rubber-span');
+
+		spans.forEach(span => {
+			span.addEventListener('mouseover', function(e) {
+				span.classList.add('animated', 'rubberBand');
+			});
+		});
+
+		spans.forEach(span =>
+			span.addEventListener('mouseout', function(e) {
+				setTimeout(() => {
+					span.classList.remove('animated', 'rubberBand');
+				}, 1000);
+			})
+		);
+	}, []);
+
+	const { projects } = props;
+	return (
+		<>
+			<NavbarOtherSites></NavbarOtherSites>
+			<StyledProjects className="sites__hero">
+				<div className="sites__container">
+					<div className="container">
+						<h1 className="section__title">
+							<span className="rubber-span">P</span>
+							<span className="rubber-span">r</span>
+							<span className="rubber-span">o</span>
+							<span className="rubber-span">j</span>
+							<span className="rubber-span">e</span>
+							<span className="rubber-span">c</span>
+							<span className="rubber-span">t</span>
+							<span className="rubber-span">s</span>
+						</h1>
+						<div className="sites__wrapper projects__wrapper">
+							<div className="sites__desc projects__desc">
+								Check our portfolio!
 							</div>
+							<ProjectList projects={projects}></ProjectList>
 						</div>
 					</div>
-				</StyledProjects>
-			</>
-		);
-	}
-}
+				</div>
+			</StyledProjects>
+		</>
+	);
+};
 
 const mapStateToProps = state => {
 	return {

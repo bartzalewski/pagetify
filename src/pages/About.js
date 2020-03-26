@@ -44,6 +44,8 @@ const StyledAbout = styled.section`
 		&__desc {
 			text-align: justify;
 			margin: 1rem 0;
+			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+				Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 
 			&--center {
 				margin: 50px 0;
@@ -132,6 +134,22 @@ const StyledAbout = styled.section`
 export default function About() {
 	useEffect(() => {
 		window.scrollTo(0, 0);
+
+		const spans = document.querySelectorAll('.rubber-span');
+
+		spans.forEach(span => {
+			span.addEventListener('mouseover', function(e) {
+				span.classList.add('animated', 'rubberBand');
+			});
+		});
+
+		spans.forEach(span =>
+			span.addEventListener('mouseout', function(e) {
+				setTimeout(() => {
+					span.classList.remove('animated', 'rubberBand');
+				}, 1000);
+			})
+		);
 	}, []);
 	return (
 		<>
@@ -139,7 +157,13 @@ export default function About() {
 			<StyledAbout className="sites__hero">
 				<div className="sites__container">
 					<div className="container">
-						<h1 className="section__title">About</h1>
+						<h1 className="section__title rubber-band">
+							<span className="rubber-span">A</span>
+							<span className="rubber-span">b</span>
+							<span className="rubber-span">o</span>
+							<span className="rubber-span">u</span>
+							<span className="rubber-span">t</span>
+						</h1>
 						<div className="sites__wrapper">
 							<p className="sites__desc">Learn more about us!</p>
 							<div className="video__wrapper">

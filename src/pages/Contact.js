@@ -12,6 +12,22 @@ const StyledContact = styled.section`
 export default function Contact() {
 	useEffect(() => {
 		window.scrollTo(0, 0);
+
+		const spans = document.querySelectorAll('.rubber-span');
+
+		spans.forEach(span => {
+			span.addEventListener('mouseover', function(e) {
+				span.classList.add('animated', 'rubberBand');
+			});
+		});
+
+		spans.forEach(span =>
+			span.addEventListener('mouseout', function(e) {
+				setTimeout(() => {
+					span.classList.remove('animated', 'rubberBand');
+				}, 1000);
+			})
+		);
 	}, []);
 	return (
 		<>
@@ -19,7 +35,15 @@ export default function Contact() {
 			<StyledContact className="sites__hero">
 				<div className="sites__container">
 					<div className="container">
-						<h1 className="section__title">Contact</h1>
+						<h1 className="section__title rubber-band">
+							<span className="rubber-span">C</span>
+							<span className="rubber-span">o</span>
+							<span className="rubber-span">n</span>
+							<span className="rubber-span">t</span>
+							<span className="rubber-span">a</span>
+							<span className="rubber-span">c</span>
+							<span className="rubber-span">t</span>
+						</h1>
 						<div className="sites__wrapper form__container">
 							<p className="sites__desc contact__desc">
 								Get in touch with us by using the following form or via{' '}

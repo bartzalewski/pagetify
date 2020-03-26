@@ -49,6 +49,8 @@ const StyledWebsites = styled.section`
 
 		&__desc {
 			text-align: justify;
+			font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+				Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 		}
 	}
 
@@ -74,6 +76,22 @@ const StyledWebsites = styled.section`
 export default function Websites() {
 	useEffect(() => {
 		window.scrollTo(0, 0);
+
+		const spans = document.querySelectorAll('.rubber-span');
+
+		spans.forEach(span => {
+			span.addEventListener('mouseover', function(e) {
+				span.classList.add('animated', 'rubberBand');
+			});
+		});
+
+		spans.forEach(span =>
+			span.addEventListener('mouseout', function(e) {
+				setTimeout(() => {
+					span.classList.remove('animated', 'rubberBand');
+				}, 1000);
+			})
+		);
 	}, []);
 	return (
 		<>
@@ -81,7 +99,16 @@ export default function Websites() {
 			<StyledWebsites className="sites__hero">
 				<div className="sites__container">
 					<div className="container">
-						<h1 className="section__title">Websites</h1>
+						<h1 className="section__title rubber-band">
+							<span className="rubber-span">W</span>
+							<span className="rubber-span">e</span>
+							<span className="rubber-span">b</span>
+							<span className="rubber-span">s</span>
+							<span className="rubber-span">i</span>
+							<span className="rubber-span">t</span>
+							<span className="rubber-span">e</span>
+							<span className="rubber-span">s</span>
+						</h1>
 						<div className="sites__wrapper">
 							<p className="sites__desc">
 								Supported mobile devices, easy to use independently, SEO
@@ -91,7 +118,12 @@ export default function Websites() {
 							</p>
 							<div className="websites__wrapper">
 								<div className="websites__box">
-									<img src={wordpress} alt="wordpress icon" />
+									<img
+										data-aos="zoom-in"
+										data-aos-once="true"
+										src={wordpress}
+										alt="wordpress icon"
+									/>
 									<p className="websites__title">WordPress</p>
 									<p className="websites__desc">
 										<b>The most popular option</b>. If you are not that much
@@ -102,7 +134,13 @@ export default function Websites() {
 									</p>
 								</div>
 								<div className="websites__box">
-									<img src={react} alt="react icon" />
+									<img
+										data-aos="zoom-in"
+										data-aos-once="true"
+										data-aos-delay="100"
+										src={react}
+										alt="react icon"
+									/>
 									<p className="websites__title">React</p>
 									<p className="websites__desc">
 										<b>The best non-wordpress option</b>. If you want your
@@ -112,7 +150,13 @@ export default function Websites() {
 									</p>
 								</div>
 								<div className="websites__box">
-									<img src={other} alt="other icon" />
+									<img
+										data-aos="zoom-in"
+										data-aos-once="true"
+										data-aos-delay="200"
+										src={other}
+										alt="other icon"
+									/>
 									<p className="websites__title">Other technology</p>
 									<p className="websites__desc">
 										If you want your website to be in other technology that is
@@ -124,7 +168,12 @@ export default function Websites() {
 							<h1 className="section__title">Our website features</h1>
 							<div className="websites__wrapper">
 								<div className="websites__box">
-									<img src={responsive} alt="responsive icon" />
+									<img
+										data-aos="fade-up"
+										data-aos-once="true"
+										src={responsive}
+										alt="responsive icon"
+									/>
 									<p className="websites__title">Fully responsive</p>
 									<p className="websites__desc">
 										We make sure that our websites are fully responsive on every
@@ -133,7 +182,13 @@ export default function Websites() {
 									</p>
 								</div>
 								<div className="websites__box">
-									<img src={blazing} alt="blazing fast icon" />
+									<img
+										data-aos="fade-up"
+										data-aos-once="true"
+										data-aos-delay="100"
+										src={blazing}
+										alt="blazing fast icon"
+									/>
 									<p className="websites__title">Blazing fast</p>
 									<p className="websites__desc">
 										We take care of every aspect that leads to making your
@@ -142,7 +197,13 @@ export default function Websites() {
 									</p>
 								</div>
 								<div className="websites__box">
-									<img src={seo} alt="seo icon" />
+									<img
+										data-aos="fade-up"
+										data-aos-once="true"
+										data-aos-delay="200"
+										src={seo}
+										alt="seo icon"
+									/>
 									<p className="websites__title">SEO friendly</p>
 									<p className="websites__desc">
 										We had businesses like you do and we know how to position
@@ -151,7 +212,13 @@ export default function Websites() {
 									</p>
 								</div>
 								<div className="websites__box">
-									<img src={convenient} alt="technology icon" />
+									<img
+										data-aos="fade-up"
+										data-aos-once="true"
+										data-aos-delay="300"
+										src={convenient}
+										alt="technology icon"
+									/>
 									<p className="websites__title">Convenient</p>
 									<p className="websites__desc">
 										Responsible, SEO-friendly and convenient in self-service
@@ -159,7 +226,13 @@ export default function Websites() {
 									</p>
 								</div>
 								<div className="websites__box">
-									<img src={modern} alt="modern looking icon" />
+									<img
+										data-aos="fade-up"
+										data-aos-once="true"
+										data-aos-delay="400"
+										src={modern}
+										alt="modern looking icon"
+									/>
 									<p className="websites__title">Modern looking</p>
 									<p className="websites__desc">
 										The number one rule to success with your website is that it
@@ -168,7 +241,13 @@ export default function Websites() {
 									</p>
 								</div>
 								<div className="websites__box">
-									<img src={easy} alt="easy to use icon" />
+									<img
+										data-aos="fade-up"
+										data-aos-once="true"
+										data-aos-delay="500"
+										src={easy}
+										alt="easy to use icon"
+									/>
 									<p className="websites__title">Easy to use</p>
 									<p className="websites__desc">
 										After taking our service, we want you to feel comfortable
