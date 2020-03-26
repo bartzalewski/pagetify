@@ -41,6 +41,13 @@ const StyledRequirements = styled.section`
 				background-clip: text;
 				-webkit-text-fill-color: transparent;
 				font-weight: 600;
+
+				&::selection {
+					-webkit-background-clip: initial;
+					background-clip: initial;
+					-webkit-text-fill-color: initial;
+					color: white;
+				}
 			}
 
 			&--tick::after {
