@@ -67,8 +67,8 @@ const StyledWebsites = styled.section`
 		}
 
 		&__counter {
-			font-size: 24px;
-			font-weight: 500;
+			font-size: 36px;
+			font-weight: 600;
 		}
 	}
 `;
@@ -146,7 +146,8 @@ export default function Websites() {
 										<b>The best non-wordpress option</b>. If you want your
 										website to be the fastest one, the most stable and the most
 										customizable among your competitors, this is the right
-										choice for you.
+										choice for you. We provide React simple and complex apps
+										which can match your strong requirements.
 									</p>
 								</div>
 								<div className="websites__box">
@@ -161,7 +162,9 @@ export default function Websites() {
 									<p className="websites__desc">
 										If you want your website to be in other technology that is
 										not listed here, you can always tell us what specific type
-										of technology you want us to use.
+										of technology you want us to use. Knowing your requirements,
+										we will shortly inform you if we are ready to work with you
+										or not.
 									</p>
 								</div>
 							</div>
@@ -221,8 +224,9 @@ export default function Websites() {
 									/>
 									<p className="websites__title">Convenient</p>
 									<p className="websites__desc">
-										Responsible, SEO-friendly and convenient in self-service
-										thanks to the popular WordPress CMS.
+										Depending on your needs, we do everything we can to make
+										sure your final product is as advantageous for you and for
+										your clients as possible.
 									</p>
 								</div>
 								<div className="websites__box">
@@ -263,7 +267,7 @@ export default function Websites() {
 										end={100}
 										duration={2}
 										redraw={true}
-										prefix={'+'}
+										suffix={'%'}
 									>
 										{({ countUpRef, start }) => (
 											<VisibilitySensor onChange={start} delayedCall>
@@ -271,7 +275,7 @@ export default function Websites() {
 											</VisibilitySensor>
 										)}
 									</CountUp>
-									<p>Hello</p>
+									<p>Customer Satisfaction</p>
 								</div>
 								<div className="count__box">
 									<CountUp
@@ -290,7 +294,13 @@ export default function Websites() {
 									<p>Written lines of code</p>
 								</div>
 								<div className="count__box">
-									<CountUp start={0} end={20} duration={4} redraw={true}>
+									<CountUp
+										start={0}
+										end={20}
+										duration={4}
+										redraw={true}
+										prefix={'&plusmn;'}
+									>
 										{({ countUpRef, start }) => (
 											<VisibilitySensor onChange={start} delayedCall>
 												<span ref={countUpRef} className="count__counter" />

@@ -1,9 +1,9 @@
 import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import NavbarOtherSites from '../components/Navbar/NavbarOtherSites';
-import wordpress from '../images/wordpress.svg';
-import react from '../images/react.svg';
-import other from '../images/other.svg';
+import woocommerce from '../images/woocommerce.svg';
+import prestashop from '../images/prestashop.svg';
+import other2 from '../images/other-2.svg';
 import responsive from '../images/responsive.svg';
 import blazing from '../images/blazing.svg';
 import seo from '../images/seo.svg';
@@ -106,8 +106,8 @@ export default function Stores() {
 									<img
 										data-aos="zoom-in"
 										data-aos-once="true"
-										src={wordpress}
-										alt="wordpress icon"
+										src={woocommerce}
+										alt="woocommerce icon"
 									/>
 									<p className="websites__title">WooCommerce</p>
 									<p className="websites__desc">
@@ -123,8 +123,8 @@ export default function Stores() {
 										data-aos="zoom-in"
 										data-aos-once="true"
 										data-aos-delay="100"
-										src={react}
-										alt="react icon"
+										src={prestashop}
+										alt="prestashop icon"
 									/>
 									<p className="websites__title">PrestaShop</p>
 									<p className="websites__desc">
@@ -139,7 +139,7 @@ export default function Stores() {
 										data-aos="zoom-in"
 										data-aos-once="true"
 										data-aos-delay="200"
-										src={other}
+										src={other2}
 										alt="other icon"
 									/>
 									<p className="websites__title">Other technology</p>

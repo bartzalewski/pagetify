@@ -4,6 +4,7 @@ import NavbarOtherSites from '../components/Navbar/NavbarOtherSites';
 import bz from '../images/bz.png';
 import dg from '../images/dg.png';
 import video from '../images/video.mp4';
+import video2 from '../images/video2.mp4';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const StyledAbout = styled.section`
@@ -173,6 +174,8 @@ export default function About() {
 									loop={true}
 									muted={true}
 									playsInline={true}
+									data-aos="flip-up"
+									data-aos-once="true"
 								></video>
 								<div className="video__text">
 									<p className="video__title">About us</p>
@@ -211,11 +214,13 @@ export default function About() {
 									</p>
 								</div>
 								<video
-									src={video}
+									src={video2}
 									autoPlay={true}
 									loop={true}
 									muted={true}
 									playsInline={true}
+									data-aos="flip-up"
+									data-aos-once="true"
 								></video>
 							</div>
 							<h1 className="section__title" style={{ margin: '50px 0' }}>
