@@ -111,11 +111,11 @@ export default function Stores() {
 									/>
 									<p className="websites__title">WooCommerce</p>
 									<p className="websites__desc">
-										<b>The most popular option</b>. If you are not that much
-										into websites, this is the perfect option for you. Wordpress
-										is the easiest way to get started in managing your own
-										website, because of it's very clear interface which is
-										effortless to learn and maintain.
+										<b>The best for new sellers</b>. If you don't need to sell
+										tens of thousands of products, you have a limited budget and
+										you don't want your website to be visited by millions of
+										people at the same time, WordPress WooCommerce is the
+										perfect option for you.
 									</p>
 								</div>
 								<div className="websites__box">
@@ -128,10 +128,11 @@ export default function Stores() {
 									/>
 									<p className="websites__title">PrestaShop</p>
 									<p className="websites__desc">
-										<b>The best non-wordpress option</b>. If you want your
-										website to be the fastest one, the most stable and the most
-										customizable among your competitors, this is the right
-										choice for you.
+										<b>The best for experienced sellers</b>. If you are looking
+										for scalable solutions, you have an extra budget for
+										programming work, you are ready to invest in your store and
+										you care about the fastest page loading, PrestaShop is the
+										perfect option for you.
 									</p>
 								</div>
 								<div className="websites__box">
@@ -144,9 +145,11 @@ export default function Stores() {
 									/>
 									<p className="websites__title">Other technology</p>
 									<p className="websites__desc">
-										If you want your website to be in other technology that is
-										not listed here, you can always tell us what specific type
-										of technology you want us to use.
+										If you want your store to be in other technology that is not
+										listed here, you can always tell us what specific type of
+										technology you want us to use. Knowing your requirements, we
+										will shortly inform you if we are ready to work with you or
+										not.
 									</p>
 								</div>
 							</div>
@@ -177,7 +180,7 @@ export default function Stores() {
 									<p className="websites__title">Build successful brand</p>
 									<p className="websites__desc">
 										We take care of every aspect that leads to making your
-										website as fast as possible. Thanks to our experience, wthis
+										website as fast as possible. Thanks to our experience, this
 										is our strongest point amongst other companies.
 									</p>
 								</div>
@@ -192,7 +195,8 @@ export default function Stores() {
 									<p className="websites__title">Save your money</p>
 									<p className="websites__desc">
 										Don't spend a lot of money on website! With our service you
-										can focus on getting more clients than saving up money.
+										can focus on getting more clients than saving up money from
+										the beggining of your wonderful journey.
 									</p>
 								</div>
 								<div className="websites__box">
@@ -205,8 +209,9 @@ export default function Stores() {
 									/>
 									<p className="websites__title">Make more sales</p>
 									<p className="websites__desc">
-										Responsible, SEO-friendly and convenient in self-service
-										thanks to the popular WordPress CMS.
+										Selling your product in your online store is the best way to
+										make more sales. With our help, you can always do your best
+										to reach your goals.
 									</p>
 								</div>
 								<div className="websites__box">
@@ -219,9 +224,9 @@ export default function Stores() {
 									/>
 									<p className="websites__title">Get our help</p>
 									<p className="websites__desc">
-										The number one rule to success with your website is that it
-										has to be looking beautiful. Your clients and visitors won't
-										be satisfied with your website if it's not looking good.
+										If something is unclear to you, if you have any questions,
+										you can always feel free to ask us. We want you to succeed,
+										you finally chose us as your web developers.
 									</p>
 								</div>
 								<div className="websites__box">
@@ -232,11 +237,11 @@ export default function Stores() {
 										src={branding}
 										alt="easy to use icon"
 									/>
-									<p className="websites__title">Build your brand</p>
+									<p className="websites__title">Feature-rich</p>
 									<p className="websites__desc">
-										After taking our service, we want you to feel comfortable
-										maintaining your website. We always provide a manual
-										instruction covering everything you need to know.
+										Thanks to our services offered you can easily do everything
+										that you need to do when you are managing a store.
+										Newsletters, quick product edition and much more!
 									</p>
 								</div>
 							</div>

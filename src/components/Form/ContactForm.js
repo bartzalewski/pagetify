@@ -21,11 +21,7 @@ const StyledContactForm = styled.div`
 		width: 100%;
 		margin: 1rem 0;
 		font-size: 14px;
-	}
-
-	input[type='checkbox'] {
-		width: auto;
-		margin-right: 0.5rem;
+		display: flex;
 	}
 `;
 

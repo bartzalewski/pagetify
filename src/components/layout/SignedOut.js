@@ -23,7 +23,6 @@ const SignedOut = () => {
 		<>
 			<Switch>
 				<Route exact path="/" component={Home} />
-				<Route path="/services" component={Websites} />
 				<Route path="/websites" component={Websites} />
 				<Route path="/stores" component={Stores} />
 				<Route path="/graphics" component={Graphics} />

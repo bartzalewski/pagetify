@@ -195,7 +195,7 @@ export default function Websites() {
 									<p className="websites__title">Blazing fast</p>
 									<p className="websites__desc">
 										We take care of every aspect that leads to making your
-										website as fast as possible. Thanks to our experience, wthis
+										website as fast as possible. Thanks to our experience, this
 										is our strongest point amongst other companies.
 									</p>
 								</div>

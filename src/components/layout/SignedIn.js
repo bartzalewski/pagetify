@@ -31,7 +31,6 @@ const SignedIn = props => {
 					path="/"
 					component={props => <Home {...props} profile={profile} />}
 				/>
-				<Route path="/services" component={Websites} />
 				<Route path="/websites" component={Websites} />
 				<Route path="/stores" component={Stores} />
 				<Route path="/graphics" component={Graphics} />

@@ -15,6 +15,18 @@ const StyledNavbarOtherSites = styled.nav`
 			}
 		}
 	}
+
+	.navbar__more__content {
+		.active {
+			p {
+				color: #49a9e0 !important;
+			}
+
+			svg {
+				fill: #49a9e0 !important;
+			}
+		}
+	}
 `;
 
 class NavbarOtherSites extends Component {
@@ -94,12 +106,12 @@ class NavbarOtherSites extends Component {
 					</div>
 					<ul className="right navbar__right">
 						<div className="navbar__wrapper navbar__link navbar__services">
-							<NavLink activeClassName="active" to="/services">
+							<NavLink activeClassName="active" to="/websites">
 								<li>Services</li>
 							</NavLink>
 							<div className="navbar__more">
 								<div className="navbar__more__content">
-									<NavLink to="/websites">
+									<NavLink to="/websites" activeClassName="active">
 										<svg
 											width="50"
 											height="50"
@@ -124,7 +136,7 @@ class NavbarOtherSites extends Component {
 											</span>
 										</div>
 									</NavLink>
-									<NavLink to="/stores">
+									<NavLink to="/stores" activeClassName="active">
 										<svg
 											width="50"
 											height="50"
@@ -148,7 +160,7 @@ class NavbarOtherSites extends Component {
 											<span>Easy to manage e-commerce websites.</span>
 										</div>
 									</NavLink>
-									<NavLink to="/graphics">
+									<NavLink to="/graphics" activeClassName="active">
 										<svg
 											width="50"
 											height="51"

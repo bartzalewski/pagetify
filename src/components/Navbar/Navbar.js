@@ -82,7 +82,7 @@ class Navbar extends Component {
 					</div>
 					<ul className="right navbar__right">
 						<div className="navbar__wrapper navbar__link navbar__services">
-							<NavLink activeClassName="active" to="/services">
+							<NavLink activeClassName="active" to="/websites">
 								<li>Services</li>
 							</NavLink>
 							<div className="navbar__more">

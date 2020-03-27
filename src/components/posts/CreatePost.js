@@ -14,26 +14,6 @@ const StyledCreatePost = styled.section`
 	#content {
 		width: 100%;
 		border: none;
-		border-bottom: 1px solid #d9d9d9;
-		padding: 10px 15px;
-		font-family: 'Montserrat';
-		font-size: 18px;
-		outline: none;
-		transition: 0.2s ease-in-out;
-
-		&:focus {
-			border-bottom: 1px solid #49a9e0;
-			transition: 0.2s ease-in-out;
-		}
-	}
-
-	#title,
-	#url {
-		/* font-weight: 600; */
-	}
-
-	#url {
-		margin: 1rem 0;
 	}
 
 	#content {
@@ -68,7 +48,8 @@ const StyledCreatePost = styled.section`
 	}
 
 	.input-field {
-		width: 100%;
+		display: block;
+		padding: 0;
 
 		&--flex {
 			display: flex;

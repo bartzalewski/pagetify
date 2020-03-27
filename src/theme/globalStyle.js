@@ -686,6 +686,46 @@ const GlobalStyle = createGlobalStyle`
 
   /* LINKS HOVER END */
 
+  /* CHECKBOX */
+
+  input[type='checkbox'] {
+		position: relative;
+		width: auto;
+		padding: 8px;
+		margin-right: 0.5rem;
+		color: #363839;
+		border: 1px solid #bdc1c6;
+		border-radius: 100px;
+		appearance: none;
+		outline: 0;
+		cursor: pointer;
+		transition: background 175ms cubic-bezier(0.1, 0.1, 0.25, 1);
+		&::before {
+			position: absolute;
+			content: '';
+			display: block;
+			top: 2px;
+			left: 5px;
+			width: 5px;
+			height: 9px;
+			border-style: solid;
+			border-color: #fff;
+			border-width: 0 2px 2px 0;
+			transform: rotate(45deg);
+			opacity: 0;
+		}
+		&:checked {
+			color: #fff;
+			border-color: #49a9e0;
+			background: #49a9e0;
+			&::before {
+				opacity: 1;
+			}
+		}
+	}
+
+  /* CHECKBOX END */
+
   @media (max-width: 1200px) {
     .container {
       width: 90%;

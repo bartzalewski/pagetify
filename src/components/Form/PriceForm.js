@@ -24,6 +24,7 @@ const StyledPriceForm = styled.div`
 		width: 100%;
 		margin: 0.5rem 0;
 		font-size: 16px;
+		display: flex;
 	}
 
 	input[type='checkbox'] {

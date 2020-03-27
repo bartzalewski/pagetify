@@ -12,6 +12,12 @@ const StyledCreateProject = styled.section`
 	.create-project__wrapper {
 		width: 100%;
 	}
+
+	.input-field {
+		display: block;
+		margin: 0;
+		padding: 0;
+	}
 `;
 
 class CreatePost extends Component {

@@ -449,8 +449,8 @@ export default function Home(props) {
 								/>
 								<p className="offer__title">Websites</p>
 								<p className="offer__desc">
-									Responsible, SEO-friendly and convenient in self-service
-									thanks to the popular WordPress CMS.
+									Responsible, SEO-friendly, modern-looking, very efficient and
+									convenient in self-service websites.
 								</p>
 							</Link>
 							<Link to="/stores" className="offer__box">
@@ -465,8 +465,8 @@ export default function Home(props) {
 								/>
 								<p className="offer__title">Online stores</p>
 								<p className="offer__desc">
-									We use the world’s best e-commerce system called WooCommerce
-									that is extremely easy to use.
+									We use the world’s best e-commerce systems like WooCommerce or
+									PrestaShop which are easy to use.
 								</p>
 							</Link>
 							<Link to="/graphics" className="offer__box">
@@ -577,7 +577,10 @@ export default function Home(props) {
 								</div>
 								<p className="reviews__name">Charlean</p>
 								<p className="reviews__desc">
-									Pagetify was the best investment I ever made. Thank you!
+									I wanted simple WooCommerce online store which would help me
+									getting more sales. I chose Pagetify offer, and I'm not
+									disappointed. Pagetify was the best investment I ever made.
+									Thank you!
 								</p>
 							</div>
 							<div className="reviews__box reviews__box--right">
@@ -641,9 +644,7 @@ export default function Home(props) {
 								<p className="reviews__desc">
 									Pagetify is the real deal! Great job, I will definitely be
 									ordering again! Thank you for making it painless, pleasant and
-									most of all hassle free! Thank you for making it painless,
-									pleasant and most of all hassle free! I will be recommending
-									you guys.
+									most of all hassle free! I will be recommending you guys.
 								</p>
 							</div>
 							<div className="reviews__box reviews__box--left">
