@@ -96,10 +96,8 @@ export default function Stores() {
 						</h1>
 						<div className="sites__wrapper">
 							<p className="sites__desc">
-								Supported mobile devices, easy to use independently, SEO
-								friendly and ready for any expansion at any time. We create
-								websites ideally suited to the needs of both you and your
-								recipients.
+								Easy to manage independently, friendly to buyers through mobile
+								devices and ready for expansion with any new functions.
 							</p>
 							<div className="websites__wrapper">
 								<div className="websites__box">

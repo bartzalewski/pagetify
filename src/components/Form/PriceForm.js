@@ -23,13 +23,8 @@ const StyledPriceForm = styled.div`
 	.input-field__checkbox {
 		width: 100%;
 		margin: 0.5rem 0;
-		font-size: 16px;
+		font-size: 14px;
 		display: flex;
-	}
-
-	input[type='checkbox'] {
-		width: auto;
-		margin-right: 0.5rem;
 	}
 
 	.section__subtitle {
@@ -56,11 +51,25 @@ class Form extends Component {
 		email: '',
 		message: '',
 		emailStatus: '',
-		type: ''
+		type: ['website']
 	};
 
 	handleChange = input => e => {
 		this.setState({ [input]: e.target.value });
+	};
+
+	handleCheckbox = async e => {
+		if (e.target.checked) {
+			await this.setState({
+				type: [...this.state.type, e.target.value]
+			});
+		} else {
+			await this.setState({
+				type: this.state.type.filter(function(item) {
+					return item !== e.target.value;
+				})
+			});
+		}
 	};
 
 	submitForm = e => {
@@ -118,6 +127,7 @@ class Form extends Component {
 
 	render() {
 		const { name, email, message, emailStatus } = this.state;
+		console.log(this.state);
 
 		return (
 			<StyledPriceForm className="form__wrapper" onSubmit={this.submitForm}>
@@ -133,8 +143,11 @@ class Form extends Component {
 									id="website"
 									value="website"
 									defaultChecked={true}
+									onChange={this.handleCheckbox}
 								/>
-								<label htmlFor="website">Website</label>
+								<label className="checkbox__label" htmlFor="website">
+									Website
+								</label>
 							</div>
 							<div className="input-field__checkbox">
 								<input
@@ -142,8 +155,11 @@ class Form extends Component {
 									name="store"
 									id="store"
 									value="online store"
+									onChange={this.handleCheckbox}
 								/>
-								<label htmlFor="store">Online store</label>
+								<label className="checkbox__label" htmlFor="store">
+									Online store
+								</label>
 							</div>
 							<div className="input-field__checkbox">
 								<input
@@ -151,8 +167,11 @@ class Form extends Component {
 									name="graphic"
 									id="graphic"
 									value="graphic"
+									onChange={this.handleCheckbox}
 								/>
-								<label htmlFor="graphic">Graphic design</label>
+								<label className="checkbox__label" htmlFor="graphic">
+									Graphic design
+								</label>
 							</div>
 						</div>
 						<div className="input-checkbox--right">
@@ -162,8 +181,11 @@ class Form extends Component {
 									name="ad"
 									id="ad"
 									value="advertisement"
+									onChange={this.handleCheckbox}
 								/>
-								<label htmlFor="ad">Advertisements</label>
+								<label className="checkbox__label" htmlFor="ad">
+									Advertisements
+								</label>
 							</div>
 							<div className="input-field__checkbox">
 								<input
@@ -171,8 +193,11 @@ class Form extends Component {
 									name="seo"
 									id="seo"
 									value="seo optimization"
+									onChange={this.handleCheckbox}
 								/>
-								<label htmlFor="seo">SEO Optimization</label>
+								<label className="checkbox__label" htmlFor="seo">
+									SEO Optimization
+								</label>
 							</div>
 							<div className="input-field__checkbox">
 								<input
@@ -180,8 +205,11 @@ class Form extends Component {
 									name="other"
 									id="other"
 									value="other project"
+									onChange={this.handleCheckbox}
 								/>
-								<label htmlFor="other">Other project</label>
+								<label className="checkbox__label" htmlFor="other">
+									Other project
+								</label>
 							</div>
 						</div>
 					</div>

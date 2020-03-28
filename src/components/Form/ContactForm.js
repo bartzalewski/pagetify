@@ -151,7 +151,7 @@ class Form extends Component {
 					</div>
 					<div className="input-field__checkbox">
 						<input type="checkbox" id="accept" required name="accept" />
-						<label htmlFor="accept">
+						<label className="checkbox__label" htmlFor="accept">
 							I accept the information contained in the{' '}
 							<a
 								href="https://pagetify.com/privacy-policy"

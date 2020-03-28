@@ -689,10 +689,9 @@ const GlobalStyle = createGlobalStyle`
   /* CHECKBOX */
 
   input[type='checkbox'] {
-		position: relative;
+		position: absolute;
 		width: auto;
 		padding: 8px;
-		margin-right: 0.5rem;
 		color: #363839;
 		border: 1px solid #bdc1c6;
 		border-radius: 100px;
@@ -722,7 +721,11 @@ const GlobalStyle = createGlobalStyle`
 				opacity: 1;
 			}
 		}
-	}
+  }
+  
+  .checkbox__label {
+    margin-left: 25px;
+  }
 
   /* CHECKBOX END */
 
@@ -730,6 +733,14 @@ const GlobalStyle = createGlobalStyle`
     outline: none;
     position: absolute;
     right: 14%;
+    box-shadow: 0 9px 32px 0 rgba(0, 0, 0, 0.5);
+    transition: .2s ease-in-out;
+    border-radius: 100%;
+
+    &:hover {
+      transition: .2s ease-in-out;
+			box-shadow: 0 9px 32px 0 rgba(0, 0, 0, 1);
+    }
   }
 
   .sphere {
@@ -1001,6 +1012,19 @@ const GlobalStyle = createGlobalStyle`
       &--right {
         margin-top: 1rem;
       }
+
+      &__wrapper {
+
+        span {
+          font-size: 14px !important;
+        }
+      }
+    }
+
+    .input-field.focus {
+      span {
+        font-size: 12px !important;
+      }
     }
 
     .project__wrapper, .about__wrapper, .websites__wrapper, .project__wrapper--grid {
@@ -1067,6 +1091,31 @@ const GlobalStyle = createGlobalStyle`
       
       &__counter {
         font-size: 24px !important;
+      }
+    }
+
+    .input-checkbox {
+
+      &__wrapper {
+        flex-direction: column;
+      }
+
+      &--left, &--right {
+        width: 100%;
+      }
+
+      &--right {
+        margin-top: -.5rem;
+      }
+    }
+  }
+
+  @media (max-width: 340px) {
+    .hero {
+
+      h1 {
+        font-size: 26px !important;
+        width: 80%;
       }
     }
   }
