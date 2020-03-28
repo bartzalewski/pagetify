@@ -726,6 +726,16 @@ const GlobalStyle = createGlobalStyle`
 
   /* CHECKBOX END */
 
+  canvas {
+    outline: none;
+    position: absolute;
+    right: 14%;
+  }
+
+  .sphere {
+    position: relative;
+  }
+
   @media (max-width: 1200px) {
     .container {
       width: 90%;
@@ -786,6 +796,10 @@ const GlobalStyle = createGlobalStyle`
         display: flex;
         flex-direction: column;
         align-items: center;
+
+        &--right {
+          display: none !important;
+        }
       }
 
       &__cta {

@@ -26,7 +26,8 @@
 		"redux-firestore": "^0.13.0",
 		"redux-thunk": "^2.3.0",
 		"styled-components": "^4.4.1",
-		"textarea-markdown": "^1.2.4"
+		"textarea-markdown": "^1.2.4",
+		"three": "^0.115.0"
 	},
 	"scripts": {
 		"start": "react-scripts start",

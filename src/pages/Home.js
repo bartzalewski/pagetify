@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import styled from 'styled-components';
 import Navbar from '../components/Navbar/Navbar';
 import { Link } from 'react-router-dom';
+import Sphere from '../components/animations/Sphere';
 
 import bg from '../images/bg.jpg';
 import websites from '../images/websites.svg';
@@ -69,8 +70,9 @@ const StyledHomeHero = styled.header`
 		}
 
 		.container {
-			justify-content: center;
+			justify-content: space-between;
 			align-items: flex-start;
+			flex-direction: row;
 
 			.wrapper {
 				width: 40%;
@@ -360,7 +362,7 @@ export default function Home(props) {
 				<Navbar profile={props.profile}></Navbar>
 				<div className="hero">
 					<div className="container">
-						<div className="wrapper">
+						<div className="wrapper wrapper--left">
 							<h1
 								data-aos="fade-right"
 								data-aos-once="true"
@@ -423,6 +425,9 @@ export default function Home(props) {
 									or check our offer
 								</a>
 							</div>
+						</div>
+						<div className="wrapper--right">
+							<Sphere />
 						</div>
 					</div>
 				</div>
