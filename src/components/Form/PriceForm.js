@@ -73,7 +73,9 @@ class Form extends Component {
 	};
 
 	submitForm = e => {
-		const { name, email, message } = this.state;
+		const { name, email, message, type } = this.state;
+
+		const newType = type.join(' ');
 
 		var xhr = new XMLHttpRequest();
 
@@ -90,7 +92,9 @@ class Form extends Component {
 				'&name=' +
 				name +
 				'&message=' +
-				message
+				message +
+				'&type=' +
+				newType
 		);
 
 		xhr.send();
