@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import NavbarOtherSites from '../components/Navbar/NavbarOtherSites';
 import { connect } from 'react-redux';
@@ -62,26 +62,6 @@ const StyledProjects = styled.section`
 `;
 
 const Projects = props => {
-	useEffect(() => {
-		window.scrollTo(0, 0);
-
-		const spans = document.querySelectorAll('.rubber-span');
-
-		spans.forEach(span => {
-			span.addEventListener('mouseover', function(e) {
-				span.classList.add('animated', 'rubberBand');
-			});
-		});
-
-		spans.forEach(span =>
-			span.addEventListener('mouseout', function(e) {
-				setTimeout(() => {
-					span.classList.remove('animated', 'rubberBand');
-				}, 1000);
-			})
-		);
-	}, []);
-
 	const { projects } = props;
 	return (
 		<>
@@ -89,16 +69,7 @@ const Projects = props => {
 			<StyledProjects className="sites__hero">
 				<div className="sites__container">
 					<div className="container">
-						<h1 className="section__title">
-							<span className="rubber-span">P</span>
-							<span className="rubber-span">r</span>
-							<span className="rubber-span">o</span>
-							<span className="rubber-span">j</span>
-							<span className="rubber-span">e</span>
-							<span className="rubber-span">c</span>
-							<span className="rubber-span">t</span>
-							<span className="rubber-span">s</span>
-						</h1>
+						<h1 className="section__title rubber-band">Projects</h1>
 						<div className="sites__wrapper projects__wrapper">
 							<div className="sites__desc projects__desc">
 								Check our portfolio!

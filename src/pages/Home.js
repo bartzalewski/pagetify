@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import Navbar from '../components/Navbar/Navbar';
 import { Link } from 'react-router-dom';
@@ -336,26 +336,6 @@ const StyledHomeStandOut = styled.section`
 `;
 
 export default function Home(props) {
-	useEffect(() => {
-		window.scrollTo(0, 0);
-
-		const spans = document.querySelectorAll('.rubber-span');
-
-		spans.forEach(span => {
-			span.addEventListener('mouseover', function(e) {
-				span.classList.add('animated', 'rubberBand');
-			});
-		});
-
-		spans.forEach(span =>
-			span.addEventListener('mouseout', function(e) {
-				setTimeout(() => {
-					span.classList.remove('animated', 'rubberBand');
-				}, 1000);
-			})
-		);
-	}, []);
-
 	return (
 		<StyledHome>
 			<StyledHomeHero>
@@ -368,41 +348,7 @@ export default function Home(props) {
 								data-aos-once="true"
 								className="rubber-band"
 							>
-								<span className="rubber-span">T</span>
-								<span className="rubber-span">a</span>
-								<span className="rubber-span">k</span>
-								<span className="rubber-span">e</span>
-								<span className="rubber-span rubber-hide">i</span>
-								<span className="rubber-span">y</span>
-								<span className="rubber-span">o</span>
-								<span className="rubber-span">u</span>
-								<span className="rubber-span">r</span>
-								<br />
-								<span className="rubber-span">w</span>
-								<span className="rubber-span">e</span>
-								<span className="rubber-span">b</span>
-								<span className="rubber-span">s</span>
-								<span className="rubber-span">i</span>
-								<span className="rubber-span">t</span>
-								<span className="rubber-span">e</span>
-								<span className="rubber-span rubber-hide">i</span>
-								<span className="rubber-span">t</span>
-								<span className="rubber-span">o</span>
-								<span className="rubber-span rubber-hide">i</span>
-								<span className="rubber-span">t</span>
-								<span className="rubber-span">h</span>
-								<span className="rubber-span">e</span>
-								<br />
-								<span className="rubber-span">n</span>
-								<span className="rubber-span">e</span>
-								<span className="rubber-span">x</span>
-								<span className="rubber-span">t</span>
-								<span className="rubber-span rubber-hide">i</span>
-								<span className="rubber-span">l</span>
-								<span className="rubber-span">e</span>
-								<span className="rubber-span">v</span>
-								<span className="rubber-span">e</span>
-								<span className="rubber-span">l</span>
+								Take your website to the next level
 							</h1>
 							<p
 								data-aos="fade-right"

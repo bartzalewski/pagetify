@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import NavbarOtherSites from '../components/Navbar/NavbarOtherSites';
 import woocommerce from '../images/woocommerce.svg';
@@ -54,46 +54,13 @@ const StyledWebsites = styled.section`
 `;
 
 export default function Stores() {
-	useEffect(() => {
-		window.scrollTo(0, 0);
-
-		const spans = document.querySelectorAll('.rubber-span');
-
-		spans.forEach(span => {
-			span.addEventListener('mouseover', function(e) {
-				span.classList.add('animated', 'rubberBand');
-			});
-		});
-
-		spans.forEach(span =>
-			span.addEventListener('mouseout', function(e) {
-				setTimeout(() => {
-					span.classList.remove('animated', 'rubberBand');
-				}, 1000);
-			})
-		);
-	}, []);
 	return (
 		<>
 			<NavbarOtherSites></NavbarOtherSites>
 			<StyledWebsites className="sites__hero">
 				<div className="sites__container">
 					<div className="container">
-						<h1 className="section__title rubber-band">
-							<span className="rubber-span">O</span>
-							<span className="rubber-span">n</span>
-							<span className="rubber-span">l</span>
-							<span className="rubber-span">i</span>
-							<span className="rubber-span">n</span>
-							<span className="rubber-span">e</span>
-							<span className="rubber-span rubber-hide">i</span>
-							<span className="rubber-span">s</span>
-							<span className="rubber-span">t</span>
-							<span className="rubber-span">o</span>
-							<span className="rubber-span">r</span>
-							<span className="rubber-span">e</span>
-							<span className="rubber-span">s</span>
-						</h1>
+						<h1 className="section__title rubber-band">Online stores</h1>
 						<div className="sites__wrapper">
 							<p className="sites__desc">
 								Easy to manage independently, friendly to buyers through mobile

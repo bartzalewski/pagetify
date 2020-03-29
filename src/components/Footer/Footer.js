@@ -108,11 +108,7 @@ export default function Footer() {
 						<div className="footer__box">
 							<div className="footer__title">Info</div>
 							<div className="footer__content">
-								<Link
-									to="/"
-									className="footer__homepage"
-									onClick={() => window.scrollTo(0, 0)}
-								>
+								<Link to="/" className="footer__homepage">
 									<img loading="lazy" src={logo} alt="pagetify logo" />
 								</Link>
 								<a href="tel:+48531797647">

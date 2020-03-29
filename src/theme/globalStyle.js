@@ -801,6 +801,10 @@ const GlobalStyle = createGlobalStyle`
         font-size: 16px !important;
       }
 
+      .decoration {
+        width: 101%;
+      }
+
       .wrapper {
         width: 100% !important;
         text-align: center;

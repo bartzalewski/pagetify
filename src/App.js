@@ -2,6 +2,7 @@ import React from 'react';
 import GlobalStyle from './theme/globalStyle';
 import SignedIn from './components/layout/SignedIn';
 import SignedOut from './components/layout/SignedOut';
+import ScrollToTop from './components/effects/ScrollToTop';
 import { BrowserRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -22,7 +23,8 @@ function App(props) {
 
 	return (
 		<BrowserRouter>
-			<GlobalStyle></GlobalStyle>
+			<GlobalStyle />
+			<ScrollToTop />
 			{links}
 		</BrowserRouter>
 	);

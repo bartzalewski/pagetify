@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
@@ -75,9 +75,6 @@ const StyledProjectDetails = styled.section`
 
 const ProjectDetails = props => {
 	const { project } = props;
-	useEffect(() => {
-		window.scrollTo(0, 0);
-	}, []);
 	if (project) {
 		return (
 			<>

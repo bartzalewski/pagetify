@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import NavbarOtherSites from '../components/Navbar/NavbarOtherSites';
 import bz from '../images/bz.png';
@@ -133,38 +133,13 @@ const StyledAbout = styled.section`
 `;
 
 export default function About() {
-	useEffect(() => {
-		window.scrollTo(0, 0);
-
-		const spans = document.querySelectorAll('.rubber-span');
-
-		spans.forEach(span => {
-			span.addEventListener('mouseover', function(e) {
-				span.classList.add('animated', 'rubberBand');
-			});
-		});
-
-		spans.forEach(span =>
-			span.addEventListener('mouseout', function(e) {
-				setTimeout(() => {
-					span.classList.remove('animated', 'rubberBand');
-				}, 1000);
-			})
-		);
-	}, []);
 	return (
 		<>
 			<NavbarOtherSites></NavbarOtherSites>
 			<StyledAbout className="sites__hero">
 				<div className="sites__container">
 					<div className="container">
-						<h1 className="section__title rubber-band">
-							<span className="rubber-span">A</span>
-							<span className="rubber-span">b</span>
-							<span className="rubber-span">o</span>
-							<span className="rubber-span">u</span>
-							<span className="rubber-span">t</span>
-						</h1>
+						<h1 className="section__title rubber-band">About</h1>
 						<div className="sites__wrapper">
 							<p className="sites__desc">Learn more about us!</p>
 							<div className="video__wrapper">

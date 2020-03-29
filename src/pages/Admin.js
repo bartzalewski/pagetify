@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import NavbarOtherSites from '../components/Navbar/NavbarOtherSites';
 import { Link } from 'react-router-dom';
@@ -37,9 +37,6 @@ const StyledAdmin = styled.section`
 `;
 
 function Admin(props) {
-	useEffect(() => {
-		window.scrollTo(0, 0);
-	}, []);
 	return (
 		<>
 			<NavbarOtherSites></NavbarOtherSites>
