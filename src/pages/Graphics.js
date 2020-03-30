@@ -1,15 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import NavbarOtherSites from '../components/Navbar/NavbarOtherSites';
-import woocommerce from '../images/stores/woocommerce.svg';
-import prestashop from '../images/stores/prestashop.svg';
-import other2 from '../images/stores/other-2.svg';
-import branding from '../images/stores/branding-online.svg';
-import help from '../images/stores/help.svg';
-import sales from '../images/stores/sales.svg';
-import save from '../images/stores/save-money.svg';
-import success from '../images/stores/success.svg';
-import yourStore from '../images/stores/your-store.svg';
+import palette from '../images/graphics/palette.svg';
+import bucket from '../images/graphics/bucket.svg';
+import other3 from '../images/graphics/other-3.svg';
+import measured from '../images/graphics/measured.svg';
+import colors from '../images/graphics/colors.svg';
+import based from '../images/graphics/based.svg';
+import customized from '../images/graphics/customized.svg';
+import typography from '../images/graphics/typography.svg';
+import fixes from '../images/graphics/fixes.svg';
 
 const StyledGraphics = styled.section`
 	.websites {
@@ -71,8 +71,8 @@ export default function Graphics() {
 									<img
 										data-aos="zoom-in"
 										data-aos-once="true"
-										src={woocommerce}
-										alt="woocommerce icon"
+										src={palette}
+										alt="palette icon"
 									/>
 									<p className="websites__title">Logos, business cards</p>
 									<p className="websites__desc">
@@ -88,8 +88,8 @@ export default function Graphics() {
 										data-aos="zoom-in"
 										data-aos-once="true"
 										data-aos-delay="100"
-										src={prestashop}
-										alt="prestashop icon"
+										src={bucket}
+										alt="bucket icon"
 									/>
 									<p className="websites__title">Banner Ads</p>
 									<p className="websites__desc">
@@ -105,7 +105,7 @@ export default function Graphics() {
 										data-aos="zoom-in"
 										data-aos-once="true"
 										data-aos-delay="200"
-										src={other2}
+										src={other3}
 										alt="other icon"
 									/>
 									<p className="websites__title">Other graphics</p>
@@ -124,10 +124,10 @@ export default function Graphics() {
 									<img
 										data-aos="fade-up"
 										data-aos-once="true"
-										src={yourStore}
-										alt="your store icon"
+										src={measured}
+										alt="measured icon"
 									/>
-									<p className="websites__title">Your store online</p>
+									<p className="websites__title">Accurately measured</p>
 									<p className="websites__desc">
 										We make sure that our websites are fully responsive on every
 										device. Hence, your website will be looking superb on every
@@ -139,10 +139,10 @@ export default function Graphics() {
 										data-aos="fade-up"
 										data-aos-once="true"
 										data-aos-delay="100"
-										src={success}
-										alt="success icon"
+										src={colors}
+										alt="colors icon"
 									/>
-									<p className="websites__title">Build successful brand</p>
+									<p className="websites__title">Properly selected colors</p>
 									<p className="websites__desc">
 										We take care of every aspect that leads to making your
 										website as fast as possible. Thanks to our experience, this
@@ -154,10 +154,10 @@ export default function Graphics() {
 										data-aos="fade-up"
 										data-aos-once="true"
 										data-aos-delay="200"
-										src={save}
-										alt="save money icon"
+										src={based}
+										alt="based icon"
 									/>
-									<p className="websites__title">Save your money</p>
+									<p className="websites__title">Based on your idea</p>
 									<p className="websites__desc">
 										Don't spend a lot of money on website! With our service you
 										can focus on getting more clients than saving up money from
@@ -169,10 +169,10 @@ export default function Graphics() {
 										data-aos="fade-up"
 										data-aos-once="true"
 										data-aos-delay="300"
-										src={sales}
-										alt="sales icon"
+										src={customized}
+										alt="customized icon"
 									/>
-									<p className="websites__title">Make more sales</p>
+									<p className="websites__title">Tailored to your needs</p>
 									<p className="websites__desc">
 										Selling your product in your online store is the best way to
 										make more sales. With our help, you can always do your best
@@ -184,10 +184,10 @@ export default function Graphics() {
 										data-aos="fade-up"
 										data-aos-once="true"
 										data-aos-delay="400"
-										src={help}
-										alt="help icon"
+										src={typography}
+										alt="typography icon"
 									/>
-									<p className="websites__title">Get our help</p>
+									<p className="websites__title">Aesthetic typography</p>
 									<p className="websites__desc">
 										If something is unclear to you, if you have any questions,
 										you can always feel free to ask us. We want you to succeed,
@@ -199,10 +199,10 @@ export default function Graphics() {
 										data-aos="fade-up"
 										data-aos-once="true"
 										data-aos-delay="500"
-										src={branding}
-										alt="easy to use icon"
+										src={fixes}
+										alt="fixes icon"
 									/>
-									<p className="websites__title">Feature-rich</p>
+									<p className="websites__title">Possible corrections</p>
 									<p className="websites__desc">
 										Thanks to our services offered you can easily do everything
 										that you need to do when you are managing a store.

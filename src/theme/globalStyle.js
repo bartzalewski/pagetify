@@ -927,7 +927,7 @@ const GlobalStyle = createGlobalStyle`
 
       &__name {
         font-size: 18px !important;
-        margin: 1.5rem 0 2rem 0 !important;
+        margin: 1rem 0 2rem 0 !important;
       }
 
       &__desc {
