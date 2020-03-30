@@ -1,7 +1,7 @@
 import React from 'react';
 import styled from 'styled-components';
-import tickDownPurple from '../../images/tick-down-purple.svg';
-import pyramidDown from '../../images/pyramiddown.svg';
+import tickDownPurple from '../../images/decorations/tick-down-purple.svg';
+import pyramidDown from '../../images/decorations/pyramiddown.svg';
 import { Link } from 'react-router-dom';
 
 const StyledRequirements = styled.section`

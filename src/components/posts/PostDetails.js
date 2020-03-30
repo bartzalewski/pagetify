@@ -70,7 +70,11 @@ const PostDetails = props => {
 							</h1>
 							<div className="sites__wrapper post__wrapper">
 								<div className="post__info">
-									<img src={post.authorAvatar} alt="author avatar" />
+									<img
+										loading="lazy"
+										src={post.authorAvatar}
+										alt="author avatar"
+									/>
 									<div className="post__author">
 										<p className="post__name">{post.authorName}</p>
 										<p className="post__date">
@@ -79,6 +83,7 @@ const PostDetails = props => {
 									</div>
 								</div>
 								<img
+									loading="lazy"
 									className="post__background"
 									src={post.postBackground}
 									alt="post background"

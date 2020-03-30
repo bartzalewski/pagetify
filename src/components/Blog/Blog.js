@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import styled from 'styled-components';
-import stairsdown from '../../images/stairsdown.svg';
-import pyramidup from '../../images/pyramidup.svg';
+import stairsdown from '../../images/decorations/stairsdown.svg';
+import pyramidup from '../../images/decorations/pyramidup.svg';
 import { connect } from 'react-redux';
 import { firestoreConnect } from 'react-redux-firebase';
 import { compose } from 'redux';

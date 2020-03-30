@@ -3,15 +3,15 @@ import styled from 'styled-components';
 import NavbarOtherSites from '../components/Navbar/NavbarOtherSites';
 import CountUp from 'react-countup';
 import VisibilitySensor from 'react-visibility-sensor';
-import wordpress from '../images/wordpress.svg';
-import react from '../images/react.svg';
-import other from '../images/other.svg';
-import responsive from '../images/responsive.svg';
-import blazing from '../images/blazing.svg';
-import seo from '../images/seo.svg';
-import easy from '../images/easy.svg';
-import convenient from '../images/convenient.svg';
-import modern from '../images/modern.svg';
+import wordpress from '../images/websites/wordpress.svg';
+import react from '../images/websites/react.svg';
+import other from '../images/websites/other.svg';
+import responsive from '../images/websites/responsive.svg';
+import blazing from '../images/websites/blazing.svg';
+import seo from '../images/websites/seo.svg';
+import easy from '../images/websites/easy.svg';
+import convenient from '../images/websites/convenient.svg';
+import modern from '../images/websites/modern.svg';
 
 const StyledWebsites = styled.section`
 	.websites {

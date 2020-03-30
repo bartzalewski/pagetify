@@ -1,15 +1,15 @@
 import React from 'react';
 import styled from 'styled-components';
 import NavbarOtherSites from '../components/Navbar/NavbarOtherSites';
-import woocommerce from '../images/woocommerce.svg';
-import prestashop from '../images/prestashop.svg';
-import other2 from '../images/other-2.svg';
-import branding from '../images/branding-online.svg';
-import help from '../images/help.svg';
-import sales from '../images/sales.svg';
-import save from '../images/save-money.svg';
-import success from '../images/success.svg';
-import yourStore from '../images/your-store.svg';
+import woocommerce from '../images/stores/woocommerce.svg';
+import prestashop from '../images/stores/prestashop.svg';
+import other2 from '../images/stores/other-2.svg';
+import branding from '../images/stores/branding-online.svg';
+import help from '../images/stores/help.svg';
+import sales from '../images/stores/sales.svg';
+import save from '../images/stores/save-money.svg';
+import success from '../images/stores/success.svg';
+import yourStore from '../images/stores/your-store.svg';
 
 const StyledWebsites = styled.section`
 	.websites {

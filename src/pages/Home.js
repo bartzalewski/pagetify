@@ -4,17 +4,25 @@ import Navbar from '../components/Navbar/Navbar';
 import { Link } from 'react-router-dom';
 import Sphere from '../components/animations/Sphere';
 
-import bg from '../images/bg.jpg';
-import websites from '../images/websites.svg';
-import stores from '../images/stores.svg';
-import graphic from '../images/graphic.svg';
-import delivery from '../images/delivery.svg';
-import quality from '../images/quality.svg';
-import wallet from '../images/wallet.svg';
-import waveup from '../images/waveup.svg';
-import wavedown from '../images/wavedown.svg';
-import stairsup from '../images/stairsup.svg';
-import orella from '../images/clients/orella.jpg';
+import bg from '../images/home/bg.jpg';
+import delivery from '../images/home/delivery.svg';
+import graphic from '../images/home/graphic.svg';
+import standout1 from '../images/home/standout-1.svg';
+import standout2 from '../images/home/standout-2.svg';
+import standout3 from '../images/home/standout-3.svg';
+import standout4 from '../images/home/standout-4.svg';
+import stores from '../images/home/stores.svg';
+import websites from '../images/home/websites.svg';
+import quality from '../images/home/quality.svg';
+import wallet from '../images/home/wallet.svg';
+
+import tickdown from '../images/decorations/tick-down.svg';
+import waveup from '../images/decorations/waveup.svg';
+import wavedown from '../images/decorations/wavedown.svg';
+import stairsup from '../images/decorations/stairsup.svg';
+import tick from '../images/decorations/tick.svg';
+
+import aniela from '../images/clients/aniela.jpg';
 import charlean from '../images/clients/charlean.jpg';
 import kalil from '../images/clients/kalil.jpg';
 import jeralee from '../images/clients/jeralee.jpg';
@@ -23,12 +31,6 @@ import marti from '../images/clients/marti.jpg';
 import aubrie from '../images/clients/aubrie.jpg';
 import dodi from '../images/clients/dodi.jpg';
 import adam from '../images/clients/adam.jpg';
-import standout1 from '../images/standout-1.svg';
-import standout2 from '../images/standout-2.svg';
-import standout3 from '../images/standout-3.svg';
-import standout4 from '../images/standout-4.svg';
-import tick from '../images/tick.svg';
-import tickdown from '../images/tick-down.svg';
 
 const StyledHome = styled.section`
 	.hero,
@@ -219,45 +221,56 @@ const StyledHomeReviews = styled.section`
 			align-items: center;
 			flex-direction: column;
 			padding: 20px;
-			border-top: 5px solid;
+			border: 1px solid;
+			border-radius: 5px;
+			border-color: #d2d2d2;
 			position: relative;
-			box-shadow: 0 2px 10px rgba(50, 50, 93, 0.1);
-			transition: 0.2s ease-in-out;
+			transition: 0.5s ease;
 
 			&:hover {
-				transition: 0.2s ease-in-out;
+				transition: 0.5s ease;
 				box-shadow: 0 9px 32px 0 rgba(0, 0, 0, 0.15);
+				transform: scale(1.1);
+
+				.reviews__name {
+					color: #49a9e0;
+					transition: 0.3s ease-in-out;
+				}
+
+				.reviews__client {
+					border: 1px solid #49a9e0;
+					transition: 0.5s ease;
+				}
 			}
 
-			&--left {
-				border-image-source: linear-gradient(#36d0dc, #41bade);
-				border-image-slice: 1;
-			}
-
-			&--center {
-				border-image-source: linear-gradient(#43b6df, #4da1e1);
-				border-image-slice: 1;
-			}
-
+			&--left,
+			&--center,
 			&--right {
-				border-image-source: linear-gradient(#509ce2, #5b86e5);
-				border-image-slice: 1;
+				border-color: #d2d2d2;
+
+				&:hover {
+					border-color: #49a9e0;
+					transition: 0.5s ease;
+				}
 			}
 		}
 
 		&__client {
 			position: absolute;
 			top: -30px;
-			box-shadow: 0 3px 5px 0 rgba(0, 0, 0, 0.4);
 			overflow: hidden;
 			border-radius: 100%;
 			height: 60px;
 			width: 60px;
+			border: 1px solid #d2d2d2;
+			transition: 0.5s ease;
 		}
 
 		&__name {
 			margin: 1rem 0;
-			font-weight: 500;
+			margin-top: 1.5rem;
+			font-weight: 600;
+			transition: 0.3s ease-in-out;
 		}
 
 		&__desc {
@@ -269,6 +282,7 @@ const StyledHomeReviews = styled.section`
 
 	.decoration--bottom {
 		margin-top: 80px;
+		bottom: -3px;
 	}
 `;
 
@@ -505,12 +519,12 @@ export default function Home(props) {
 								<div className="reviews__client">
 									<img
 										loading="lazy"
-										src={orella}
+										src={aniela}
 										alt="client"
 										className="reviews__img"
 									/>
 								</div>
-								<p className="reviews__name">Orella</p>
+								<p className="reviews__name">Aniela</p>
 								<p className="reviews__desc">
 									The best on the net! I have gotten at least 50 times the value
 									from Pagetify. I am completely blown away. Thanks to Pagetify,
@@ -526,7 +540,7 @@ export default function Home(props) {
 										className="reviews__img"
 									/>
 								</div>
-								<p className="reviews__name">Charlean</p>
+								<p className="reviews__name">Kamil</p>
 								<p className="reviews__desc">
 									I wanted simple WooCommerce online store which would help me
 									getting more sales. I chose Pagetify offer, and I'm not

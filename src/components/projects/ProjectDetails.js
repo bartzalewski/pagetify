@@ -88,6 +88,7 @@ const ProjectDetails = props => {
 							<div className="sites__wrapper project__wrapper">
 								<div className="project__wrapper--grid">
 									<img
+										loading="lazy"
 										className="project__background"
 										src={project.projectBackground}
 										alt="project background"

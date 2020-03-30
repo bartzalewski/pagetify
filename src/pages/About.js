@@ -1,10 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
 import NavbarOtherSites from '../components/Navbar/NavbarOtherSites';
-import bz from '../images/bz.png';
-import dg from '../images/dg.png';
-import video from '../images/video.mp4';
-import video2 from '../images/video2.mp4';
+import bz from '../images/about/bz.png';
+import dg from '../images/about/dg.png';
+import video from '../images/about/video.mp4';
+import video2 from '../images/about/video2.mp4';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 const StyledAbout = styled.section`
@@ -203,7 +203,12 @@ export default function About() {
 							</h1>
 							<div className="about__wrapper">
 								<div className="about__box">
-									<img src={bz} alt="bart zalewski" className="about__avatar" />
+									<img
+										loading="lazy"
+										src={bz}
+										alt="bart zalewski"
+										className="about__avatar"
+									/>
 									<p className="about__dev">Bart Zalewski</p>
 									<p className="about__role">Front-end Developer</p>
 									<div className="about__social">
@@ -255,7 +260,12 @@ export default function About() {
 									</div>
 								</div>
 								<div className="about__box">
-									<img src={dg} alt="david grzanka" className="about__avatar" />
+									<img
+										loading="lazy"
+										src={dg}
+										alt="david grzanka"
+										className="about__avatar"
+									/>
 									<p className="about__dev">David Grzanka</p>
 									<p className="about__role">Back-end Developer</p>
 									<div className="about__social">

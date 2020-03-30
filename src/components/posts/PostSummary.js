@@ -13,7 +13,7 @@ export default function PostSummary({ post }) {
 						{post.title}
 					</div>
 					<div className="blog__author--hide-on-component">
-						<img src={post.authorAvatar} alt="author avatar" />
+						<img loading="lazy" src={post.authorAvatar} alt="author avatar" />
 						<div className="blog__author--flex">
 							<p className="blog__name">{post.authorName}</p>
 							<p className="blog__date">
@@ -23,6 +23,7 @@ export default function PostSummary({ post }) {
 					</div>
 					<div className="blog__overlay--wrapper">
 						<img
+							loading="lazy"
 							className="blog__background"
 							src={post.postBackground}
 							alt="post background"
@@ -32,7 +33,7 @@ export default function PostSummary({ post }) {
 						</div>
 					</div>
 					<div className="blog__author--hide-on-site">
-						<img src={post.authorAvatar} alt="author avatar" />
+						<img loading="lazy" src={post.authorAvatar} alt="author avatar" />
 						<div className="blog__author--flex">
 							<p className="blog__name">{post.authorName}</p>
 							<p className="blog__date">

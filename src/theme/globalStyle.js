@@ -1,6 +1,6 @@
 import { createGlobalStyle } from 'styled-components';
-import tickDownPrimary from '../images/tick-down-primary.svg';
-import tickDown from '../images/tick-down.svg';
+import tickDownPrimary from '../images/decorations/tick-down-primary.svg';
+import tickDown from '../images/decorations/tick-down.svg';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 
@@ -906,6 +906,12 @@ const GlobalStyle = createGlobalStyle`
           &:nth-of-type(9) {
             display: none !important;
           }
+        }
+      }
+
+      &__box {
+        &:hover {
+				  transform: scale(1.02) !important;
         }
       }
 

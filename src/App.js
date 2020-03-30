@@ -13,10 +13,11 @@ import {
 	faPhone,
 	faEnvelope,
 	faUser,
-	faComments
+	faComments,
+	faUnlock
 } from '@fortawesome/free-solid-svg-icons';
 
-library.add(fab, faGlobe, faPhone, faEnvelope, faUser, faComments);
+library.add(fab, faGlobe, faPhone, faEnvelope, faUser, faComments, faUnlock);
 
 function App(props) {
 	const { auth, profile } = props;

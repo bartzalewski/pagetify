@@ -12,6 +12,7 @@ export default function PostSummary({ project }) {
 		<StyledProjectSummary>
 			<div className="project__box">
 				<img
+					loading="lazy"
 					src={project.projectBackground}
 					className="project__background--preview"
 					alt="project background"

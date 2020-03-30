@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import logo from '../../images/logo-black.png';
+import logo from '../../images/decorations/logo-black.png';
 import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
@@ -111,10 +111,10 @@ export default function Footer() {
 								<Link to="/" className="footer__homepage">
 									<img loading="lazy" src={logo} alt="pagetify logo" />
 								</Link>
-								<a href="tel:+48531797647">
+								<a href="tel:+48531797647" title="Call us now!">
 									<FontAwesomeIcon icon="phone" /> +48 531 797 647
 								</a>
-								<a href="mailto:mail@pagetify.com">
+								<a href="mailto:mail@pagetify.com" title="Email us now!">
 									<FontAwesomeIcon icon="envelope" /> mail@pagetify.com
 								</a>
 							</div>

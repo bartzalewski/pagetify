@@ -13,7 +13,7 @@ export default function Login() {
 				<div className="sites__container">
 					<div className="container">
 						<h1 className="section__title">Log in</h1>
-						<div className="sites__wrapper">
+						<div className="sites__wrapper form__container">
 							<SignIn></SignIn>
 						</div>
 					</div>
