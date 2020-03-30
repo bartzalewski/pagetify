@@ -132,6 +132,7 @@ const GlobalStyle = createGlobalStyle`
 
   .rubber-band {
     user-select: none;
+    white-space: pre-wrap;
   }
 
   .rubber-hide {
@@ -736,6 +737,7 @@ const GlobalStyle = createGlobalStyle`
     box-shadow: 0 9px 32px 0 rgba(0, 0, 0, 0.5);
     transition: .2s ease-in-out;
     border-radius: 100%;
+    top: -22px;
 
     &:hover {
       transition: .2s ease-in-out;
@@ -751,11 +753,23 @@ const GlobalStyle = createGlobalStyle`
     .container {
       width: 90%;
     }
+
+    .hero {
+      .wrapper {
+        width: 50% !important;
+      }
+    }
   }
 
   @media (max-width: 1024px) {
     .container {
       width: 95%;
+    }
+
+    .hero {
+      .wrapper {
+        width: 58% !important;
+      }
     }
   }
   

@@ -131,8 +131,6 @@ class Form extends Component {
 
 	render() {
 		const { name, email, message, emailStatus } = this.state;
-		console.log(this.state);
-
 		return (
 			<StyledPriceForm className="form__wrapper" onSubmit={this.submitForm}>
 				{emailStatus ? emailStatus : null}

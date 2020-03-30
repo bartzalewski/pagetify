@@ -75,7 +75,7 @@ const StyledHomeHero = styled.header`
 			flex-direction: row;
 
 			.wrapper {
-				width: 40%;
+				width: 42%;
 			}
 
 			h1 {

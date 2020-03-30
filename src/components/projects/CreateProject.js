@@ -121,7 +121,6 @@ class CreatePost extends Component {
 			uploadPostButton.disabled = false;
 			uploadPostButton.style.visibility = 'visible';
 		}
-		console.log(this.state);
 		return (
 			<>
 				<NavbarOtherSites></NavbarOtherSites>

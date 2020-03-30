@@ -65,7 +65,9 @@ const PostDetails = props => {
 				<StyledPostDetails className="sites__hero">
 					<div className="sites__container">
 						<div className="container post__container">
-							<h1 className="section__title post__title">{post.title}</h1>
+							<h1 className="section__title post__title rubber-band">
+								{post.title}
+							</h1>
 							<div className="sites__wrapper post__wrapper">
 								<div className="post__info">
 									<img src={post.authorAvatar} alt="author avatar" />

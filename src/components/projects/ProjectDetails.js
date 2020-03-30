@@ -82,7 +82,7 @@ const ProjectDetails = props => {
 				<StyledProjectDetails className="sites__hero">
 					<div className="sites__container">
 						<div className="container project__container">
-							<h1 className="section__title project__title">
+							<h1 className="section__title project__title rubber-band">
 								{project.projectName}
 							</h1>
 							<div className="sites__wrapper project__wrapper">

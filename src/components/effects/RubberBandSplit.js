@@ -6,17 +6,19 @@ export default function RubberBandSplit() {
 
 	useEffect(() => {
 		const textEl = document.querySelector('.rubber-band');
-		const text = textEl.textContent;
-		const swap = text.replace(/\s/g, '.');
-		const letters = swap.split('');
+		if (textEl) {
+			const text = textEl.textContent;
+			const swap = text.replace(/\s/g, ' ');
+			const letters = swap.split('');
 
-		let html = '';
+			let html = '';
 
-		const makespan = letter => `<span class="rubber-span">${letter}</span>`;
+			const makespan = letter => `<span class="rubber-span">${letter}</span>`;
 
-		letters.forEach(letter => (html += makespan(letter)));
+			letters.forEach(letter => (html += makespan(letter)));
 
-		textEl.innerHTML = html;
+			textEl.innerHTML = html;
+		}
 	}, [pathname]);
 
 	return null;

@@ -43,7 +43,7 @@ function Admin(props) {
 			<StyledAdmin className="sites__hero">
 				<div className="sites__container">
 					<div className="container">
-						<h1 className="section__title">Admin panel</h1>
+						<h1 className="section__title rubber-band">Admin panel</h1>
 						<div className="sites__desc admin__desc">
 							Hello {props.profile.firstName}!
 						</div>
