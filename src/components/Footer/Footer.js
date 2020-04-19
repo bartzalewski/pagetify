@@ -180,7 +180,8 @@ export default function Footer() {
 					</div>
 					<hr className="footer__line" />
 					<p className="footer__copyright">
-						Pagetify &copy; 2019-2020. All rights reserved.
+						Pagetify &copy; 2019-{new Date().getFullYear()}. All rights
+						reserved.
 					</p>
 				</div>
 			</div>

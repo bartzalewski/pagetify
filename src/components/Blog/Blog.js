@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import stairsdown from '../../images/decorations/stairsdown.svg';
 import pyramidup from '../../images/decorations/pyramidup.svg';
@@ -113,45 +113,43 @@ const StyledBlog = styled.section`
 	}
 `;
 
-class Blog extends Component {
-	render() {
-		const { posts } = this.props;
-		return (
-			<StyledBlog>
-				<img
-					loading="lazy"
-					className="decoration decoration--blog"
-					src={stairsdown}
-					alt="decoration"
-				/>
-				<div className="blog">
-					<div className="container">
-						<h1 className="section__title">
-							Here are the latest posts from our blog
-						</h1>
-						<PostList posts={posts}></PostList>
-					</div>
+const Blog = (props) => {
+	const { posts } = props;
+	return (
+		<StyledBlog>
+			<img
+				loading="lazy"
+				className="decoration decoration--blog"
+				src={stairsdown}
+				alt="decoration"
+			/>
+			<div className="blog">
+				<div className="container">
+					<h1 className="section__title">
+						Here are the latest posts from our blog
+					</h1>
+					<PostList posts={posts}></PostList>
 				</div>
-				<img
-					loading="lazy"
-					className="decoration decoration__pyramidup"
-					src={pyramidup}
-					alt="decoration"
-				/>
-			</StyledBlog>
-		);
-	}
-}
+			</div>
+			<img
+				loading="lazy"
+				className="decoration decoration__pyramidup"
+				src={pyramidup}
+				alt="decoration"
+			/>
+		</StyledBlog>
+	);
+};
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
 	return {
-		posts: state.firestore.ordered.posts
+		posts: state.firestore.ordered.posts,
 	};
 };
 
 export default compose(
 	connect(mapStateToProps),
 	firestoreConnect([
-		{ collection: 'posts', limit: 6, orderBy: ['createdAt', 'desc'] }
+		{ collection: 'posts', limit: 6, orderBy: ['createdAt', 'desc'] },
 	])
 )(Blog);

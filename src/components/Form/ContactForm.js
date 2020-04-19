@@ -25,26 +25,26 @@ const StyledContactForm = styled.div`
 	}
 `;
 
-class Form extends Component {
+class ContactForm extends Component {
 	state = {
 		name: '',
 		email: '',
 		message: '',
-		emailStatus: ''
+		emailStatus: '',
 	};
 
-	handleChange = input => e => {
+	handleChange = (input) => (e) => {
 		this.setState({ [input]: e.target.value });
 	};
 
-	submitForm = e => {
+	submitForm = (e) => {
 		const { name, email, message } = this.state;
 
-		var xhr = new XMLHttpRequest();
+		let xhr = new XMLHttpRequest();
 
 		xhr.addEventListener('load', () => {
 			this.setState({
-				emailStatus: xhr.responseText
+				emailStatus: xhr.responseText,
 			});
 		});
 
@@ -63,7 +63,7 @@ class Form extends Component {
 		this.setState({
 			name: '',
 			email: '',
-			message: ''
+			message: '',
 		});
 		e.preventDefault();
 	};
@@ -71,21 +71,21 @@ class Form extends Component {
 	componentDidMount = () => {
 		const inputs = document.querySelectorAll('.input-field__input');
 
-		function addcl() {
+		function addCl() {
 			let parent = this.parentNode.parentNode.parentNode;
 			parent.classList.add('focus');
 		}
 
-		function remcl() {
+		function remCl() {
 			let parent = this.parentNode.parentNode.parentNode;
 			if (this.value === '') {
 				parent.classList.remove('focus');
 			}
 		}
 
-		inputs.forEach(input => {
-			input.addEventListener('focus', addcl);
-			input.addEventListener('blur', remcl);
+		inputs.forEach((input) => {
+			input.addEventListener('focus', addCl);
+			input.addEventListener('blur', remCl);
 		});
 	};
 
@@ -175,4 +175,4 @@ class Form extends Component {
 	}
 }
 
-export default Form;
+export default ContactForm;

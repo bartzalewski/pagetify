@@ -9,17 +9,6 @@ AOS.init();
 const GlobalStyle = createGlobalStyle`
   @import url('https://fonts.googleapis.com/css?family=Montserrat:400,500,600,700&display=swap');
 
-  /*
-  
-  MONTSERRAT FONT WEIGHT
-  
-  400 - regular
-  500 - medium
-  600 - semi-bold
-  700 - bold
-
-  */
-
   html {
 	  scrollbar-color: #49A9E0 #f0f0f0;
 	  scrollbar-width: thin;

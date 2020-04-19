@@ -73,8 +73,9 @@ const StyledProjectDetails = styled.section`
 	}
 `;
 
-const ProjectDetails = props => {
+const ProjectDetails = (props) => {
 	const { project } = props;
+
 	if (project) {
 		return (
 			<>
@@ -148,7 +149,7 @@ const mapStateToProps = (state, ownProps) => {
 	const project = projects ? projects[id] : null;
 	return {
 		project: project,
-		auth: state.firebase.auth
+		auth: state.firebase.auth,
 	};
 };
 
@@ -156,7 +157,7 @@ export default compose(
 	connect(mapStateToProps),
 	firestoreConnect([
 		{
-			collection: 'projects'
-		}
+			collection: 'projects',
+		},
 	])
 )(ProjectDetails);

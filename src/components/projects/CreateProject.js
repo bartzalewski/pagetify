@@ -32,7 +32,7 @@ class CreatePost extends Component {
 			content: '',
 			url: '',
 			projectURL: '',
-			progress: 0
+			progress: 0,
 		};
 		this.handleChange = this.handleChange.bind(this);
 		this.handleUpload = this.handleUpload.bind(this);
@@ -40,29 +40,26 @@ class CreatePost extends Component {
 		this.handleChoose = this.handleChoose.bind(this);
 		this.handleURL = this.handleURL.bind(this);
 	}
-	handleURL = async e => {
+	handleURL = async (e) => {
 		await this.setState({
 			url:
 				e.target.id === 'projectName'
-					? e.target.value
-							.split(' ')
-							.join('-')
-							.toLowerCase()
+					? e.target.value.split(' ').join('-').toLowerCase()
 					: null,
-			[e.target.id]: e.target.value
+			[e.target.id]: e.target.value,
 		});
 	};
-	handleChange = async e => {
+	handleChange = async (e) => {
 		await this.setState({
-			[e.target.id]: e.target.value
+			[e.target.id]: e.target.value,
 		});
 	};
-	handleSubmit = e => {
+	handleSubmit = (e) => {
 		e.preventDefault();
 		this.props.createProject(this.state, this.state.url);
 		this.props.history.push('/');
 	};
-	handleChoose = e => {
+	handleChoose = (e) => {
 		if (e.target.files[0]) {
 			const projectBackground = e.target.files[0];
 			this.setState(() => ({ projectBackground }));
@@ -70,20 +67,23 @@ class CreatePost extends Component {
 	};
 	handleUpload = () => {
 		const { projectBackground } = this.state;
-		const imageName = `${projectBackground.name +
-			Math.round(Math.random() * 1000000000000)}`;
+		const imageName = `${
+			projectBackground.name + Math.round(Math.random() * 1000000000000)
+		}`;
+
 		const uploadTask = storage
 			.ref(`images/projects/${imageName}`)
 			.put(projectBackground);
+
 		uploadTask.on(
 			'state_changed',
-			snapshot => {
+			(snapshot) => {
 				const progress = Math.round(
 					(snapshot.bytesTransferred / snapshot.totalBytes) * 100
 				);
 				this.setState({ progress });
 			},
-			error => {
+			(error) => {
 				console.log(error);
 			},
 			() => {
@@ -91,13 +91,13 @@ class CreatePost extends Component {
 					.ref('images/projects')
 					.child(imageName)
 					.getDownloadURL()
-					.then(projectBackground => {
+					.then((projectBackground) => {
 						this.setState({ projectBackground });
 					});
 			}
 		);
-		uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
-			console.log('File available at', downloadURL);
+
+		uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
 			return downloadURL;
 		});
 	};
@@ -108,7 +108,9 @@ class CreatePost extends Component {
 	render() {
 		const { auth } = this.props;
 		const uploadPostButton = document.getElementById('upload-post-btn');
+
 		if (!auth.uid) return <Redirect to="/" />;
+
 		if (
 			this.state.projectName !== '' &&
 			this.state.projectClient !== '' &&
@@ -210,7 +212,7 @@ class CreatePost extends Component {
 										style={{
 											margin: '1rem 0',
 											fontWeight: 500,
-											fontSize: '16px'
+											fontSize: '16px',
 										}}
 									>
 										Preview:
@@ -251,15 +253,15 @@ class CreatePost extends Component {
 	}
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
 	return {
-		auth: state.firebase.auth
+		auth: state.firebase.auth,
 	};
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
 	return {
-		createProject: (project, url) => dispatch(createProject(project, url))
+		createProject: (project, url) => dispatch(createProject(project, url)),
 	};
 };
 

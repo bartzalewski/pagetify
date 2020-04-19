@@ -75,7 +75,7 @@ class CreatePost extends Component {
 			content: '',
 			url: '',
 			postBackground: null,
-			progress: 0
+			progress: 0,
 		};
 		this.handleChange = this.handleChange.bind(this);
 		this.handleUpload = this.handleUpload.bind(this);
@@ -83,29 +83,26 @@ class CreatePost extends Component {
 		this.handleChoose = this.handleChoose.bind(this);
 		this.handleURL = this.handleURL.bind(this);
 	}
-	handleURL = async e => {
+	handleURL = async (e) => {
 		await this.setState({
 			url:
 				e.target.id === 'title'
-					? e.target.value
-							.split(' ')
-							.join('-')
-							.toLowerCase()
+					? e.target.value.split(' ').join('-').toLowerCase()
 					: null,
-			[e.target.id]: e.target.value
+			[e.target.id]: e.target.value,
 		});
 	};
-	handleChange = async e => {
+	handleChange = async (e) => {
 		await this.setState({
-			[e.target.id]: e.target.value
+			[e.target.id]: e.target.value,
 		});
 	};
-	handleSubmit = e => {
+	handleSubmit = (e) => {
 		e.preventDefault();
 		this.props.createPost(this.state, this.state.url);
 		this.props.history.push('/');
 	};
-	handleChoose = e => {
+	handleChoose = (e) => {
 		if (e.target.files[0]) {
 			const postBackground = e.target.files[0];
 			this.setState(() => ({ postBackground }));
@@ -113,20 +110,23 @@ class CreatePost extends Component {
 	};
 	handleUpload = () => {
 		const { postBackground } = this.state;
-		const imageName = `${postBackground.name +
-			Math.round(Math.random() * 1000000000000)}`;
+		const imageName = `${
+			postBackground.name + Math.round(Math.random() * 1000000000000)
+		}`;
+
 		const uploadTask = storage
 			.ref(`images/posts/${imageName}`)
 			.put(postBackground);
+
 		uploadTask.on(
 			'state_changed',
-			snapshot => {
+			(snapshot) => {
 				const progress = Math.round(
 					(snapshot.bytesTransferred / snapshot.totalBytes) * 100
 				);
 				this.setState({ progress });
 			},
-			error => {
+			(error) => {
 				console.log(error);
 			},
 			() => {
@@ -134,13 +134,13 @@ class CreatePost extends Component {
 					.ref('images/posts')
 					.child(imageName)
 					.getDownloadURL()
-					.then(postBackground => {
+					.then((postBackground) => {
 						this.setState({ postBackground });
 					});
 			}
 		);
-		uploadTask.snapshot.ref.getDownloadURL().then(function(downloadURL) {
-			console.log('File available at', downloadURL);
+
+		uploadTask.snapshot.ref.getDownloadURL().then(function (downloadURL) {
 			return downloadURL;
 		});
 	};
@@ -151,7 +151,9 @@ class CreatePost extends Component {
 	render() {
 		const { auth } = this.props;
 		const uploadPostButton = document.getElementById('upload-post-btn');
+
 		if (!auth.uid) return <Redirect to="/" />;
+
 		if (
 			this.state.authorName !== '' &&
 			this.state.postBackground !== null &&
@@ -210,7 +212,7 @@ class CreatePost extends Component {
 										style={{
 											margin: '1rem 0',
 											fontWeight: 500,
-											fontSize: '16px'
+											fontSize: '16px',
 										}}
 									>
 										Preview:
@@ -251,15 +253,15 @@ class CreatePost extends Component {
 	}
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
 	return {
-		auth: state.firebase.auth
+		auth: state.firebase.auth,
 	};
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
 	return {
-		createPost: (post, url) => dispatch(createPost(post, url))
+		createPost: (post, url) => dispatch(createPost(post, url)),
 	};
 };
 

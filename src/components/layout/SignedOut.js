@@ -18,9 +18,9 @@ import Login from '../../pages/Login';
 import PostDetails from '../posts/PostDetails';
 import ProjectDetails from '../projects/ProjectDetails';
 
-const SignedOut = () => {
-	return (
-		<>
+const SignedOut = () => (
+	<>
+		<main>
 			<Switch>
 				<Route exact path="/" component={Home} />
 				<Route path="/websites" component={Websites} />
@@ -39,9 +39,9 @@ const SignedOut = () => {
 			</Switch>
 			<Blog></Blog>
 			<Requirements></Requirements>
-			<Footer></Footer>
-		</>
-	);
-};
+		</main>
+		<Footer></Footer>
+	</>
+);
 
 export default SignedOut;

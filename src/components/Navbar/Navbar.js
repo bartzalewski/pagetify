@@ -1,22 +1,19 @@
 import React, { Component } from 'react';
-import styled from 'styled-components';
 import { NavLink } from 'react-router-dom';
 import logo from '../../images/decorations/logo-white.png';
 
-const StyledNavbar = styled.nav``;
-
 class Navbar extends Component {
 	state = {
-		condition: false
+		condition: false,
 	};
 	handleClick = () => {
 		this.setState({
-			condition: !this.state.condition
+			condition: !this.state.condition,
 		});
 	};
 	render() {
 		return (
-			<StyledNavbar className="navbar">
+			<header className="navbar">
 				<div
 					id="sidenav"
 					className={this.state.condition ? 'sidenav sidenav--open' : 'sidenav'}
@@ -29,37 +26,43 @@ class Navbar extends Component {
 						<NavLink to="/stores">Online stores</NavLink>
 						<NavLink to="/graphics">Graphic design</NavLink>
 					</div>
-					<NavLink
-						to="/projects"
-						activeClassName="active"
-						className="navbar__projects"
-					>
-						Projects
-					</NavLink>
-					<NavLink
-						to="/about"
-						activeClassName="active"
-						className="navbar__about"
-					>
-						About
-					</NavLink>
-					<NavLink to="/blog" activeClassName="active" className="navbar__blog">
-						Blog
-					</NavLink>
-					<NavLink
-						to="/contact"
-						activeClassName="active"
-						className="navbar__contact"
-					>
-						Contact
-					</NavLink>
-					<NavLink
-						to="/price"
-						activeClassName="active"
-						className="navbar__price"
-					>
-						Price
-					</NavLink>
+					<nav>
+						<NavLink
+							to="/projects"
+							activeClassName="active"
+							className="navbar__projects"
+						>
+							Projects
+						</NavLink>
+						<NavLink
+							to="/about"
+							activeClassName="active"
+							className="navbar__about"
+						>
+							About
+						</NavLink>
+						<NavLink
+							to="/blog"
+							activeClassName="active"
+							className="navbar__blog"
+						>
+							Blog
+						</NavLink>
+						<NavLink
+							to="/contact"
+							activeClassName="active"
+							className="navbar__contact"
+						>
+							Contact
+						</NavLink>
+						<NavLink
+							to="/price"
+							activeClassName="active"
+							className="navbar__price"
+						>
+							Price
+						</NavLink>
+					</nav>
 				</div>
 				<div className="container navbar-container">
 					<div className="left navbar__left">
@@ -198,7 +201,7 @@ class Navbar extends Component {
 						) : null}
 					</ul>
 				</div>
-			</StyledNavbar>
+			</header>
 		);
 	}
 }

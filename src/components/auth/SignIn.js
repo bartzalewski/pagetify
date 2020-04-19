@@ -13,41 +13,41 @@ class SignIn extends Component {
 	state = {
 		email: '',
 		password: '',
-		isSignedIn: false
+		isSignedIn: false,
 	};
-	handleChange = e => {
+	handleChange = (e) => {
 		this.setState({
-			[e.target.id]: e.target.value
+			[e.target.id]: e.target.value,
 		});
 	};
-	handleSubmit = e => {
+	handleSubmit = (e) => {
 		e.preventDefault();
 		this.props.signIn(this.state);
 	};
 	componentDidMount = () => {
-		firebase.auth().onAuthStateChanged(user => {
+		firebase.auth().onAuthStateChanged((user) => {
 			this.setState({
-				isSignedIn: !!user
+				isSignedIn: !!user,
 			});
 		});
 
 		const inputs = document.querySelectorAll('.input-field__input');
 
-		function addcl() {
+		function addCl() {
 			let parent = this.parentNode.parentNode.parentNode;
 			parent.classList.add('focus');
 		}
 
-		function remcl() {
+		function remCl() {
 			let parent = this.parentNode.parentNode.parentNode;
 			if (this.value === '') {
 				parent.classList.remove('focus');
 			}
 		}
 
-		inputs.forEach(input => {
-			input.addEventListener('focus', addcl);
-			input.addEventListener('blur', remcl);
+		inputs.forEach((input) => {
+			input.addEventListener('focus', addCl);
+			input.addEventListener('blur', remCl);
 		});
 	};
 	render() {
@@ -97,16 +97,16 @@ class SignIn extends Component {
 	}
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
 	return {
 		authError: state.auth.authError,
-		auth: state.firebase.auth
+		auth: state.firebase.auth,
 	};
 };
 
-const mapDispatchToProps = dispatch => {
+const mapDispatchToProps = (dispatch) => {
 	return {
-		signIn: creds => dispatch(signIn(creds))
+		signIn: (creds) => dispatch(signIn(creds)),
 	};
 };
 

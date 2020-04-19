@@ -56,8 +56,9 @@ const StyledPostDetails = styled.section`
 	}
 `;
 
-const PostDetails = props => {
+const PostDetails = (props) => {
 	const { post } = props;
+
 	if (post) {
 		return (
 			<>
@@ -117,7 +118,7 @@ const mapStateToProps = (state, ownProps) => {
 	const post = posts ? posts[id] : null;
 	return {
 		post: post,
-		auth: state.firebase.auth
+		auth: state.firebase.auth,
 	};
 };
 
@@ -125,7 +126,7 @@ export default compose(
 	connect(mapStateToProps),
 	firestoreConnect([
 		{
-			collection: 'posts'
-		}
+			collection: 'posts',
+		},
 	])
 )(PostDetails);
