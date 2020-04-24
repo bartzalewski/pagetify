@@ -4,6 +4,8 @@ This is my project for creating a complex website for web developers. It will co
 
 Link to the website: https://pagetify.com/
 
+<img alt="screenshot" src="https://i.imgur.com/7fRzjjl.jpg">
+
 ## What kind of technologies did I use?
 
 - React.js
