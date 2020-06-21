@@ -719,25 +719,6 @@ const GlobalStyle = createGlobalStyle`
 
   /* CHECKBOX END */
 
-  canvas {
-    outline: none;
-    position: absolute;
-    right: 14%;
-    box-shadow: 0 9px 32px 0 rgba(0, 0, 0, 0.5);
-    transition: .2s ease-in-out;
-    border-radius: 100%;
-    top: -22px;
-
-    &:hover {
-      transition: .2s ease-in-out;
-			box-shadow: 0 9px 32px 0 rgba(0, 0, 0, 1);
-    }
-  }
-
-  .sphere {
-    position: relative;
-  }
-
   @media (max-width: 1200px) {
     .container {
       width: 90%;

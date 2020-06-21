@@ -2,7 +2,6 @@ import React from 'react';
 import styled from 'styled-components';
 import Navbar from '../components/Navbar/Navbar';
 import { Link } from 'react-router-dom';
-import Sphere from '../components/animations/Sphere';
 
 import bg from '../images/home/bg.jpg';
 import delivery from '../images/home/delivery.svg';
@@ -356,7 +355,7 @@ export default function Home(props) {
 				<Navbar profile={props.profile}></Navbar>
 				<div className="hero">
 					<div className="container">
-						<div className="wrapper wrapper--left">
+						<div className="wrapper">
 							<h1
 								data-aos="fade-right"
 								data-aos-once="true"
@@ -385,9 +384,6 @@ export default function Home(props) {
 									or check our offer
 								</a>
 							</div>
-						</div>
-						<div className="wrapper--right">
-							<Sphere />
 						</div>
 					</div>
 				</div>

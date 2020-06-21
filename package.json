@@ -11,7 +11,7 @@
 		"@testing-library/react": "^9.3.2",
 		"@testing-library/user-event": "^7.1.2",
 		"aos": "^3.0.0-beta.6",
-		"firebase": "^7.11.0",
+		"firebase": "^7.15.3",
 		"moment": "^2.24.0",
 		"react": "^16.12.0",
 		"react-countup": "^4.3.3",
@@ -20,14 +20,13 @@
 		"react-redux": "^5.1.1",
 		"react-redux-firebase": "^2.2.4",
 		"react-router-dom": "^5.1.2",
-		"react-scripts": "3.2.0",
+		"react-scripts": "^3.4.1",
 		"react-visibility-sensor": "^5.1.1",
 		"redux": "^4.0.5",
 		"redux-firestore": "^0.13.0",
 		"redux-thunk": "^2.3.0",
 		"styled-components": "^4.4.1",
-		"textarea-markdown": "^1.2.4",
-		"three": "^0.115.0"
+		"textarea-markdown": "^1.2.4"
 	},
 	"scripts": {
 		"start": "react-scripts start",

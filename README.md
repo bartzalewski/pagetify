@@ -20,7 +20,6 @@ Link to the website: https://pagetify.com/
 - Composer
 - PHPMailer
 - MomentJS
-- Three.js
 - AOS
 - React CountUp
 - React Visibility Sensor
