@@ -14,7 +14,7 @@ import {
 	faEnvelope,
 	faUser,
 	faComments,
-	faUnlock
+	faUnlock,
 } from '@fortawesome/free-solid-svg-icons';
 
 library.add(fab, faGlobe, faPhone, faEnvelope, faUser, faComments, faUnlock);
@@ -33,10 +33,10 @@ function App(props) {
 	);
 }
 
-const mapStateToProps = state => {
+const mapStateToProps = (state) => {
 	return {
 		auth: state.firebase.auth,
-		profile: state.firebase.profile
+		profile: state.firebase.profile,
 	};
 };
 
