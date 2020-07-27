@@ -1,0 +1,126 @@
+{
+	"navbar": {
+		"services": "Usługi",
+		"websites": "Strony internetowe",
+		"stores": "Sklepy internetowe",
+		"graphics": "Usługi graficzne",
+		"projects": "Projekty",
+		"about": "O nas",
+		"contact": "Kontakt",
+		"price": "Cena"
+	},
+	"home": {
+		"hero": {
+			"title": "Przenieś swoją witrynę na wyższy poziom",
+			"description": "Jeśli potrzebujesz strony internetowej, która jest w pełni responsywna, zoptymalizowana i łatwa w użyciu - jesteśmy tu dla Ciebie.",
+			"ask": "Zapytaj o cenę",
+			"check": "lub sprawdź naszą ofertę"
+		},
+		"offer": {
+			"title": "Co możemy Ci zaoferować?",
+			"websites": {
+				"title": "Strony internetowe",
+				"description": "Responsywne, przyjazne dla SEO, nowoczesne, bardzo wydajne i wygodne w samoobsłudze witryny internetowe."
+			},
+			"stores": {
+				"title": "Sklepy internetowe",
+				"description": "Korzystamy z najlepszych na świecie systemów handlu elektronicznego, takich jak WooCommerce lub PrestaShop, które są łatwe w użyciu."
+			},
+			"graphic": {
+				"title": "Usługi graficzne",
+				"description": "If you don't have graphic skills or a knack for writing, entrust us with creating effective content for your website."
+			},
+			"delivery": {
+				"title": "Szybką dostawę",
+				"description": "We don’t like waiting as much as you do, so we make sure to guarantee as fastest delivery as possible."
+			},
+			"quality": {
+				"title": "Najwyższą jakość",
+				"description": "We are professionals that care about what are we developing. We always do our best."
+			},
+			"wallet": {
+				"title": "Tanią usługę",
+				"description": "We don’t want you to bankrupt after taking our service. Our prices are the most optimized ones."
+			}
+		},
+		"customers": {
+			"title": "What do our customers say about us?",
+			"first": {
+				"name": "Aniela",
+				"review": "The best on the net! I have gotten at least 50 times the value from Pagetify. I am completely blown away. Thanks to Pagetify, we've just launched our 5th website!"
+			},
+			"second": {
+				"name": "Kamil",
+				"review": "I wanted simple WooCommerce online store which would help me getting more sales. I chose Pagetify offer, and I'm not disappointed. Pagetify was the best investment I ever made. Thank you!"
+			},
+			"third": {
+				"name": "Kalil",
+				"review": "Pagetify is worth much more than I paid. Pagetify is the most valuable business resource we have EVER purchased. Pagetify is worth much more than I paid."
+			},
+			"fourth": {
+				"name": "Jeralee",
+				"review": "The best on the net! I have gotten at least 50 times the value from Pagetify. I am completely blown away."
+			},
+			"fifth": {
+				"name": "Aaron",
+				"review": "Pagetify is the real deal! Great job, I will definitely be ordering again! Thank you for making it painless, pleasant and most of all hassle free! Pagetify is worth much more than I paid. I highly recommend them."
+			},
+			"sixth": {
+				"name": "Marti",
+				"review": "Pagetify is the real deal! Great job, I will definitely be ordering again! Thank you for making it painless, pleasant and most of all hassle free! I will be recommending you guys."
+			},
+			"seventh": {
+				"name": "Aubrie",
+				"review": "You guys rock! No matter where you go, Pagetify is the best! I am completely blown away. I will be recommending you guys."
+			},
+			"eighth": {
+				"name": "Dodi",
+				"review": "The best on the net! I have gotten at least 50 times the value from Pagetify. I am completely blown away. I will be recommending you guys. Pagetify was the best investment I ever made. Thank you!"
+			},
+			"ninth": {
+				"name": "Adam",
+				"review": "Pagetify was the best investment I ever made. Thank you!"
+			}
+		},
+		"stand": {
+			"title": "How do we stand out?",
+			"description": "We know that there are a lot of companies operating in our industry on the market. However, several issues distinguish us from others and make you entrust us with the image of your company on the web.",
+			"first": "We approach each order individually. We guarantee that we will respond to your message within a maximum of 24 hours.",
+			"second": "We thoroughly analyze your requirements and propose solutions ourselves, thanks to which each project is tailor made.",
+			"third": "We do not leave anyone alone after commissioning the project. All you need to do is contact us and we'll advise you or help you in every situation.",
+			"fourth": "We do not leave anyone alone after commissioning the project. All you need to do is contact us and we'll advise you or help you in every situation."
+		}
+	},
+	"sections": {
+		"blog": {
+			"title": "Here are the latest posts from our blog"
+		},
+		"requirements": {
+			"title": "Tell us your requirements",
+			"description": "Complete a very simple quick quotation form. Thanks to this, we will get to know your requirements and select something fully adequate to your needs.",
+			"button": "Ask for price"
+		},
+		"footer": {
+			"info": {
+				"title": "Info"
+			},
+			"services": {
+				"title": "Services",
+				"websites": "Websites",
+				"stores": "Online stores",
+				"graphics": "Graphic design"
+			},
+			"more": {
+				"title": "More",
+				"projects": "Projects",
+				"about": "About",
+				"contact": "Contact",
+				"price": "Price",
+				"privacy": "Privacy Policy"
+			},
+			"social": {
+				"title": "Social media"
+			}
+		}
+	}
+}

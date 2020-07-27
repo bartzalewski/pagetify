@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import Navbar from '../components/Navbar/Navbar';
 import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 import bg from '../images/home/bg.jpg';
 import delivery from '../images/home/delivery.svg';
@@ -349,6 +350,8 @@ const StyledHomeStandOut = styled.section`
 `;
 
 export default function Home(props) {
+	const { t } = useTranslation();
+
 	return (
 		<StyledHome>
 			<StyledHomeHero>
@@ -361,15 +364,14 @@ export default function Home(props) {
 								data-aos-once="true"
 								className="rubber-band"
 							>
-								Take your website to the next level
+								{t('home.hero.title')}
 							</h1>
 							<p
 								data-aos="fade-right"
 								data-aos-once="true"
 								data-aos-delay="100"
 							>
-								If you need a website that if fully responsive, optimized and
-								easy to use - we are here for you.
+								{t('home.hero.description')}
 							</p>
 							<div
 								data-aos="fade-right"

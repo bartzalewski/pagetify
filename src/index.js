@@ -10,6 +10,7 @@ import thunk from 'redux-thunk';
 import { reduxFirestore, getFirestore } from 'redux-firestore';
 import { reactReduxFirebase, getFirebase } from 'react-redux-firebase';
 import MessengerCustomerChat from 'react-messenger-customer-chat';
+import './lang/i18n';
 
 const store = createStore(
 	rootReducer,

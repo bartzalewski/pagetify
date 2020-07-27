@@ -1,0 +1,262 @@
+{
+	"navbar": {
+		"services": "Services",
+		"websites": "Websites",
+		"stores": "Online stores",
+		"graphics": "Graphic design",
+		"projects": "Projects",
+		"about": "About",
+		"contact": "Contact",
+		"price": "Price"
+	},
+	"home": {
+		"hero": {
+			"title": "Take your website to the next level",
+			"description": "If you need a website that if fully responsive, optimized and easy to use - we are here for you.",
+			"ask": "Ask for price",
+			"check": "or check our offer"
+		},
+		"offer": {
+			"title": "What can we offer for you?",
+			"websites": {
+				"title": "Websites",
+				"description": "Responsible, SEO-friendly, modern-looking, very efficient and convenient in self-service websites."
+			},
+			"stores": {
+				"title": "Online stores",
+				"description": "We use the world’s best e-commerce systems like WooCommerce or PrestaShop which are easy to use."
+			},
+			"graphic": {
+				"title": "Graphic design",
+				"description": "If you don't have graphic skills or a knack for writing, entrust us with creating effective content for your website."
+			},
+			"delivery": {
+				"title": "Fast delivery",
+				"description": "We don’t like waiting as much as you do, so we make sure to guarantee as fastest delivery as possible."
+			},
+			"quality": {
+				"title": "Highest quality",
+				"description": "We are professionals that care about what are we developing. We always do our best."
+			},
+			"wallet": {
+				"title": "Wallet-friendly",
+				"description": "We don’t want you to bankrupt after taking our service. Our prices are the most optimized ones."
+			}
+		},
+		"customers": {
+			"title": "What do our customers say about us?",
+			"first": {
+				"name": "Aniela",
+				"review": "The best on the net! I have gotten at least 50 times the value from Pagetify. I am completely blown away. Thanks to Pagetify, we've just launched our 5th website!"
+			},
+			"second": {
+				"name": "Kamil",
+				"review": "I wanted simple WooCommerce online store which would help me getting more sales. I chose Pagetify offer, and I'm not disappointed. Pagetify was the best investment I ever made. Thank you!"
+			},
+			"third": {
+				"name": "Kalil",
+				"review": "Pagetify is worth much more than I paid. Pagetify is the most valuable business resource we have EVER purchased. Pagetify is worth much more than I paid."
+			},
+			"fourth": {
+				"name": "Jeralee",
+				"review": "The best on the net! I have gotten at least 50 times the value from Pagetify. I am completely blown away."
+			},
+			"fifth": {
+				"name": "Aaron",
+				"review": "Pagetify is the real deal! Great job, I will definitely be ordering again! Thank you for making it painless, pleasant and most of all hassle free! Pagetify is worth much more than I paid. I highly recommend them."
+			},
+			"sixth": {
+				"name": "Marti",
+				"review": "Pagetify is the real deal! Great job, I will definitely be ordering again! Thank you for making it painless, pleasant and most of all hassle free! I will be recommending you guys."
+			},
+			"seventh": {
+				"name": "Aubrie",
+				"review": "You guys rock! No matter where you go, Pagetify is the best! I am completely blown away. I will be recommending you guys."
+			},
+			"eighth": {
+				"name": "Dodi",
+				"review": "The best on the net! I have gotten at least 50 times the value from Pagetify. I am completely blown away. I will be recommending you guys. Pagetify was the best investment I ever made. Thank you!"
+			},
+			"ninth": {
+				"name": "Adam",
+				"review": "Pagetify was the best investment I ever made. Thank you!"
+			}
+		},
+		"stand": {
+			"title": "How do we stand out?",
+			"description": "We know that there are a lot of companies operating in our industry on the market. However, several issues distinguish us from others and make you entrust us with the image of your company on the web.",
+			"first": "We approach each order individually. We guarantee that we will respond to your message within a maximum of 24 hours.",
+			"second": "We thoroughly analyze your requirements and propose solutions ourselves, thanks to which each project is tailor made.",
+			"third": "We do not leave anyone alone after commissioning the project. All you need to do is contact us and we'll advise you or help you in every situation.",
+			"fourth": "We do not leave anyone alone after commissioning the project. All you need to do is contact us and we'll advise you or help you in every situation."
+		}
+	},
+	"sections": {
+		"blog": {
+			"title": "Here are the latest posts from our blog"
+		},
+		"requirements": {
+			"title": "Tell us your requirements",
+			"description": "Complete a very simple quick quotation form. Thanks to this, we will get to know your requirements and select something fully adequate to your needs.",
+			"button": "Ask for price"
+		},
+		"footer": {
+			"info": {
+				"title": "Info"
+			},
+			"services": {
+				"title": "Services",
+				"websites": "Websites",
+				"stores": "Online stores",
+				"graphics": "Graphic design"
+			},
+			"more": {
+				"title": "More",
+				"projects": "Projects",
+				"about": "About",
+				"contact": "Contact",
+				"price": "Price",
+				"privacy": "Privacy Policy"
+			},
+			"social": {
+				"title": "Social media"
+			}
+		}
+	},
+	"websites": {
+		"hero": {
+			"title": "Websites",
+			"description": "Adapted to mobile devices, easy to operate independently, friendly SEO and ready for any expansion at any time.",
+			"first": {
+				"title": "WordPress",
+				"description": "The most popular option. If you are not that much into websites, this is the perfect option for you. Wordpress is the easiest way to get started in managing your own website, because of it's very clear interface which is effortless to learn and maintain."
+			},
+			"second": {
+				"title": "React",
+				"description": "The best non-wordpress option. If you want your website to be the fastest one, the most stable and the most customizable among your competitors, this is the right choice for you. We provide React simple and complex apps which can match your strong requirements."
+			},
+			"third": {
+				"title": "Other technology",
+				"description": "If you want your website to be in other technology that is not listed here, you can always tell us what specific type of technology you want us to use. Knowing your requirements, we will shortly inform you if we are ready to work with you or not."
+			}
+		},
+		"features": {
+			"first": {
+				"title": "Fully responsive",
+				"description": "We make sure that our websites are fully responsive on every device. Hence, your website will be looking superb on every screen!"
+			},
+			"second": {
+				"title": "Blazing fast",
+				"description": "We take care of every aspect that leads to making your website as fast as possible. Thanks to our experience, this is our strongest point amongst other companies."
+			},
+			"third": {
+				"title": "SEO friendly",
+				"description": "We had businesses like you do and we know how to position your website in the search engines and make it as efficient as possible to get to the top of popularity."
+			},
+			"fourth": {
+				"title": "Convenient",
+				"description": "Depending on your needs, we do everything we can to make sure your final product is as advantageous for you and for your clients as possible."
+			},
+			"fifth": {
+				"title": "Modern looking",
+				"description": "The number one rule to success with your website is that it has to be looking beautiful. Your clients and visitors won't be satisfied with your website if it's not looking good."
+			},
+			"sixth": {
+				"title": "Easy to use",
+				"description": "After taking our service, we want you to feel comfortable maintaining your website. We always provide a manual instruction covering everything you need to know."
+			}
+		}
+	},
+	"stores": {
+		"hero": {
+			"title": "Online stores",
+			"description": "Easy to manage independently, friendly to buyers through mobile devices and ready for expansion with any new functions.",
+			"first": {
+				"title": "WooCommerce",
+				"description": "The best for new sellers. If you don't need to sell tens of thousands of products, you have a limited budget and you don't want your website to be visited by millions of people at the same time, WordPress WooCommerce is the perfect option for you."
+			},
+			"second": {
+				"title": "PrestaShop",
+				"description": "The best for experienced sellers. If you are looking for scalable solutions, you have an extra budget for programming work, you are ready to invest in your store and you care about the fastest page loading, PrestaShop is the perfect option for you."
+			},
+			"third": {
+				"title": "Other technology",
+				"description": "If you want your store to be in other technology that is not listed here, you can always tell us what specific type of technology you want us to use. Knowing your requirements, we will shortly inform you if we are ready to work with you or not."
+			}
+		},
+		"features": {
+			"first": {
+				"title": "Your store online",
+				"description": "We make sure that our websites are fully responsive on every device. Hence, your website will be looking superb on every screen!"
+			},
+			"second": {
+				"title": "Build successful brand",
+				"description": "We take care of every aspect that leads to making your website as fast as possible. Thanks to our experience, this is our strongest point amongst other companies."
+			},
+			"third": {
+				"title": "Save your money",
+				"description": "Don't spend a lot of money on website! With our service you can focus on getting more clients than saving up money from the beggining of your wonderful journey."
+			},
+			"fourth": {
+				"title": "Make more sales",
+				"description": "Selling your product in your online store is the best way to make more sales. With our help, you can always do your best to reach your goals."
+			},
+			"fifth": {
+				"title": "Get our help",
+				"description": "If something is unclear to you, if you have any questions, you can always feel free to ask us. We want you to succeed, you finally chose us as your web developers."
+			},
+			"sixth": {
+				"title": "Feature-rich",
+				"description": "Thanks to our services offered you can easily do everything that you need to do when you are managing a store. Newsletters, quick product edition and much more!"
+			}
+		}
+	},
+	"graphics": {
+		"hero": {
+			"title": "Graphic design",
+			"description": "Logo, business card, banner or graphic website template design - these are examples of projects you can order from us.",
+			"first": {
+				"title": "Logos, business cards",
+				"description": "The best for new sellers. If you don't need to sell tens of thousands of products, you have a limited budget and you don't want your website to be visited by millions of people at the same time, WordPress WooCommerce is the perfect option for you."
+			},
+			"second": {
+				"title": "Banner Ads",
+				"description": "The best for experienced sellers. If you are looking for scalable solutions, you have an extra budget for programming work, you are ready to invest in your store and you care about the fastest page loading, PrestaShop is the perfect option for you."
+			},
+			"third": {
+				"title": "Other graphics",
+				"description": "If you want your store to be in other technology that is not listed here, you can always tell us what specific type of technology you want us to use. Knowing your requirements, we will shortly inform you if we are ready to work with you or not."
+			}
+		},
+		"features": {
+			"first": {
+				"title": "Accurately measured",
+				"description": "We make sure that our websites are fully responsive on every device. Hence, your website will be looking superb on every screen!"
+			},
+			"second": {
+				"title": "Properly selected colors",
+				"description": "We take care of every aspect that leads to making your website as fast as possible. Thanks to our experience, this is our strongest point amongst other companies."
+			},
+			"third": {
+				"title": "Based on your idea",
+				"description": "Don't spend a lot of money on website! With our service you can focus on getting more clients than saving up money from the beggining of your wonderful journey."
+			},
+			"fourth": {
+				"title": "Tailored to your needs",
+				"description": "Selling your product in your online store is the best way to make more sales. With our help, you can always do your best to reach your goals."
+			},
+			"fifth": {
+				"title": "Aesthetic typography",
+				"description": "If something is unclear to you, if you have any questions, you can always feel free to ask us. We want you to succeed, you finally chose us as your web developers."
+			},
+			"sixth": {
+				"title": "Possible corrections",
+				"description": "Thanks to our services offered you can easily do everything that you need to do when you are managing a store. Newsletters, quick product edition and much more!"
+			}
+		}
+	},
+	"projects": {
+		"title": "Projects",
+		"description": "Check our portfolio!"
+	}
+}
