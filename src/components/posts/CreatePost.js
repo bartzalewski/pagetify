@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import { connect } from "react-redux";
 import { createPost } from "../../store/actions/postActions";
@@ -65,51 +65,51 @@ const StyledCreatePost = styled.section`
   }
 `;
 
-class CreatePost extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      authorName: `${this.props.profile.firstName} ${this.props.profile.lastName}`,
-      authorAvatar: this.props.profile.userAvatar,
-      title: "",
-      content: "",
-      url: "",
-      postBackground: null,
-      progress: 0,
-    };
-    this.handleChange = this.handleChange.bind(this);
-    this.handleUpload = this.handleUpload.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.handleChoose = this.handleChoose.bind(this);
-    this.handleURL = this.handleURL.bind(this);
-  }
-  handleURL = async (e) => {
-    await this.setState({
-      url:
-        e.target.id === "title"
-          ? e.target.value.split(" ").join("-").toLowerCase()
-          : null,
-      [e.target.id]: e.target.value,
-    });
+const CreatePost = (props) => {
+  const [authorName] = useState(
+    `${props.profile.firstName} ${props.profile.lastName}`
+  );
+  const [authorAvatar] = useState(props.profile.userAvatar);
+  const [title, setTitle] = useState("");
+  const [content, setContent] = useState("");
+  const [url, setUrl] = useState("");
+  const [postBackground, setPostBackground] = useState(null);
+  const [progress, setProgress] = useState(0);
+  const state = {
+    authorName,
+    authorAvatar,
+    title,
+    content,
+    url,
+    postBackground,
   };
-  handleChange = async (e) => {
-    await this.setState({
-      [e.target.id]: e.target.value,
-    });
+
+  const handleURL = async (e) => {
+    e.persist();
+
+    await setUrl(
+      e.target.id === "title"
+        ? e.target.value.split(" ").join("-").toLowerCase()
+        : null
+    );
+
+    await setTitle(e.target.value);
   };
-  handleSubmit = (e) => {
+
+  const handleSubmit = (e) => {
     e.preventDefault();
-    this.props.createPost(this.state, this.state.url);
-    this.props.history.push("/");
+    props.createPost(state, url);
+    props.history.push("/");
   };
-  handleChoose = (e) => {
+
+  const handleChoose = (e) => {
     if (e.target.files[0]) {
       const postBackground = e.target.files[0];
-      this.setState(() => ({ postBackground }));
+      setPostBackground(postBackground);
     }
   };
-  handleUpload = () => {
-    const { postBackground } = this.state;
+
+  const handleUpload = () => {
     const imageName = `${
       postBackground.name + Math.round(Math.random() * 1000000000000)
     }`;
@@ -124,7 +124,7 @@ class CreatePost extends Component {
         const progress = Math.round(
           (snapshot.bytesTransferred / snapshot.totalBytes) * 100
         );
-        this.setState({ progress });
+        setProgress(progress);
       },
       (error) => {
         console.log(error);
@@ -135,7 +135,7 @@ class CreatePost extends Component {
           .child(imageName)
           .getDownloadURL()
           .then((postBackground) => {
-            this.setState({ postBackground });
+            setPostBackground(postBackground);
           });
       }
     );
@@ -144,114 +144,112 @@ class CreatePost extends Component {
       return downloadURL;
     });
   };
-  componentDidMount = () => {
+
+  useEffect(() => {
     let textarea = document.querySelector("textarea");
     new TextareaMarkdown(textarea);
-  };
-  render() {
-    const { auth } = this.props;
-    const uploadPostButton = document.getElementById("upload-post-btn");
+  }, []);
 
-    if (!auth.uid) return <Redirect to="/" />;
+  const { auth } = props;
+  const uploadPostButton = document.getElementById("upload-post-btn");
 
-    if (
-      this.state.authorName !== "" &&
-      this.state.postBackground !== null &&
-      this.state.progress === 100 &&
-      this.state.content !== "" &&
-      this.state.title !== "" &&
-      this.state.url !== ""
-    ) {
-      uploadPostButton.disabled = false;
-      uploadPostButton.style.visibility = "visible";
-    }
-    return (
-      <>
-        <NavbarOtherSites></NavbarOtherSites>
-        <StyledCreatePost className="sites__hero">
-          <div className="sites__container">
-            <div className="container">
-              <h1 className="section__title">Create new post</h1>
-              <form
-                className="sites__wrapper create-post__wrapper"
-                onSubmit={this.handleSubmit}
-              >
-                <div className="input-field--flex">
-                  <div className="input-field">
-                    <label htmlFor="title" />
-                    <input
-                      type="text"
-                      placeholder="Title here..."
-                      id="title"
-                      onChange={this.handleURL}
-                      autoComplete="off"
-                    />
-                  </div>
-                  <div className="input-field">
-                    <label htmlFor="url" />
-                    <input
-                      type="text"
-                      placeholder="This post's URL"
-                      id="url"
-                      value={this.state.url}
-                      onChange={this.handleChange}
-                      autoComplete="off"
-                      disabled
-                    />
-                  </div>
+  if (!auth.uid) return <Redirect to="/" />;
+
+  if (
+    authorName !== "" &&
+    postBackground !== null &&
+    progress === 100 &&
+    content !== "" &&
+    title !== "" &&
+    url !== ""
+  ) {
+    uploadPostButton.disabled = false;
+    uploadPostButton.style.visibility = "visible";
+  }
+
+  return (
+    <>
+      <NavbarOtherSites></NavbarOtherSites>
+      <StyledCreatePost className="sites__hero">
+        <div className="sites__container">
+          <div className="container">
+            <h1 className="section__title">Create new post</h1>
+            <form
+              className="sites__wrapper create-post__wrapper"
+              onSubmit={handleSubmit}
+            >
+              <div className="input-field--flex">
+                <div className="input-field">
+                  <label htmlFor="title" />
+                  <input
+                    type="text"
+                    placeholder="Title here..."
+                    id="title"
+                    onChange={handleURL}
+                    autoComplete="off"
+                  />
                 </div>
                 <div className="input-field">
-                  <label htmlFor="content" />
-                  <textarea
-                    placeholder="Type your post content here..."
-                    id="content"
-                    data-preview="#preview"
-                    onChange={this.handleChange}
-                  />
-                  <p
-                    style={{
-                      margin: "1rem 0",
-                      fontWeight: 500,
-                      fontSize: "16px",
-                    }}
-                  >
-                    Preview:
-                  </p>
-                  <div id="preview"></div>
-                </div>
-                <button
-                  id="upload-post-btn"
-                  disabled
-                  className="post__btn"
-                  onClick={this.handleSubmit}
-                >
-                  Upload Post
-                </button>
-              </form>
-              <div className="upload__wrapper">
-                <progress value={this.state.progress} max="100" />
-                <br />
-                <div className="upload__container">
+                  <label htmlFor="url" />
                   <input
-                    className="custom-file-input"
-                    type="file"
-                    onChange={this.handleChoose}
+                    type="text"
+                    placeholder="This post's URL"
+                    id="url"
+                    value={url}
+                    onChange={(e) => setUrl(e.target.value)}
+                    autoComplete="off"
+                    disabled
                   />
-                  <button
-                    className="custom-file-btn"
-                    onClick={this.handleUpload}
-                  >
-                    Upload an image
-                  </button>
                 </div>
+              </div>
+              <div className="input-field">
+                <label htmlFor="content" />
+                <textarea
+                  placeholder="Type your post content here..."
+                  id="content"
+                  data-preview="#preview"
+                  onChange={(e) => setContent(e.target.value)}
+                />
+                <p
+                  style={{
+                    margin: "1rem 0",
+                    fontWeight: 500,
+                    fontSize: "16px",
+                  }}
+                >
+                  Preview:
+                </p>
+                <div id="preview"></div>
+              </div>
+              <button
+                id="upload-post-btn"
+                disabled
+                className="post__btn"
+                onClick={handleSubmit}
+              >
+                Upload Post
+              </button>
+            </form>
+            <div className="upload__wrapper">
+              <progress value={progress} max="100" />
+              <br />
+              <div className="upload__container">
+                <input
+                  className="custom-file-input"
+                  type="file"
+                  onChange={handleChoose}
+                />
+                <button className="custom-file-btn" onClick={handleUpload}>
+                  Upload an image
+                </button>
               </div>
             </div>
           </div>
-        </StyledCreatePost>
-      </>
-    );
-  }
-}
+        </div>
+      </StyledCreatePost>
+    </>
+  );
+};
 
 const mapStateToProps = (state) => {
   return {

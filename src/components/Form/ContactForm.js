@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
@@ -25,27 +25,20 @@ const StyledContactForm = styled.div`
   }
 `;
 
-class ContactForm extends Component {
-  state = {
-    name: "",
-    email: "",
-    message: "",
-    emailStatus: "",
-  };
+const ContactForm = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [message, setMessage] = useState("");
+  const [emailStatus, setEmailStatus] = useState("");
+  const [isActiveName, setIsActiveName] = useState(false);
+  const [isActiveEmail, setIsActiveEmail] = useState(false);
+  const [isActiveMessage, setIsActiveMessage] = useState(false);
 
-  handleChange = (input) => (e) => {
-    this.setState({ [input]: e.target.value });
-  };
-
-  submitForm = (e) => {
-    const { name, email, message } = this.state;
-
+  const submitForm = (e) => {
     let xhr = new XMLHttpRequest();
 
     xhr.addEventListener("load", () => {
-      this.setState({
-        emailStatus: xhr.responseText,
-      });
+      setEmailStatus(xhr.responseText);
     });
 
     xhr.open(
@@ -60,119 +53,108 @@ class ContactForm extends Component {
 
     xhr.send();
 
-    this.setState({
-      name: "",
-      email: "",
-      message: "",
-    });
+    setName("");
+    setEmail("");
+    setMessage("");
+
     e.preventDefault();
   };
 
-  componentDidMount = () => {
-    const inputs = document.querySelectorAll(".input-field__input");
-
-    function addCl() {
-      let parent = this.parentNode.parentNode.parentNode;
-      parent.classList.add("focus");
-    }
-
-    function remCl() {
-      let parent = this.parentNode.parentNode.parentNode;
-      if (this.value === "") {
-        parent.classList.remove("focus");
-      }
-    }
-
-    inputs.forEach((input) => {
-      input.addEventListener("focus", addCl);
-      input.addEventListener("blur", remCl);
-    });
-  };
-
-  render() {
-    const { name, email, message, emailStatus } = this.state;
-
-    return (
-      <StyledContactForm className="form__wrapper" onSubmit={this.submitForm}>
-        {emailStatus ? emailStatus : null}
-        <form className="form--flex">
-          <div className="input-field--flex">
-            <div className="input-field">
-              <div className="input-field__icon">
-                <FontAwesomeIcon icon="user" className="input-field__fa" />
-              </div>
-              <div className="input-field__wrapper">
-                <span>Your name *</span>
-                <label>
-                  <input
-                    type="text"
-                    value={name}
-                    onChange={this.handleChange("name")}
-                    required
-                    className="input-field__input"
-                  />
-                </label>
-              </div>
-            </div>
-            <div className="input-field input-field--right">
-              <div className="input-field__icon">
-                <FontAwesomeIcon icon="envelope" className="input-field__fa" />
-              </div>
-              <div className="input-field__wrapper">
-                <span>Your email *</span>
-                <label>
-                  <input
-                    type="email"
-                    value={email}
-                    onChange={this.handleChange("email")}
-                    required
-                    className="input-field__input"
-                  />
-                </label>
-              </div>
-            </div>
-          </div>
-          <div className="input-field input-field__textarea">
+  return (
+    <StyledContactForm className="form__wrapper" onSubmit={submitForm}>
+      {emailStatus ? emailStatus : null}
+      <form className="form--flex">
+        <div className="input-field--flex">
+          <div className={isActiveName ? "input-field focus" : "input-field"}>
             <div className="input-field__icon">
-              <FontAwesomeIcon icon="comments" className="input-field__fa" />
+              <FontAwesomeIcon icon="user" className="input-field__fa" />
             </div>
             <div className="input-field__wrapper">
-              <span>Message *</span>
+              <span>Your name *</span>
               <label>
-                <textarea
+                <input
                   type="text"
-                  value={message}
-                  onChange={this.handleChange("message")}
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
+                  onClick={() => setIsActiveName(!isActiveName)}
                   required
                   className="input-field__input"
-                ></textarea>
+                />
               </label>
             </div>
           </div>
-          <div className="input-field__checkbox">
-            <input type="checkbox" id="accept" required name="accept" />
-            <label className="checkbox__label" htmlFor="accept">
-              I accept the information contained in the{" "}
-              <a
-                href="https://pagetify.com/privacy-policy"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="default-link"
-              >
-                privacy policy
-              </a>
-              . *
+          <div
+            className={
+              isActiveEmail
+                ? "input-field input-field--right focus"
+                : "input-field input-field--right"
+            }
+          >
+            <div className="input-field__icon">
+              <FontAwesomeIcon icon="envelope" className="input-field__fa" />
+            </div>
+            <div className="input-field__wrapper">
+              <span>Your email *</span>
+              <label>
+                <input
+                  type="email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  onClick={() => setIsActiveEmail(!isActiveEmail)}
+                  required
+                  className="input-field__input"
+                />
+              </label>
+            </div>
+          </div>
+        </div>
+        <div
+          className={
+            isActiveMessage
+              ? "input-field input-field__textarea focus"
+              : "input-field input-field__textarea"
+          }
+        >
+          <div className="input-field__icon">
+            <FontAwesomeIcon icon="comments" className="input-field__fa" />
+          </div>
+          <div className="input-field__wrapper">
+            <span>Message *</span>
+            <label>
+              <textarea
+                type="text"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                onClick={() => setIsActiveMessage(!isActiveMessage)}
+                required
+                className="input-field__input"
+              ></textarea>
             </label>
           </div>
-          <input
-            type="submit"
-            className="form__btn btn--gradient"
-            value="Submit"
-          />
-        </form>
-      </StyledContactForm>
-    );
-  }
-}
+        </div>
+        <div className="input-field__checkbox">
+          <input type="checkbox" id="accept" required name="accept" />
+          <label className="checkbox__label" htmlFor="accept">
+            I accept the information contained in the{" "}
+            <a
+              href="https://pagetify.com/privacy-policy"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="default-link"
+            >
+              privacy policy
+            </a>
+            . *
+          </label>
+        </div>
+        <input
+          type="submit"
+          className="form__btn btn--gradient"
+          value="Submit"
+        />
+      </form>
+    </StyledContactForm>
+  );
+};
 
 export default ContactForm;
