@@ -1,8 +1,8 @@
-import { createGlobalStyle } from 'styled-components';
-import tickDownPrimary from '../images/decorations/tick-down-primary.svg';
-import tickDown from '../images/decorations/tick-down.svg';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+import { createGlobalStyle } from "styled-components";
+import tickDownPrimary from "../images/decorations/tick-down-primary.svg";
+import tickDown from "../images/decorations/tick-down.svg";
+import AOS from "aos";
+import "aos/dist/aos.css";
 
 AOS.init();
 
